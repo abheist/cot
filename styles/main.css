@@ -1,0 +1,205 @@
+@font-face {
+    font-family: latoBlack;
+    src: url(../fonts/Lato/Lato-Black.ttf);
+}
+
+@font-face {
+    font-family: latoBlackItalic;
+    src: url(../fonts/Lato/Lato-BlackItalic.ttf);
+}
+
+@font-face {
+    font-family: latoBold;
+    src: url(../fonts/Lato/Lato-Bold.ttf);
+}
+
+@font-face {
+    font-family: latoItalic;
+    src: url(../fonts/Lato/Lato-BoldItalic.ttf);
+}
+
+@font-face {
+    font-family: latoHairline;
+    src: url(../fonts/Lato/Lato-Hairline.ttf);
+}
+
+@font-face {
+    font-family: latoHairlineItalic;
+    src: url(../fonts/Lato/Lato-HairlineItalic.ttf);
+}
+
+@font-face {
+    font-family: latoItalic;
+    src: url(../fonts/Lato/Lato-Italic.ttf);
+}
+
+@font-face {
+    font-family: latoLight;
+    src: url(../fonts/Lato/Lato-Light.ttf);
+}
+
+@font-face {
+    font-family: latoLightItalic;
+    src: url(../fonts/Lato/Lato-LightItalic.ttf);
+}
+
+@font-face {
+    font-family: latoRegular;
+    src: url(../fonts/Lato/Lato-Regular.ttf);
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: latoRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #303030;
+    line-height: 1.7;
+    background-color: #fff;
+}
+
+#mainBox {
+    width: 66.66666%;
+    margin: 0px auto;
+    padding-top: 100px;
+    padding-bottom: 500px;
+}
+
+header {
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+#profilePicInner {
+    background: url(/images/steveProfile.jpg);
+    background-size: cover;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    font-family: latoBlack;
+    margin: 0px auto;
+}
+
+#headerUserName {
+    font-size: 22px;
+    font-family: latoBold;
+    color: #307699;
+    line-height: 1.6;
+    margin-top: 10px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+#placePointer {
+    font-family: latoLight;
+    color: #666;
+    font-size: 15px;
+    margin-top: 4px;
+    text-transform: capitalize;
+}
+
+.fontsAdded {
+    margin: 0px 10px 0px -10px;
+}
+
+
+#tagLine {
+    font-family: latoBold;
+    margin-top: 15px;
+    font-size: 15px;
+    text-transform: capitalize;
+}
+
+#personalLinks  {
+  margin-top: 25px;
+  list-style: none;
+}
+
+.personalLinkList {
+  float: left;
+  width: 25%;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+#summaryAndAll  {
+  width: 80%;
+  margin: 0px auto;
+}
+
+#summaryDiv {
+
+}
+
+#summaryPara  {
+  font-size: 15px;
+  color: #333;
+  text-align: justify;
+  margin-top: 60px;
+  letter-spacing: 0.7px;
+}
+
+.section {
+  margin-top: 50px;
+}
+
+.fieldHead {
+    font-size: 21px;
+    font-family: latoBold;
+    color: #307699;
+    line-height: 1.6;
+    letter-spacing: 1px;
+}
+
+#workFirst  {
+  width: 90%;
+  margin: 0px auto;
+  display: table;
+}
+
+#workMaterial {
+  width: 70%;
+  float: left;
+}
+
+#workImg  {
+  background: url(/images/litlogo.png);
+  background-size: cover;
+  width: 20%;
+  height: 100%;
+  min-height: 100px;
+  float: right;
+  margin-right: 30px;
+}
+
+.second {
+  clear: both;
+  margin-top: 200px;
+}
+
+.workHeading  {
+  font-family: latoBold;
+  font-size: 20px;
+  line-height: 10px;
+}
+
+.workCompany  {
+  font-family: latoRegular;
+  font-size: 15px;
+}
+
+.workDateAndPlace {
+  color: #666;
+  text-transform: capitalize;
+  font-family: latoRegular;
+}

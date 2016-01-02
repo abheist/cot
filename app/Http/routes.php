@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 /*
 |--------------------------------------------------------------------------
@@ -27,5 +25,13 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
+	
+	Route::get('/', function () {
+	    return view('app');
+	});
+
+	Route::get('register','UsersController@index');
+	Route::post('register', 'UsersController@store');
+
+	Route::get('login', 'UsersController@login');
 });

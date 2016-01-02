@@ -92,6 +92,23 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        
+        'email' => [
+            'required' => 'We need to know your e-mail address!',
+        ],
+        'fname' => [
+            'required'  => 'We need to know your first name!',
+        ],
+         'lname' => [
+            'required'  => 'We need to know your last name!',
+        ],
+         'password' => [
+            'required'  => 'Please enter a valid password!',
+        ], 
+        'cnfrmpassword' => [
+            'required'  => 'Confirm Password field is required!',
+            'same'      => 'Password and Confirm Password field must match!'
+        ],
     ],
 
     /*

@@ -34,4 +34,6 @@ Route::group(['middleware' => ['web']], function () {
 	Route::post('register', 'UsersController@store');
 
 	Route::get('login', 'UsersController@login');
+	Route::post('login', 'UsersController@loggedin');
+	Route::get('logout', 'UsersController@destroy');
 });

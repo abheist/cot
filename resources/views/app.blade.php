@@ -27,6 +27,7 @@
 	      		@if(Auth::check())
 	        		<li><a href="#">Write</a></li>
 	        		<li><a href="#"> {{ Auth::user()->fname }} </a></li>
+	        		<li><a href="logout">Logout</a></li>
 	        	@else
 					<li><a href="register">Sign Up</a></li>
 	        		<li><a href="login">Sign In</a></li>

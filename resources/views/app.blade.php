@@ -25,7 +25,7 @@
 	      	</form>
 	      	<ul class="nav navbar-nav navbar-right">
 	      		@if(Auth::check())
-	        		<li><a href="#">Write</a></li>
+	        		<li><a href="create">Create</a></li>
 	        		<li><a href="#"> {{ Auth::user()->fname }} </a></li>
 	        		<li><a href="logout">Logout</a></li>
 	        	@else

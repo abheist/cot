@@ -6,7 +6,10 @@
 		<h3>Recent Blogs</h3>
 	</div>
 
-	<div class="well">
-		<strong>Title</strong> <br/><span class="badge">Time</span><br/>Small Desc.	
-	</div>
+	@foreach($blogs as $blog)
+		<div class="well">
+			<strong>{{$blog->blog_title}}</strong> <br/><span class="badge">{{date_format($blog->created_at,'l, H:i A')}}</span><br/>{{$blog->blog_body}}
+		</div>
+	@endforeach
+	
 @stop

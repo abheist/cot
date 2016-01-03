@@ -24,7 +24,6 @@ class User extends Authenticatable
         'password',
     ];
 
-
     public function blogs()
     {
         return $this->hasMany('App\Blog');

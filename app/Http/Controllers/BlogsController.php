@@ -13,8 +13,8 @@ class BlogsController extends Controller
 {
    public function index()
    {
-   	$blogs = Blog::all();
-   	return view('pages.home',['blogs' => $blogs]);
+      $blogs = Blog::with('user')->latest()->get();
+      return view('pages.home',['blogs' => $blogs]);
    }
 
    public function create()
@@ -35,4 +35,5 @@ class BlogsController extends Controller
     $blog = $user->blogs()->save($blog);
     return redirect('/');
    }
+
 }

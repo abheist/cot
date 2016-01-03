@@ -40,10 +40,13 @@
 		@yield('content')
 
 	</div>
+
+	<!--
 	<nav class="navbar navbar-default navbar-inverse navbar-fixed-bottom">
 		<div class="container">
 			<a href="http://cotanz.com" class="navbar-brand">Cotanz.com</a>
 		</div>	
-	</nav>
+	</nav>	
+	-->
 </body>
 </html>

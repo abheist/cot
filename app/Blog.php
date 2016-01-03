@@ -11,4 +11,9 @@ class Blog extends Model
         'blog_title', 'blog_body',
     ];
 
+
+    public function user()
+    {
+    	return $this->belongsTo('App\User');
+    }
 }

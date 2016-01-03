@@ -27,7 +27,7 @@
 Route::group(['middleware' => ['web']], function () {
 	
 	Route::get('/', function () {
-	    return view('app');
+	    return view('pages.home');
 	});
 
 	Route::get('register','UsersController@index');
@@ -36,4 +36,5 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('login', 'UsersController@login');
 	Route::post('login', 'UsersController@loggedin');
 	Route::get('logout', 'UsersController@destroy');
+
 });

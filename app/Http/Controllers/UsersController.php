@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Redirect;
 
 class UsersController extends Controller
 {
-    public function index($value='')
+    public function index()
     {
     	return view('pages.register');
     }
@@ -29,10 +29,8 @@ class UsersController extends Controller
     	$input = $request->except('cnfrmpassword','_token');
     	$input['password']=Hash::make($input['password']);
     	$user=User::create($input);
-    	//return redirect('/')->with('status','User Registered');
     	Auth::login($user);
     	return Redirect::intended('/');
-
     }
 
     public function login()

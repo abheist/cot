@@ -1,56 +1,67 @@
 <!doctype html>
 <html lang="">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>front</title>
     <link rel="favicon/icon" href="logoBlack.png">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="logoBlack.png">
     <!-- Place favicon.ico in the root directory -->
-
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
     <!-- endbower -->
     <!-- endbuild -->
-
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-    
-  </head>
-  <body>
+</head>
+
+<body>
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    
-    <div class="hero-unit">
-      <h1>'Allo, 'Allo!</h1>
-      <p>You now have</p>
-      <ul>
-        <li>HTML5 Boilerplate</li>
-        <li>jQuery</li>
-      </ul>
+    <div class="header">
+        <h1 class="headerHeading">Cotanz</h1>
     </div>
-    
+    <div class="mainBox">
+        <div class="leftBox">
+            <div class="leftBoxInner">
+                <div class="prof">
+                    <div class="profCoverPic"></div>
+                    <div class="profData">
+                        <a href="#">
+                            <div class="profProfilePic"></div>
+                        </a>
+                        <h5 class="profName"><a href="#">Steve Jobs</a></h5>
+                        <p class="profBio">I'm the founder of Apple & Next Computers.</p>
+                        <div class="profLinks">
+                            <a href="#" class="profLinksList"><i class="fa fa-github fa-lg"></i></a>
+                            <a href="#" class="profLinksList"><i class="fa fa-linkedin fa-lg"></i></a>
+                            <a href="#" class="profLinksList"><i class="fa fa-child fa-lg"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="middleBox">
+            <div class="middleBoxInner">
+                
+            </div>
+        </div>
+        <div class="rightBox"></div>
+    </div>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='https://www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script>
-
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
     <!-- endbower -->
     <!-- endbuild -->
-    
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
-  </body>
+</body>
+
 </html>

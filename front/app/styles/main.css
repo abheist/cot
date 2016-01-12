@@ -1,29 +1,159 @@
+@font-face {
+    font-family: latoBlack;
+    src: url(../fonts/Lato/Lato-Black.ttf);
+}
+
+@font-face {
+    font-family: latoBlackItalic;
+    src: url(../fonts/Lato/Lato-BlackItalic.ttf);
+}
+
+@font-face {
+    font-family: latoBold;
+    src: url(../fonts/Lato/Lato-Bold.ttf);
+}
+
+@font-face {
+    font-family: latoItalic;
+    src: url(../fonts/Lato/Lato-BoldItalic.ttf);
+}
+
+@font-face {
+    font-family: latoHairline;
+    src: url(../fonts/Lato/Lato-Hairline.ttf);
+}
+
+@font-face {
+    font-family: latoHairlineItalic;
+    src: url(../fonts/Lato/Lato-HairlineItalic.ttf);
+}
+
+@font-face {
+    font-family: latoItalic;
+    src: url(../fonts/Lato/Lato-Italic.ttf);
+}
+
+@font-face {
+    font-family: latoLight;
+    src: url(../fonts/Lato/Lato-Light.ttf);
+}
+
+@font-face {
+    font-family: latoLightItalic;
+    src: url(../fonts/Lato/Lato-LightItalic.ttf);
+}
+
+@font-face {
+    font-family: latoRegular;
+    src: url(../fonts/Lato/Lato-Regular.ttf);
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+a   {
+    text-decoration: none;
+    color: #1E3948;
+}
+
 body {
-  background: #fafafa;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #333;
+    background: #ececec;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #1E3948;
 }
 
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 300px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
+
+.header {
+    background: #fff;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
 }
 
-.hero-unit h1 {
-  font-size: 60px;
-  line-height: 1;
-  letter-spacing: -1px;
+.headerHeading {
+    font-family: latoBlack;
+    text-indent: 100px;
+    line-height: 100px;
+    font-size: 40px;
 }
 
-.browserupgrade {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
+.mainBox    {
+    width: 100%;
+    display: flex;
+    height: 100vh;
+    margin-top: 40px;
+}
+
+.leftBox    {
+    flex: 2;
+}
+
+.middleBox  {
+    flex: 4;
+}
+
+.rightBox   {
+    flex: 2;
+}
+
+.leftBoxInner   {
+    width: 80%;
+    height: 100vh;
+    float: right;
+}
+
+.prof   {
+    background: #fff;
+    padding-bottom: 20px;
+}
+
+.profCoverPic {
+    background: url(/images/coverpic.jpg);
+    height: 150px;
+    background-size: cover;
+    border-radius: 3px 3px 0px 0px;
+}
+
+.profData   {
+
+}
+
+.profProfilePic {
+    background: url(/images/profilepic.jpg);
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    border-radius: 100%;
+    margin: 0px auto;
+    margin-top: -60px;
+    border: 3px solid white;
+}
+
+.profName   {
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+    font-family: latoRegular;
+}
+
+.profBio    {
+    font-size: 16px;
+    text-align: center;
+    font-family: latoLight;
+    margin-top: 5px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.profLinks  {
+    display: flex;
+}
+
+.profLinksList  {
+    flex: 1;
+    text-align: center;
+}
+
+.profLinksList:hover  {
+    opacity: 0.7;
 }

@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>front</title>
-    <link rel="favicon/icon" href="logoBlack.png">
+    <title>Cotanz</title>
+    <link rel="icon" href="logoBlack.png">
     <link rel="apple-touch-icon" href="logoBlack.png">
     <!-- Place favicon.ico in the root directory -->
     <!-- build:css styles/vendor.css -->
@@ -47,6 +47,47 @@
         </div>
         <div class="middleBox">
             <div class="middleBoxInner">
+                <div class="dailyQuestion middleBoxMargin">
+                    <h4 class="dailyQuestionHeading">Daily Question:</h4>
+                    <p class="dailyQuestionData">Two trains running in opposite directions cross a man standing on the platform in 27 seconds and 17 seconds respectively and they cross each other in 23 seconds. The ratio of their speeds is:</p>
+                    <div class="dailyQuestionChoices">
+                        <div class="dailyQuestionUp">
+                            <div class="dailyQuestionChoicesItems">
+                                <input type="radio" name="dailyAnswer" value="1"> 1:3</input>
+                            </div>
+                            <div class="dailyQuestionChoicesItems">
+                                <input type="radio" name="dailyAnswer" value="1"> 3:2</input>
+                            </div>
+                        </div>
+                        <div class="dailyQuestionDown">
+                            <div class="dailyQuestionChoicesItems">
+                                <input type="radio" name="dailyAnswer" value="1"> 3:4</input>
+                            </div>
+                            <div class="dailyQuestionChoicesItems">
+                                <input type="radio" name="dailyAnswer" value="1"> None of these</input>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="profSubmitButton">Submit</button>
+                    <div style="clear:both; margin:0px;"></div>
+                </div>
+
+
+
+
+                <div class="compScore middleBoxMargin">
+                    <div class="compScoreInner">
+                        <div class="compScoreElement compScore1">
+                            <div class="compScoreElementProfilePic"></div>
+                            <h4>Steve Jobs</h4>
+                        </div>
+                        <div class="compScoreElement compScore2"></div>
+                        <div class="compScoreElement compScore3"></div>
+                    </div>
+                </div>
+
+
+
                 
             </div>
         </div>
@@ -56,7 +97,7 @@
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
-    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
+    <script src="/bower_components/webcomponentsjs/webcomponents.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:js scripts/main.js -->

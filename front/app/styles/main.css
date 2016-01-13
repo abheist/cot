@@ -105,6 +105,8 @@ body {
 .prof   {
     background: #fff;
     padding-bottom: 20px;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.02);
 }
 
 .profCoverPic {
@@ -157,3 +159,79 @@ body {
 .profLinksList:hover  {
     opacity: 0.7;
 }
+
+
+.middleBoxInner {
+    height: 100vh;
+    width: 90%;
+    margin: 0px auto;
+    border-radius: 4px;
+}
+
+.dailyQuestion  {
+    background: white;
+    padding: 30px 30px 15px 30px;
+    border-radius: 4px;
+    border: 1px solid rgba(0,0,0,0.02);
+    box-shadow: 0px 0px 2px rgba(0,0,0,0.2);
+}
+
+.dailyQuestionHeading   {
+    margin-bottom: 10px;
+}
+
+.dailyQuestionData  {
+    line-height: 1.4;
+}
+
+.dailyQuestionChoices   {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 4px;
+    text-indent: 50px;
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(0,0,0,0.1);
+}
+
+.dailyQuestionUp    {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.dailyQuestionDown  {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.dailyQuestionChoicesItems  {
+    flex: 1;
+    line-height: 2.6;
+}
+
+.profSubmitButton   {
+    margin-top: 10px;
+    height: 30px;
+    width: 100px;
+    float: right; 
+    border-radius: 4px;
+    border: 1px solid rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.profSubmitButton:hover {
+    box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.2);
+}
+
+
+
+
+
+
+
+
+
+

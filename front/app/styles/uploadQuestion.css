@@ -1,0 +1,40 @@
+.textArea	{
+	width: 60%;
+	margin: 0px auto;
+}
+
+#question	{
+	width: calc(100% - 42px);
+	border: 1px solid #fff;
+	padding: 20px;
+	min-height: 300px;
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+}
+
+.questionHeading	{
+	margin-bottom: 10px;
+}
+
+.answerChoice	{
+	display: flex;
+}
+
+.answerChoiceItems	{
+	flex: 1;
+	height: 30px;
+}
+
+.submitButton	{
+	width: 100%;
+	margin-top: 10px;
+	height: 30px;
+	background: #009688;
+	color: white;
+	border: 0px;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.submitButton:hover	{
+	box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+}

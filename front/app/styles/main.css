@@ -1,35 +1,55 @@
-.mainBox    {
+.mainBox {
     width: 100%;
     display: flex;
-    height: 100vh;
+    flex-wrap: wrap;
 }
 
-.leftBox    {
+.leftBox {
     flex: 2;
 }
 
-.middleBox  {
+.middleBox {
     flex: 4;
 }
 
-.rightBox   {
+.rightBox {
     flex: 2;
 }
 
-.leftBoxInner   {
+.leftBoxInner {
     width: 80%;
-    height: 100vh;
     float: right;
 }
 
-.prof   {
+@media all and (max-width: 1000px) {
+    .mainBox    {
+        flex-direction: column;
+        padding: 0px;
+    }
+    .leftBox {
+        flex: 1;
+    }
+    .middleBox {
+        flex: 1;
+    }
+    .rightBox {
+        flex: 1;
+    }
+    .leftBoxInner {
+        float: none;
+        margin: 0px auto;
+    }
+}
+
+.prof {
     background: #fff;
     padding-bottom: 20px;
     border-radius: 4px;
+    margin-bottom: 10px;
 }
 
-.boxShadow  {
-        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+.boxShadow {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 .profCoverPic {
@@ -39,8 +59,9 @@
     border-radius: 3px 3px 0px 0px;
 }
 
-.profData   {
-
+.profData {
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .profProfilePic {
@@ -54,14 +75,14 @@
     border: 3px solid white;
 }
 
-.profName   {
+.profName {
     font-size: 16px;
     text-align: center;
     margin-top: 10px;
     font-family: latoRegular;
 }
 
-.profBio    {
+.profBio {
     font-size: 16px;
     text-align: center;
     font-family: latoLight;
@@ -70,148 +91,124 @@
     margin-bottom: 30px;
 }
 
-.profLinks  {
+.profLinks {
     display: flex;
 }
 
-.profLinksList  {
+.profLinksList {
     flex: 1;
     text-align: center;
 }
 
-.profLinksList:hover  {
+.profLinksList:hover {
     opacity: 0.7;
 }
 
-
 .middleBoxInner {
-    height: 100vh;
     width: 90%;
     margin: 0px auto;
     border-radius: 4px;
 }
 
-.dailyQuestion  {
+.dailyQuestion {
     background: white;
     padding: 30px 30px 15px 30px;
     border-radius: 4px;
-    border: 1px solid rgba(0,0,0,0.02);
+    min-height: 300px;
+    border: 1px solid rgba(0, 0, 0, 0.02);
 }
 
-.dailyQuestionHeading   {
+.dailyQuestionHeading {
     margin-bottom: 10px;
 }
 
-.dailyQuestionData  {
+.dailyQuestionData {
     line-height: 1.4;
 }
 
-.dailyQuestionChoices   {
+.dailyQuestionChoices {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
     border-radius: 4px;
     text-indent: 50px;
     margin-top: 20px;
     padding: 20px;
-    background: rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.1);
 }
 
-.dailyQuestionUp    {
+.dailyQuestionUp {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     width: 100%;
 }
 
-.dailyQuestionDown  {
+.dailyQuestionDown {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     width: 100%;
 }
 
-.dailyQuestionChoicesItems  {
+.dailyQuestionChoicesItems {
     flex: 1;
     line-height: 2.6;
 }
 
-.profSubmitButton   {
-    margin-top: 10px;
+.profSubmitButton {
+    margin-top: 20px;
     height: 30px;
     width: 100px;
-    float: right; 
+    float: right;
     border-radius: 4px;
-    border: 1px solid rgba(0,0,0,0.2);
+    border: 1px solid rgba(0, 0, 0, 0.2);
     cursor: pointer;
 }
 
 .profSubmitButton:hover {
-    box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
 }
 
-
-.middleBoxMargin    {
+.middleBoxMargin {
     margin-bottom: 50px;
 }
 
-.compScore  {
+.score {
+    background: #034d7c;
     padding: 30px;
-    background: #fff;
-    border-radius: 4px;
+    box-shadow: inset 0px -5px 5px rgba(0,0,0,0.4);
 }
 
-.compScoreInner {
+.innerScore {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
 }
 
-.compScoreElement   {
-
+.upperOfScore {
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.4);
+    position: relative;
 }
 
-.compScoreElementProfilePic {
-    background: url(/images/profilepic.jpg);
-    height: 130px;
-    width: 130px;
-    background-size: cover;
-    margin-bottom: 10px;
-    border-radius: 100%;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
-}
-
-
-.compScoreElementProfilePic:hover {
-    box-shadow: 1px 1px 10px rgba(0,0,0,0.7);
-    cursor: pointer;
-}
-
-.compScoreElementName   {
+.scoreHeading {
     text-align: center;
+    color: white;
+    font-family: latoHairline;
+    font-size: 35px;
+    margin-top: -10px;
+    margin-bottom: 20px;
 }
 
-.compScoreRank  {
-    text-align: center;
-    font-size: 14px;
+.scoreCard {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
 }
 
+.scoreCard:hover {
+    box-shadow: 1px 2px 50px rgba(0, 0, 0, 0.4);
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.bottomOfScore {
+    
+}

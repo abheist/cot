@@ -53,9 +53,7 @@
 }
 
 .profCoverPic {
-    background: url(/images/coverpic.jpg);
     height: 150px;
-    background-size: cover;
     border-radius: 3px 3px 0px 0px;
 }
 
@@ -65,7 +63,6 @@
 }
 
 .profProfilePic {
-    background: url(/images/profilepic.jpg);
     width: 100px;
     height: 100px;
     background-size: cover;

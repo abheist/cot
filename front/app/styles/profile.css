@@ -61,8 +61,8 @@ body {
     line-height: 70px;
 }
 
-.mainMenuItemList:hover	{
-	border-top: 3px solid #38B7EA;
+.mainMenuItemList:hover {
+    border-top: 3px solid #38B7EA;
 }
 
 .profHeaderIcons {
@@ -94,50 +94,197 @@ body {
     color: #CD7FE2;
 }
 
-.profHeaderLower	{
-	width: 100%;
-	background: white;
+.profHeaderLower {
+    width: 100%;
+    background: white;
 }
 
-.profHeaderLowerLinks	{
-	display: flex;
+.profHeaderLowerLinks {
+    display: flex;
 }
 
-.lowerLinksList	{
-	flex: 1;
-	text-align: center;
-	line-height: 40px;
-	color: #A6A9AC;
+.lowerLinksList {
+    flex: 1;
+    text-align: center;
+    line-height: 40px;
+    color: #A6A9AC;
 }
 
-.headerEmpty	{
-	flex: 5;
+.headerEmpty {
+    flex: 5;
 }
 
-
-.lowerLinksList:hover	{
-	border-bottom: 2px solid #38B7EA;
+.lowerLinksList:hover {
+    height: 38px;
+    border-bottom: 2px solid #38B7EA;
 }
 
+.mainBox {
+    margin-top: 30px;
+    display: flex;
+}
 
+.leftBox {
+    flex: 2;
+}
 
+.middleBox {
+    flex: 4;
+}
 
+.rightBox {
+    flex: 2;
+}
 
+.personOverviewBox {
+    width: 70%;
+    margin: 0px auto;
+    border-radius: 4px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.08);
+}
 
+.basicProfInfo {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    background: white;
+    border-radius: 4px 4px 0px 0px;
+    border-bottom: 2px solid #F5F8F9;
+}
 
+.personProfilePic {
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    border-radius: 100%;
+    margin: 0px auto;
+}
 
+.profileName {
+    margin-top: 10px;
+    color: red;
+    color: #3D4347;
+    margin-bottom: 10px;
+    font-family: latoRegular;
+}
 
+.profileTagLine {
+    font-family: latoLight;
+}
 
+.currentLocation {
+    font-family: latoLight;
+    margin-top: 5px;
+    color: #A6A9AC;
+}
 
+.followButton {
+    background: #38B7EA;
+    color: white;
+    border: 0px;
+    margin: 0px auto;
+    border-radius: 100px;
+    font-size: 20px;
+    font-family: latoLight;
+    line-height: 35px;
+    margin-top: 20px;
+    width: 60%;
+}
 
+.connectButton {
+    color: white;
+    border: 0px;
+    margin: 0px auto;
+    border-radius: 100px;
+    font-size: 20px;
+    font-family: latoLight;
+    line-height: 35px;
+    margin-top: 10px;
+    width: 60%;
+    background: white;
+    color: #38B7EA;
+    border: 1px solid #38B7EA;
+}
 
+.personFollowInfo {
+    display: flex;
+    background: white;
+}
 
+.personFollowItems1 {
+    border-right: 1px solid #F5F8F9;
+    padding: 20px 0px;
+}
 
+.personFollowItems2 {
+    border-left: 1px solid #F5F8F9;
+    padding: 20px 0px;
+}
 
+.personFollowItems {
+    flex: 1;
+    text-align: center;
+}
 
+.personFollowItemsInner1 {}
 
+.personFollowItemsInner2 {
+    font-family: latoHairline;
+    color: #B3B6B8;
+}
 
+.personLinks {
+    border-top: 2px solid #F5F8F9;
+    display: flex;
+}
 
+.personLinksItems {
+    flex: 1;
+    text-align: center;
+    ;
+    background: white;
+    padding: 10px 0px;
+}
 
+.personResume {
+    background: white;
+    border-top: 2px solid #F5F8F9;
+    padding: 20px 10px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 0px 0px 4px 4px;
+}
 
+.personPosts {
+    background: white;
+}
 
+.postHeading {
+    padding: 20px;
+    border-bottom: 2px solid #F5F8F9;
+}
+
+.personPostLinksOuter {
+    display: flex;
+    padding: 20px;
+}
+
+.personPostsLink {
+    min-height: 150px;
+    flex: 1;
+    align-self: space-around;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.personPostHeading {
+    margin-top: 5px;
+    font-size: 17px;
+    color: #565A5F;
+}
+
+.personPostTime {
+    color: #A6A9AC;
+    margin-top: 5px;
+}

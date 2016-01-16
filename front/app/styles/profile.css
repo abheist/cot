@@ -1,91 +1,123 @@
-.profContainer	{
+body {
+    background: #F5F8F9;
+}
+
+.profContainer {
+    width: 100%;
+}
+
+.profHeader {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.profHeaderUpper {
+    background: #fff;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    border-bottom: 2px solid #F5F8F9;
+}
+
+.profHeaderMainMenu {
+    display: flex;
+}
+
+.profHeaderLogo {
+    border-right: 2px solid #F5F8F9;
+    flex: 1;
+}
+
+.profHeaderSearch {
+    border-right: 2px solid #F5F8F9;
+    flex: 3;
+    display: flex;
+}
+
+.profHeaderSearchInput {
+    width: 80%;
+    height: 30px;
+    margin: 0px auto;
+    align-self: center;
+    border-radius: 20px;
+    border: 1px solid #F5F8F9;
+    outline: transparent;
+    text-indent: 10px;
+}
+
+.profHeaderMainMenu {
+    border-right: 2px solid #F5F8F9;
+    flex: 6;
+    width: 100%;
+    display: flex;
+}
+
+.mainMenuItemList {
+    flex: 1;
+    align-self: center;
+    text-align: center;
+    height: 70px;
+    line-height: 70px;
+}
+
+.mainMenuItemList:hover	{
+	border-top: 3px solid #38B7EA;
+}
+
+.profHeaderIcons {
+    border-right: 2px solid #F5F8F9;
+    flex: 3;
+    display: flex;
+}
+
+.profHeaderIconsList {
+    flex: 1;
+    text-align: center;
+    align-self: center;
+}
+
+.profDropDown {
+    flex: 1;
+    display: flex;
+}
+
+.fa-envelope {
+    color: #63BD70;
+}
+
+.fa-inbox {
+    color: #FBAB4A;
+}
+
+.fa-tasks {
+    color: #CD7FE2;
+}
+
+.profHeaderLower	{
 	width: 100%;
+	background: white;
 }
 
-.profHeader	{
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-}
-
-.profHeaderUpper	{
-	background: #fff;
-	width: 100%;
-	height: 70px;
+.profHeaderLowerLinks	{
 	display: flex;
 }
 
-.profHeaderMainMenu	{
-	display: flex;
-}
-
-.profHeaderLogo	{
-	border-right: 1px solid rgba(0,0,0,0.07);
+.lowerLinksList	{
 	flex: 1;
-}
-
-
-.profHeaderSearch	{
-	border-right: 1px solid rgba(0,0,0,0.07);
-	flex: 3;
-	display: flex;
-}
-
-.profHeaderSearchInput	{
-	width: 80%;
-	height: 30px;
-	margin: 0px auto;
-	align-self: center;
-	border-radius: 20px;
-	border: 1px solid rgba(0,0,0,0.09);
-	outline: transparent;
-	text-indent: 10px;
-}
-
-.profHeaderMainMenu	{
-	border-right: 1px solid rgba(0,0,0,0.07);
-	flex: 6;
-	width: 100%;
-	display: flex;
-}
-
-.mainMenuItemList	{
-	flex: 1;
-	align-self: center;
 	text-align: center;
-	height: 70px;
-	line-height: 70px;
+	line-height: 40px;
+	color: #A6A9AC;
 }
 
-.profHeaderIcons	{
-	border-right: 1px solid rgba(0,0,0,0.07);
-	flex: 3;
-	display: flex;
+.headerEmpty	{
+	flex: 5;
 }
 
-.profHeaderIconsList	{
-	flex: 1;
-	text-align: center;
-	align-self: center;
-}
 
-.profDropDown	{
-	flex: 1;
-	display: flex;
+.lowerLinksList:hover	{
+	border-bottom: 2px solid #38B7EA;
 }
-
-.fa-envelope	{
-	color: #63BD70;
-}
-
-.fa-inbox	{
-	color: #FBAB4A;
-}
-
-.fa-tasks	{
-	color: #CD7FE2;
-}
-
 
 
 

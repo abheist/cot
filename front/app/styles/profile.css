@@ -288,3 +288,106 @@ body {
     color: #A6A9AC;
     margin-top: 5px;
 }
+
+
+.profBackground	{
+	margin-top: 30px;
+	color: #3D4347;
+}
+
+.backgroundHeading	{
+	padding: 20px;
+	background: white;
+	border-bottom: 2px solid #F5F8F9;
+}
+
+.backgroundData	{
+	padding: 20px;
+	background: white;
+}
+
+.profBackgroundInnerUpper	{
+	display: flex;
+	height: 50px;
+}
+
+.profBackgroundInnerUpperLeft	{
+	flex: 1;
+	text-align: center;
+	align-self: center;
+}
+
+.profBackgroundInnerUpperRight	{
+	flex: 7;
+	font-size: 20px;
+	align-self: center;
+	font-family: latoLight;
+}
+
+.profEachBox	{
+	padding-bottom: 40px;
+}
+
+.profSummaryData	{
+	display: flex;
+	padding: 0px 20px;
+}
+
+
+.profDataBlank	{
+	flex: 1;
+}
+
+
+.profSummaryDataRight	{
+	flex:9;
+}
+
+.profEachJob	{
+	min-height: 100px;
+	display: flex;
+	margin-bottom: 40px;
+}
+
+
+.profEachExp	{
+	flex: 7;
+	align-self: center;
+}
+
+.expLogo	{
+	flex: 2;
+}
+
+.expPeriod	{
+	font-family: latoLight;
+	font-size: 13px;
+	margin-bottom: 4px;
+}
+
+
+.expPosition	{
+	font-family: latoRegular;
+	font-size: 17px;
+	margin-bottom: 7px;
+}
+
+.expCompany	{
+	font-family: latoLight;
+	font-size: 17px;
+	color: #38B7EA;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -26,7 +26,11 @@
 
 Route::group(['middleware' => ['web']], function () {
 	
-	Route::get('/', 'BlogsController@index');
+	Route::get('/', function (){
+		return view('pages.home');
+	});
+
+	Route::get('blog', 'BlogsController@index');
 
 	Route::get('register','UsersController@index');
 	Route::post('register', 'UsersController@store');
@@ -38,4 +42,5 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('create', 'BlogsController@create');
 	Route::post('create', 'BlogsController@store');
 
+	Route::get('profile', 'UsersController@profile');
 });

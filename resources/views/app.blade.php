@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Home</title>
-	<link rel="stylesheet" href="../boot/css/bootstrap.min.css">
+	<title>@yield('title')</title>
+	{!! Html::style("../boot/css/bootstrap.min.css") !!}
 </head>
 <body>	
+	
+
 	<nav class="navbar navbar-default navbar-inverse">
 		<div class="container">
 		<div class="navbar-header">
@@ -26,7 +28,7 @@
 	      	<ul class="nav navbar-nav navbar-right">
 	      		@if(Auth::check())
 	        		<li><a href="create">Create</a></li>
-	        		<li><a href="#"> {{ Auth::user()->fname }} </a></li>
+	        		<li><a href="profile"> {{ Auth::user()->fname }} </a></li>
 	        		<li><a href="logout">Logout</a></li>
 	        	@else
 					<li><a href="register">Sign Up</a></li>
@@ -36,6 +38,9 @@
 	    </div>
 	    </div>
 	</nav>
+
+
+
 	<div class="container">
 		@yield('content')
 

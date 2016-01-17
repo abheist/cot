@@ -38,13 +38,6 @@
                         <a href="#" class="mainMenuItemList mainMenuItem3">Connection</a>
                         <a href="#" class="mainMenuItemList mainMenuItem4">Questions</a>
                         <a href="blog" class="mainMenuItemList mainMenuItem5">Blog</a>
-                        @if(Auth::check())
-                            <a href="create" class="mainMenuItemList mainMenuItem5">Create</a>
-                            <a href="logout" class="mainMenuItemList mainMenuItem5">Logout</a>
-                        @else
-                            <a href="register" class="mainMenuItemList mainMenuItem5">Sign Up</a>
-                            <a href="login" class="mainMenuItemList mainMenuItem5">Sign In</a>
-                        @endif
                     </div>
                     <div class="profHeaderIcons">
                         <a href="#" class="profHeaderIconsList"><i class="fa fa-envelope fa-lg"></i></a>
@@ -78,7 +71,7 @@
                         <div class="personOverviewBoxItems basicProfInfo">
                             <div class="personProfilePic" style="background: url(../front/app/images/profilepic.jpg); background-size: cover; background-position: center;">
                             </div>
-                            <h3 class="profileName">@if(Auth::check()) {{ Auth::user()->fname }} {{ Auth::user()->lname }} @else Steve Jobs @endif</h3>
+                            <h3 class="profileName">{{ Auth::user()->fname }} {{ Auth::user()->lname }}</h3>
                             <h4 class="profileTagLine">Founder of Apple & Next</h4>
                             <h5 class="currentLocation">Cupertino, CA</h5>
                             <button class="followButton">Follow</button>

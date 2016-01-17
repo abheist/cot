@@ -58,4 +58,9 @@ class UsersController extends Controller
     	Auth::logout();
     	return Redirect::intended('/');
     }
+
+    public function profile()
+    {
+        return view('pages.profile');
+    }
 }

@@ -307,7 +307,7 @@ body {
 
 .profBackgroundInnerUpper {
     display: flex;
-    height: 50px;
+    margin-bottom: 20px;
 }
 
 .profBackgroundInnerUpperLeft {
@@ -343,7 +343,12 @@ body {
 .profEachJob {
     min-height: 100px;
     display: flex;
-    margin-bottom: 40px;
+}
+
+.profEachProject {
+    min-height: 100px;
+    display: flex;
+    margin-bottom: 30px;
 }
 
 .profEachExp {
@@ -373,49 +378,18 @@ body {
     color: #38B7EA;
 }
 
-.skillsOuter {
-    display: flex;
+.singleSkill {
+    border: 1px solid #b3b3b3;
+    border-radius: 25px;
+    display: inline-block;
+    font-size: 11px;
+    line-height: 18px;
+    margin: 4px;
+    padding: 0 8px;
+    text-transform: uppercase;
 }
 
-.skillsInnerEach1 {
-    flex: 1;
-    height: 40px;
-}
-
-.skillsInnerEach1Inner {
-    border-radius: 100%;
-    text-align: center;
-    line-height: 40px;
-    width: 40px;
-    border: 1px solid black;
-}
-
-.skillsInnerEach2 {
-    flex: 6;
-    height: 40px;
-    line-height: 40px;
-}
-
-.skillsInnerHorizontal	{
-	margin: 0px 0.5px 0px 0.5px;
-}
-
-.skillsInnerEach3 {
-    flex: 1;
-    height: 40px;
-}
-
-.skillsInnerEach4 {
-    flex: 1;
-    height: 40px;
-}
-
-.skillsInnerEach5 {
-    flex: 1;
-    height: 40px;
-}
-
-.skillsInnerEach6 {
-    flex: 1;
-    height: 40px;
+.projectDetail {
+    font-size: 14px;
+    line-height: 17px;
 }

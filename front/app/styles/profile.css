@@ -289,105 +289,133 @@ body {
     margin-top: 5px;
 }
 
-
-.profBackground	{
-	margin-top: 30px;
-	color: #3D4347;
+.profBackground {
+    margin-top: 30px;
+    color: #3D4347;
 }
 
-.backgroundHeading	{
-	padding: 20px;
-	background: white;
-	border-bottom: 2px solid #F5F8F9;
+.backgroundHeading {
+    padding: 20px;
+    background: white;
+    border-bottom: 2px solid #F5F8F9;
 }
 
-.backgroundData	{
-	padding: 20px;
-	background: white;
+.backgroundData {
+    padding: 20px;
+    background: white;
 }
 
-.profBackgroundInnerUpper	{
-	display: flex;
-	height: 50px;
+.profBackgroundInnerUpper {
+    display: flex;
+    height: 50px;
 }
 
-.profBackgroundInnerUpperLeft	{
-	flex: 1;
-	text-align: center;
-	align-self: center;
+.profBackgroundInnerUpperLeft {
+    flex: 1;
+    text-align: center;
+    align-self: center;
 }
 
-.profBackgroundInnerUpperRight	{
-	flex: 7;
-	font-size: 20px;
-	align-self: center;
-	font-family: latoLight;
+.profBackgroundInnerUpperRight {
+    flex: 7;
+    font-size: 20px;
+    align-self: center;
+    font-family: latoLight;
 }
 
-.profEachBox	{
-	padding-bottom: 40px;
+.profEachBox {
+    padding-bottom: 40px;
 }
 
-.profSummaryData	{
-	display: flex;
-	padding: 0px 20px;
+.profSummaryData {
+    display: flex;
+    padding: 0px 20px;
 }
 
-
-.profDataBlank	{
-	flex: 1;
+.profDataBlank {
+    flex: 1;
 }
 
-
-.profSummaryDataRight	{
-	flex:9;
+.profSummaryDataRight {
+    flex: 9;
 }
 
-.profEachJob	{
-	min-height: 100px;
-	display: flex;
-	margin-bottom: 40px;
+.profEachJob {
+    min-height: 100px;
+    display: flex;
+    margin-bottom: 40px;
 }
 
-
-.profEachExp	{
-	flex: 7;
-	align-self: center;
+.profEachExp {
+    flex: 7;
+    align-self: center;
 }
 
-.expLogo	{
-	flex: 2;
+.expLogo {
+    flex: 2;
 }
 
-.expPeriod	{
-	font-family: latoLight;
-	font-size: 13px;
-	margin-bottom: 4px;
+.expPeriod {
+    font-family: latoLight;
+    font-size: 13px;
+    margin-bottom: 4px;
 }
 
-
-.expPosition	{
-	font-family: latoRegular;
-	font-size: 17px;
-	margin-bottom: 7px;
+.expPosition {
+    font-family: latoRegular;
+    font-size: 17px;
+    margin-bottom: 7px;
 }
 
-.expCompany	{
-	font-family: latoLight;
-	font-size: 17px;
-	color: #38B7EA;
+.expCompany {
+    font-family: latoLight;
+    font-size: 17px;
+    color: #38B7EA;
 }
 
+.skillsOuter {
+    display: flex;
+}
 
+.skillsInnerEach1 {
+    flex: 1;
+    height: 40px;
+}
 
+.skillsInnerEach1Inner {
+    border-radius: 100%;
+    text-align: center;
+    line-height: 40px;
+    width: 40px;
+    border: 1px solid black;
+}
 
+.skillsInnerEach2 {
+    flex: 6;
+    height: 40px;
+    line-height: 40px;
+}
 
+.skillsInnerHorizontal	{
+	margin: 0px 0.5px 0px 0.5px;
+}
 
+.skillsInnerEach3 {
+    flex: 1;
+    height: 40px;
+}
 
+.skillsInnerEach4 {
+    flex: 1;
+    height: 40px;
+}
 
+.skillsInnerEach5 {
+    flex: 1;
+    height: 40px;
+}
 
-
-
-
-
-
+.skillsInnerEach6 {
+    flex: 1;
+    height: 40px;
+}

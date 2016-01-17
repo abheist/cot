@@ -307,6 +307,7 @@ body {
 
 .profBackgroundInnerUpper {
     display: flex;
+    margin-bottom: 20px;
 }
 
 .profBackgroundInnerUpperLeft {
@@ -342,6 +343,12 @@ body {
 .profEachJob {
     min-height: 100px;
     display: flex;
+}
+
+.profEachProject {
+    min-height: 100px;
+    display: flex;
+    margin-bottom: 30px;
 }
 
 .profEachExp {
@@ -382,4 +389,7 @@ body {
     text-transform: uppercase;
 }
 
-
+.projectDetail {
+    font-size: 14px;
+    line-height: 17px;
+}

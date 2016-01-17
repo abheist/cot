@@ -42,8 +42,11 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('create', 'BlogsController@create');
 	Route::post('create', 'BlogsController@store');
 
+	Route::resource('profile', 'ProfilesController', ['only'=> ['show','edit','update']]);
+
 	Route::get('/{profile}', [
 		'as' => 'profile',
 		'uses' =>'ProfilesController@show'
-		]);
+	]);
+
 });

@@ -17,4 +17,8 @@
 		<li>{{ link_to('http://github.com/'.$user->profile->github_username,'View my work on Facebook')}}</li>
 
 	</div>
+
+	@if(Auth::user()->id == $user->id)
+		{{ link_to_route('profile.edit','Edit Your Profile',$user->id) }}
+	@endif
 @stop

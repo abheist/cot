@@ -50,7 +50,7 @@ class UsersController extends Controller
            return Redirect::intended('/');
         }
         else
-            return redirect('login');
+            return redirect('pages.login');
     }
 
     public function destroy()
@@ -59,7 +59,7 @@ class UsersController extends Controller
     	return Redirect::intended('/');
     }
 
-    public function profile()
+    public function profile($username)
     {
         return view('pages.profile');
     }

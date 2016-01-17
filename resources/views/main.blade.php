@@ -36,7 +36,7 @@
                        
                         @if(Auth::check())
                          <a href="/cotblog/public" class="mainMenuItemList mainMenuItem1">Home</a>
-                            <a href="#" class="mainMenuItemList mainMenuItem2">Profile</a>
+                            {{ link_to('/'.Auth::user()->id,'Profile',['class' => 'mainMenuItemList mainMenuItem2'])}}
                             <a href="#" class="mainMenuItemList mainMenuItem3">Connection</a>
                             <a href="#" class="mainMenuItemList mainMenuItem4">Questions</a>
                             <a href="blog" class="mainMenuItemList mainMenuItem5">Blog</a>

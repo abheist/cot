@@ -1,5 +1,10 @@
 @extends('main')
 
+@section('title')
+    LOGIN 
+@stop
+
+
 @section('content')
 
 	<div class="well">

@@ -1,5 +1,10 @@
 @extends('main')
 
+@section('title')
+    REGISTER 
+@stop
+
+
 @section('content')
 
 

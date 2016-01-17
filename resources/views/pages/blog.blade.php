@@ -1,5 +1,9 @@
 @extends('main')
 
+@section('title')
+    BLOG 
+@stop
+
 @section('content')
 
             <div class="mainBox">

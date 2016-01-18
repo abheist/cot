@@ -325,7 +325,7 @@ body {
 }
 
 .profEachBox {
-    padding-bottom: 40px;
+    margin-bottom: 40px;
 }
 
 .profSummaryData {
@@ -333,9 +333,7 @@ body {
     padding: 0px 20px;
 }
 
-.profDataBlank {
-    flex: 1;
-}
+
 
 .profSummaryDataRight {
     flex: 9;
@@ -349,7 +347,10 @@ body {
 .profEachProject {
     min-height: 100px;
     display: flex;
-    margin-bottom: 30px;
+}
+
+.notFirst	{
+	margin-top: 30px;
 }
 
 .profEachExp {
@@ -417,15 +418,35 @@ body {
 	line-height: 70px;
 }
 
+.profDataBlank {
+    flex: 1;
+    display: flex;
+}
 
+.sideLineHelloLeft	{
+	flex: 1;
+}
 
+.sideLineHelloRight	{
+	width: 5px;
+	margin-right: 20px;
+	display: flex;
+	flex-direction: column;
+}
 
+.sideLineLine	{
+	width: 2px;
+	flex: 1;
+	margin-left: 3px;
+	background: #e7ebec;
+}
 
-
-
-
-
-
+.sideLineCircle	{
+	height: 5px;
+	width: 5px;
+	border: 2px solid #e7ebec;
+	border-radius: 100%;
+}
 
 
 

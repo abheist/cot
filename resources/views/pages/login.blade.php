@@ -1,4 +1,9 @@
-@extends('app')
+@extends('main')
+
+@section('title')
+    LOGIN 
+@stop
+
 
 @section('content')
 

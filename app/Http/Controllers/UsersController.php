@@ -12,9 +12,15 @@ use Illuminate\Support\Facades\Redirect;
 
 class UsersController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('guest',['except' => 'destroy']);
+    }
+
     public function index()
     {
-    	return view('pages.register');
+	   return view('pages.register');
+      
     }
 
     public function store(Request $request)
@@ -35,7 +41,10 @@ class UsersController extends Controller
 
     public function login()
     {
-    	return view('pages.login');
+        if(!Auth::check())
+           return view('pages.login');
+        else
+            return redirect('/');
     }
 
     public function loggedin(Request $request)
@@ -50,12 +59,17 @@ class UsersController extends Controller
            return Redirect::intended('/');
         }
         else
-            return redirect('login');
+            return redirect('pages.login');
     }
 
     public function destroy()
     {
     	Auth::logout();
     	return Redirect::intended('/');
+    }
+
+    public function profile($username)
+    {
+        return view('pages.profile');
     }
 }

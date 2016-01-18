@@ -11,12 +11,14 @@
     <!-- Place favicon.ico in the root directory -->
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
-    {!! Html::style("/bower_components/font-awesome/css/font-awesome.css") !!}
+    {!! Html::style("../front/bower_components/font-awesome/css/font-awesome.css") !!}
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css styles/main.css -->
-    {!! Html::style("../front/app/styles/profile.css") !!}
-    {!! Html::style("../front/app/styles/main.css") !!}
+    {!! Html::style("../front/dist/styles/profile.css") !!}
+    {!! Html::style("../front/dist/styles/vendor.css") !!}
+    {!! Html::style("../front/dist/styles/main.css") !!}
+
     <!-- endbuild -->
 </head>
 
@@ -50,7 +52,7 @@
                         @endif
                     </div>
                     <div class="profHeaderIcons">
-                        <a href="#" class="profHeaderIconsList"><i class="fa fa-envelope fa-lg"></i></a>
+                        <a href="facebook.com" class="profHeaderIconsList"><i class="fa fa-envelope fa-lg"></i></a>
                         <a href="#" class="profHeaderIconsList"><i class="fa fa-inbox fa-lg"></i></a>
                         <a href="#" class="profHeaderIconsList"><i class="fa fa-tasks fa-lg"></i></a>
                     </div>
@@ -85,11 +87,12 @@
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="../front/bower_components/jquery/dist/jquery.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:js scripts/main.js -->
-    <script src="scripts/main.js"></script>
+    <script src="../front/dist/scripts/main.js"></script>
+
     <!-- endbuild -->
 </body>
 

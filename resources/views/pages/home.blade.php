@@ -38,7 +38,7 @@
                     <a href="#" class="personLinksItems personLinksItems1">
                         <i class="fa fa-linkedin-square fa-2x personLinksInnerItems"></i>
                     </a>
-                    <a href="#" class="personLinksItems personLinksItems2">
+                    <a href="github.com" class="personLinksItems personLinksItems2">
                         <i class="fa fa-github-square fa-2x personLinksInnerItems"></i>
                     </a>
                     <a href="#" class="personLinksItems personLinksItems3">

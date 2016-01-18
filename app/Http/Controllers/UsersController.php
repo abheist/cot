@@ -41,10 +41,8 @@ class UsersController extends Controller
 
     public function login()
     {
-        if(!Auth::check())
-           return view('pages.login');
-        else
-            return redirect('/');
+      return view('pages.login');
+      
     }
 
     public function loggedin(Request $request)

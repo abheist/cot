@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Redirect;
 
 class ProfilesController extends Controller
 {
+
 	public function show($userid)
 	{
 		try

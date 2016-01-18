@@ -12,6 +12,11 @@
 */
 
 
+Route::get('/',['middleware' => ['web','auth'],function (){
+		return view('pages.home');
+}]);	
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -24,12 +29,10 @@
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-	
-	Route::get('/', function (){
-		return view('pages.home');
-	});
 
+Route::group(['middleware' => ['web']], function () {
+
+	
 	Route::get('blog', 'BlogsController@index');
 
 	Route::get('register','UsersController@index');
@@ -37,12 +40,16 @@ Route::group(['middleware' => ['web']], function () {
 
 	Route::get('login', 'UsersController@login');
 	Route::post('login', 'UsersController@loggedin');
-	Route::get('logout', 'UsersController@destroy');
+	
+	Route::get('logout', [
+		'as' => 'user.logout',
+		'uses' => 'UsersController@destroy'
+	]);
 
 	Route::get('create', 'BlogsController@create');
 	Route::post('create', 'BlogsController@store');
 
-	Route::resource('profile', 'ProfilesController', ['only'=> ['show','edit','update']]);
+	Route::resource('profile','ProfilesController', ['only'=> ['show','edit','update']]);
 
 	Route::get('/{profile}', [
 		'as' => 'profile',
@@ -50,3 +57,4 @@ Route::group(['middleware' => ['web']], function () {
 	]);
 
 });
+

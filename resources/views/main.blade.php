@@ -11,7 +11,7 @@
     <!-- Place favicon.ico in the root directory -->
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.css">
+    {!! Html::style("/bower_components/font-awesome/css/font-awesome.css") !!}
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css styles/main.css -->
@@ -43,7 +43,7 @@
                             <a href="#" class="mainMenuItemList mainMenuItem4">Questions</a>
                             <a href="blog" class="mainMenuItemList mainMenuItem5">Blog</a>
                             <a href="create" class="mainMenuItemList mainMenuItem5">Create</a>
-                            <a href="logout" class="mainMenuItemList mainMenuItem5">Logout</a>
+                            {{ link_to_route('user.logout','Logout',null,['class' => 'mainMenuItemList mainMenuItem5'])}}
                         @else
                             <a href="register" class="mainMenuItemList mainMenuItem5">Sign Up</a>
                             <a href="login" class="mainMenuItemList mainMenuItem5">Sign In</a>

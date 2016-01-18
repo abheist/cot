@@ -1,4 +1,66 @@
+@font-face {
+    font-family: latoBlack;
+    src: url(../fonts/Lato/Lato-Black.ttf);
+}
+
+@font-face {
+    font-family: latoBlackItalic;
+    src: url(../fonts/Lato/Lato-BlackItalic.ttf);
+}
+
+@font-face {
+    font-family: latoBold;
+    src: url(../fonts/Lato/Lato-Bold.ttf);
+}
+
+@font-face {
+    font-family: latoItalic;
+    src: url(../fonts/Lato/Lato-BoldItalic.ttf);
+}
+
+@font-face {
+    font-family: latoHairline;
+    src: url(../fonts/Lato/Lato-Hairline.ttf);
+}
+
+@font-face {
+    font-family: latoHairlineItalic;
+    src: url(../fonts/Lato/Lato-HairlineItalic.ttf);
+}
+
+@font-face {
+    font-family: latoItalic;
+    src: url(../fonts/Lato/Lato-Italic.ttf);
+}
+
+@font-face {
+    font-family: latoLight;
+    src: url(../fonts/Lato/Lato-Light.ttf);
+}
+
+@font-face {
+    font-family: latoLightItalic;
+    src: url(../fonts/Lato/Lato-LightItalic.ttf);
+}
+
+@font-face {
+    font-family: latoRegular;
+    src: url(../fonts/Lato/Lato-Regular.ttf);
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+a   {
+    text-decoration: none;
+    color: #1E3948;
+}
+
 body {
+    font-family: latoRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #1E3948;
     background: #F5F8F9;
 }
 
@@ -176,6 +238,7 @@ body {
 .currentLocation {
     font-family: latoLight;
     margin-top: 5px;
+    margin-bottom: 20px;
     color: #A6A9AC;
 }
 
@@ -188,7 +251,6 @@ body {
     font-size: 20px;
     font-family: latoLight;
     line-height: 35px;
-    margin-top: 20px;
     width: 60%;
 }
 

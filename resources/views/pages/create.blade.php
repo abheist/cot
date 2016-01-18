@@ -1,4 +1,8 @@
-@extends('app')
+@extends('main')
+
+@section('title')
+    CREATE BLOG 
+@stop
 
 @section('content')
 

@@ -1,211 +1,79 @@
-.mainBox {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
+@font-face {
+    font-family: latoBlack;
+    src: url(../fonts/Lato/Lato-Black.ttf);
 }
 
-.leftBox {
-    flex: 2;
+@font-face {
+    font-family: latoBlackItalic;
+    src: url(../fonts/Lato/Lato-BlackItalic.ttf);
 }
 
-.middleBox {
-    flex: 4;
+@font-face {
+    font-family: latoBold;
+    src: url(../fonts/Lato/Lato-Bold.ttf);
 }
 
-.rightBox {
-    flex: 2;
+@font-face {
+    font-family: latoItalic;
+    src: url(../fonts/Lato/Lato-BoldItalic.ttf);
 }
 
-.leftBoxInner {
-    width: 80%;
-    float: right;
-}
-
-@media all and (max-width: 1000px) {
-    .mainBox    {
-        flex-direction: column;
-        padding: 0px;
-    }
-    .leftBox {
-        flex: 1;
-    }
-    .middleBox {
-        flex: 1;
-    }
-    .rightBox {
-        flex: 1;
-    }
-    .leftBoxInner {
-        float: none;
-        margin: 0px auto;
-    }
-}
-
-.prof {
-    background: #fff;
-    padding-bottom: 20px;
-    border-radius: 4px;
-    margin-bottom: 10px;
-}
-
-.boxShadow {
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-}
-
-.profCoverPic {
-    height: 150px;
-    border-radius: 3px 3px 0px 0px;
-}
-
-.profData {
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-.profProfilePic {
-    width: 100px;
-    height: 100px;
-    background-size: cover;
-    border-radius: 100%;
-    margin: 0px auto;
-    margin-top: -60px;
-    border: 3px solid white;
-}
-
-.profName {
-    font-size: 16px;
-    text-align: center;
-    margin-top: 10px;
-    font-family: latoRegular;
-}
-
-.profBio {
-    font-size: 16px;
-    text-align: center;
-    font-family: latoLight;
-    margin-top: 5px;
-    line-height: 1.6;
-    margin-bottom: 30px;
-}
-
-.profLinks {
-    display: flex;
-}
-
-.profLinksList {
-    flex: 1;
-    text-align: center;
-}
-
-.profLinksList:hover {
-    opacity: 0.7;
-}
-
-.middleBoxInner {
-    width: 90%;
-    margin: 0px auto;
-    border-radius: 4px;
-}
-
-.dailyQuestion {
-    background: white;
-    padding: 30px 30px 15px 30px;
-    border-radius: 4px;
-    min-height: 300px;
-    border: 1px solid rgba(0, 0, 0, 0.02);
-}
-
-.dailyQuestionHeading {
-    margin-bottom: 10px;
-}
-
-.dailyQuestionData {
-    line-height: 1.4;
-}
-
-.dailyQuestionChoices {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 4px;
-    text-indent: 50px;
-    margin-top: 20px;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.1);
-}
-
-.dailyQuestionUp {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 100%;
-}
-
-.dailyQuestionDown {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 100%;
-}
-
-.dailyQuestionChoicesItems {
-    flex: 1;
-    line-height: 2.6;
-}
-
-.profSubmitButton {
-    margin-top: 20px;
-    height: 30px;
-    width: 100px;
-    float: right;
-    border-radius: 4px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-}
-
-.profSubmitButton:hover {
-    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
-}
-
-.middleBoxMargin {
-    margin-bottom: 50px;
-}
-
-.score {
-    background: #034d7c;
-    padding: 30px;
-    box-shadow: inset 0px -5px 5px rgba(0,0,0,0.4);
-}
-
-.innerScore {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.upperOfScore {
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.4);
-    position: relative;
-}
-
-.scoreHeading {
-    text-align: center;
-    color: white;
+@font-face {
     font-family: latoHairline;
-    font-size: 35px;
-    margin-top: -10px;
-    margin-bottom: 20px;
+    src: url(../fonts/Lato/Lato-Hairline.ttf);
 }
 
-.scoreCard {
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+@font-face {
+    font-family: latoHairlineItalic;
+    src: url(../fonts/Lato/Lato-HairlineItalic.ttf);
 }
 
-.scoreCard:hover {
-    box-shadow: 1px 2px 50px rgba(0, 0, 0, 0.4);
+@font-face {
+    font-family: latoItalic;
+    src: url(../fonts/Lato/Lato-Italic.ttf);
 }
 
-.bottomOfScore {
-    
+@font-face {
+    font-family: latoLight;
+    src: url(../fonts/Lato/Lato-Light.ttf);
+}
+
+@font-face {
+    font-family: latoLightItalic;
+    src: url(../fonts/Lato/Lato-LightItalic.ttf);
+}
+
+@font-face {
+    font-family: latoRegular;
+    src: url(../fonts/Lato/Lato-Regular.ttf);
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+a   {
+    text-decoration: none;
+    color: #1E3948;
+}
+
+body {
+    background: #ececec;
+    font-family: latoRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #1E3948;
+}
+
+
+.header {
+    background: #fff;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+    margin-bottom: 40px
+}
+
+.headerHeading {
+    font-family: latoBlack;
+    text-indent: 100px;
+    line-height: 100px;
+    font-size: 40px;
 }

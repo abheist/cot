@@ -14,7 +14,7 @@ class BlogsController extends Controller
    public function index()
    {
       $blogs = Blog::with('user')->latest()->get();
-      return view('pages.home',['blogs' => $blogs]);
+      return view('pages.blog',['blogs' => $blogs]);
    }
 
    public function create()

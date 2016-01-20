@@ -12,7 +12,7 @@
 */
 
 
-Route::get('/',['middleware' => ['web','auth'],function (){
+Route::get('/',['middleware' => ['web','auth'],'as' => 'home',function (){
 		return view('pages.home');
 }]);	
 

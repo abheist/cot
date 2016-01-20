@@ -14,7 +14,7 @@
 		    		<i class="fa fa-envelope inputIconFa"></i>
 		    	</div>
 		    	<div class="inputLogoInside">
-					{!! Form::email('email',null,['class'=>'inputField inputField3']) !!}
+					{!! Form::email('email',null,['placeholder' => 'E-mail Id','class'=>'inputField inputField3']) !!}
 					<!--<input type="email" placeholder="E-mail Id" class="inputField inputField3">-->
 				</div>
 			</div>
@@ -23,7 +23,7 @@
 					<i class="fa fa-user-secret inputIconFa"></i>
 				</div>
 				<div class="inputLogoInside">
-					{!! Form::password('password',['class'=>'inputField inputField4']) !!}
+					{!! Form::password('password',['placeholder' => 'Password','class'=>'inputField inputField4']) !!}
 					<!--<input type="password" placeholder="Password" class="inputField inputField4">-->
 				</div>
 			</div>

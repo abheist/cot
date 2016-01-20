@@ -1,0 +1,184 @@
+@font-face {
+    font-family: latoBlack;
+    src: url(../fonts/Lato/Lato-Black.ttf);
+}
+
+@font-face {
+    font-family: latoBlackItalic;
+    src: url(../fonts/Lato/Lato-BlackItalic.ttf);
+}
+
+@font-face {
+    font-family: latoBold;
+    src: url(../fonts/Lato/Lato-Bold.ttf);
+}
+
+@font-face {
+    font-family: latoItalic;
+    src: url(../fonts/Lato/Lato-BoldItalic.ttf);
+}
+
+@font-face {
+    font-family: latoHairline;
+    src: url(../fonts/Lato/Lato-Hairline.ttf);
+}
+
+@font-face {
+    font-family: latoHairlineItalic;
+    src: url(../fonts/Lato/Lato-HairlineItalic.ttf);
+}
+
+@font-face {
+    font-family: latoItalic;
+    src: url(../fonts/Lato/Lato-Italic.ttf);
+}
+
+@font-face {
+    font-family: latoLight;
+    src: url(../fonts/Lato/Lato-Light.ttf);
+}
+
+@font-face {
+    font-family: latoLightItalic;
+    src: url(../fonts/Lato/Lato-LightItalic.ttf);
+}
+
+@font-face {
+    font-family: latoRegular;
+    src: url(../fonts/Lato/Lato-Regular.ttf);
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+a {
+    text-decoration: none;
+    color: #1E3948;
+}
+
+body {
+    font-family: latoRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #e3e7e3;
+    background: #e3e7e3;
+}
+
+.outerBox {
+    width: 100%;
+}
+
+.innerBox {
+    width: 30%;
+    margin: 50px auto;
+    padding: 20px 0px 0px 0px;
+    background: #2d2c3a;
+    border-radius: 4px;
+    box-shadow: 30px 30px 10px rgba(0, 0, 0, 0.07);
+}
+
+.cotanzLogo {}
+
+.inputField {
+    width: 100%;
+    height: 30px;
+    background: #2d2c3a;
+    text-indent: 20px;
+    font-family: latoRegular;
+    color: #bdbdc5;
+    border: 0px;
+    outline: none;
+}
+
+.inputOuterDiv {
+    height: 30px;
+    margin-top: 40px;
+    border-top: solid 3px #3a3041;
+    border-bottom: solid 3px #3a3041;
+    display: flex;
+}
+
+.inputLogo {
+    flex: 1;
+}
+
+.inputLogoInside {
+    flex: 5;
+}
+
+
+.inputIconFa    {
+    width: 100%;
+    text-align: center;
+    height: 30px;
+    color: #bdbdc5;
+    padding-top: 7px;
+}
+
+.submitButtonInput  {
+    margin-top: 40px;
+    height: 70px;
+    width: 100%;
+    border-radius: 0px 0px 4px 4px;
+    background: rgba(25,255,255,0.2);
+    border: 0px;
+    color: #bdbdc5;
+    font-family: latoLight;
+    font-size: 20px;
+}
+
+.submitButtonInput:hover    {
+    cursor: pointer;
+    background: rgba(25,255,255,0.3);
+}
+
+
+.inputOuterDiv2 {
+    margin-bottom: 0px;
+}
+
+.inputOuterDiv4, .inputOuterDiv3 {
+    margin-top: 0px;
+}
+
+.inputOuterDiv3 {
+    border: 0px;
+    height: 40px;
+    display: flex;
+}
+
+
+.genderIcon {
+    flex: 1;
+    align-self: center;
+    text-align: center;
+    color: #bdbdc5;
+    display: flex;
+    flex-direction: row;
+}
+
+.genderIcon1    {
+    border-right: 1px solid #3a3041;
+}
+
+.genderIconInner    {
+    flex: 1;
+    align-self: center;
+}
+
+.genderIconInner1   {
+}
+
+.genderIconInner2   {
+    text-align: left;
+}
+
+
+.genderIconInner3   {
+    text-align: right;
+}
+
+
+.radioGender    {
+    outline: none;
+}

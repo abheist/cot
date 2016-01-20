@@ -28,6 +28,7 @@ class UsersController extends Controller
     	$this->validate($request, [
             'fname' => 'required|min:3',
             'lname' => 'required|min:3',
+            'gender' => 'required',
             'email' => 'required|email',
             'password'  => 'required',
             'cnfrmpassword' => 'required|same:password'
@@ -57,7 +58,7 @@ class UsersController extends Controller
            return Redirect::intended('/');
         }
         else
-            return redirect('pages.login');
+            return redirect('login');
     }
 
     public function destroy()

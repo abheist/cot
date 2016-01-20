@@ -29,13 +29,13 @@
     			<i class="fa fa-male fa-2x"></i>
     		</div>
     		<div class="genderIconInner genderIconInner2">
-    			{!! Form::radio('gender', '0', false,['class' => 'radioGender']) !!}
+    			{!! Form::radio('gender', '0',false,['class' => 'radioGender']) !!}
     			<!--<input type="radio" name="gender" value="male" class="radioGender">-->
     		</div>
     	</div>
     	<div class="genderIcon genderIcon2">
     		<div class="genderIconInner genderIconInner3">
-    			{!! Form::radio('gender', '1', false, ['class' => 'radioGender']) !!}
+    			{!! Form::radio('gender', '1', false,['class' => 'radioGender']) !!}
     			<!--<input type="radio" name="gender" value="female" class="radioGender">-->
     		</div>
     		<div class="genderIconInner genderIconInner4">

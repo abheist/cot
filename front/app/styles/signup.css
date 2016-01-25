@@ -62,6 +62,7 @@ body {
     font-family: latoRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #e3e7e3;
     background: #e3e7e3;
+    overflow: hidden;
 }
 
 .outerBox {
@@ -70,11 +71,12 @@ body {
 
 .innerBox {
     width: 30%;
-    margin: 50px auto;
+    margin: 30px auto;
     padding: 20px 0px 0px 0px;
     background: #2d2c3a;
     border-radius: 4px;
     box-shadow: 30px 30px 10px rgba(0, 0, 0, 0.07);
+    display: block;
 }
 
 .signInInner {
@@ -190,4 +192,20 @@ body {
 
 .signInDiv4 {
     margin-top: 50px;
+}
+
+.helloButton    {
+    width: 49.6%;
+    border: 0px;
+    height: 40px;
+    font-size: 24px;
+    font-family: latoRegular;
+    color: #2d2c3a;
+    background: #bdbdc5;
+    cursor: pointer;
+    margin: 0px;
+}
+
+.helloButton:hover  {
+    background: rgba(255,255,255,0.75);
 }

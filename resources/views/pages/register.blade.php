@@ -2,7 +2,8 @@
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]--><div class="outerBox">
     <div class="innerBox"><div class="cotanzLogo" style="background: url(../front/dist/logo_white.png); height: 130px; width: 130px; background-size: contain; background-position: center; margin: 10px auto"></div>
-    
+   
+
 	{!! Form::open() !!}
     
     <div class="inputOuterDiv">
@@ -72,5 +73,5 @@
     </div>
     <button class="submitButtonInput">Sign Up</button>
    
-    {!! Form::close()!! }
+    {!! Form::close() !!}
     </div></div><!-- Google Analytics: change UA-XXXXX-X to be your site's ID. --><script src="scripts/vendor.js"></script><script src="scripts/main.js"></script></body></html>

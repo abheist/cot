@@ -297,15 +297,6 @@ body {
 
 }
 
-.profFooter	{
-	border-top: 2px solid #e7ebec;
-	margin-top: 100px;
-	height: 70px;
-	color: #777;
-	text-align: center;
-	line-height: 70px;
-}
-
 .profDataBlank {
     flex: 1;
     display: flex;

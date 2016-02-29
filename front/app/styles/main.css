@@ -189,3 +189,12 @@ body {
     height: 38px;
     border-bottom: 2px solid #38B7EA;
 }
+
+.profFooter {
+    border-top: 2px solid #e7ebec;
+    margin-top: 100px;
+    height: 70px;
+    color: #777;
+    text-align: center;
+    line-height: 70px;
+}

@@ -26,16 +26,11 @@
 
 Route::group(['middleware' => ['web']], function () {
 	
-	Route::get('/', 'BlogsController@index');
 
-	Route::get('register','UsersController@index');
-	Route::post('register', 'UsersController@store');
+});
 
-	Route::get('login', 'UsersController@login');
-	Route::post('login', 'UsersController@loggedin');
-	Route::get('logout', 'UsersController@destroy');
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
 
-	Route::get('create', 'BlogsController@create');
-	Route::post('create', 'BlogsController@store');
-
+    Route::get('/home', 'HomeController@index');
 });

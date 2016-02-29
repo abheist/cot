@@ -7,7 +7,6 @@ body {
     color: #1F1F1F;
     text-shadow: 0 0 0;
     background: white;
-    padding-bottom: 1000px;
 }
 
 .blog-division {
@@ -134,7 +133,7 @@ body {
 
 .eb-post {
     margin-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 50px;
     /*background: red;*/
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }

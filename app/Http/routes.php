@@ -33,6 +33,8 @@ Route::get('/',['middleware' => ['web','auth'],'as' => 'home',function (){
 Route::group(['middleware' => ['web']], function () {
 
 	
+	Route::resource('questions', 'QuestionsController');
+
 	Route::get('blog', 'BlogsController@index');
 
 	Route::get('register','UsersController@index');
@@ -51,10 +53,14 @@ Route::group(['middleware' => ['web']], function () {
 
 	Route::resource('profile','ProfilesController', ['only'=> ['show','edit','update']]);
 
+
 	Route::get('/{profile}', [
 		'as' => 'profile',
 		'uses' =>'ProfilesController@show'
 	]);
+
+
+
 
 });
 

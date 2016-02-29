@@ -135,6 +135,7 @@ body {
     margin-top: 20px;
     padding-bottom: 50px;
     /*background: red;*/
+    width: 95%;
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
@@ -175,61 +176,125 @@ body {
     margin-top: 2px;
 }
 
-.eb-pic	{
-	height: 250px;
-	width: 100%;
-	background: red;
-	margin-top: 10px;
+.eb-pic {
+    height: 250px;
+    width: 100%;
+    background: red;
+    margin-top: 10px;
 }
 
-.eb-heading	{
-	margin-top: 20px;
+.eb-heading {
+    margin-top: 20px;
 }
 
-.eb-desc	{
-	font-family: latoHairline;
-	font-size: 19px;
-	margin-top: 10px;
+.eb-desc {
+    font-family: latoHairline;
+    font-size: 19px;
+    margin-top: 10px;
 }
 
-.eb-post-stats	{
-	margin-top: 20px;
-	display: flex;
+.eb-post-stats {
+    margin-top: 20px;
+    display: flex;
 }
 
-.eb-post-like	{
-	width: 25px;
-	height: 25px;
-	align-self: center;
+.eb-post-like {
+    width: 25px;
+    height: 25px;
+    align-self: center;
 }
 
-.eb-like-count	{
-	align-self: center;
-	margin-left: 5px;
-	font-family: latoLight;
-	cursor: pinter;
-	color: #8F9FAF;
+.eb-like-count {
+    align-self: center;
+    margin-left: 5px;
+    font-family: latoLight;
+    cursor: pinter;
+    color: #8F9FAF;
 }
 
-.eb-like-count:hover	{
-	color: #38B7EA;
-	cursor: pointer;
+.eb-like-count:hover {
+    color: #38B7EA;
+    cursor: pointer;
 }
 
+.about-blogger {
+    width: 100%;
+    margin-top: 20px;
+}
 
+.blogger-pic-name {
+    display: flex;
+}
 
+.blogger-pic {
+    width: 50px;
+    height: 50px;
+    background: #38B7EA;
+    border-radius: 100%;
+    align-self: center;
+}
 
+.blogger-name {
+    align-self: center;
+    font-family: latoLight;
+    font-size: 20px;
+    text-indent: 10px;
+    color: #38B7EA;
+}
 
+.blogger-desc {
+    margin-top: 14px;
+    line-height: 20px;
+    font-size: 16px;
+    color: #1F1F1F;
+    font-family: latoLight;
+}
 
+.blogger-more-info-button {
+    display: inline-block;
+    margin-top: 20px;
+    line-height: 24px;
+    padding: 2px 15px;
+    border-radius: 20px;
+    border: 1px solid #38B7EA;
+    color: #38B7EA;
+}
 
+.blogger-follower {
+    margin-top: 15px;
+    text-indent: 5px;
+}
 
+.blogger-follower h4 {
+    font-size: 12px;
+    line-height: 20px;
+    font-family: latoHairline;
+    color: rgba(0, 0, 0, 0.5);
+}
 
+.blogger-follower h5 {
+    font-size: 14px;
+    font-family: latoHairline;
+    color: rgba(0, 0, 0, 0.9);
+}
 
+.blogger-links {
+    display: flex;
+}
 
+.blogger-links a {
+    padding: 5px;
+}
 
+.blogger-follow-link {
+    font-size: 17px;
+    line-height: 20px;
+    font-family: latoLight;
+    text-indent: 5px;
+    color: rgba(0,0,0,0.5);
+    margin-bottom: 3px;
+}
 
-
-
-
-
-
+.blogger-links-upper {
+    margin-top: 15px;
+}

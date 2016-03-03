@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blog | Steve jobs</title>
+    <link rel="icon" href="logoBlack.png">
+    <link rel="apple-touch-icon" href="logoBlack.png">
+    <!-- Place favicon.ico in the root directory -->
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+    <link rel="stylesheet" href="styles/profile.css">
+    <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.css">
+</head>
+
+<body>
+    <div class="profHeader">
+        <div class="profHeaderUpper">
+            <div class="profHeaderLogo" style="background: url(logoBlue.png); background-size: 50px 50px; background-position: center; background-repeat: no-repeat;"></div>
+            <div class="profHeaderSearch">
+                <input type="text" class="profHeaderSearchInput" placeholder="Search">
+            </div>
+            <div class="profHeaderMainMenu">
+                <a href="#" class="mainMenuItemList mainMenuItem1">Home</a>
+                <a href="#" class="mainMenuItemList mainMenuItem2">Profile</a>
+                <a href="#" class="mainMenuItemList mainMenuItem3">Connection</a>
+                <a href="#" class="mainMenuItemList mainMenuItem4">Questions</a>
+                <a href="#" class="mainMenuItemList mainMenuItem5">Blog</a>
+            </div>
+            <div class="profHeaderIcons">
+                <a href="#" class="profHeaderIconsList"><i class="fa fa-envelope fa-lg"></i></a>
+                <a href="#" class="profHeaderIconsList"><i class="fa fa-inbox fa-lg"></i></a>
+                <a href="#" class="profHeaderIconsList"><i class="fa fa-tasks fa-lg"></i></a>
+            </div>
+            <div class="profDropDown">
+                <a href="#" class="profDropDownInner" style="background: url(images/profilepic.jpg); background-size: 50px 50px; width: 50px; height: 50px; align-self: center; margin: 0px auto; border-radius: 100%;"></a>
+                <!--
+                        <div class="profDropDownItems">
+                            <a href="#" class="insideDropDown">Edit Profile</a>
+                            <a href="#" class="insideDropDown">Help</a>
+                            <a href="#" class="insideDropDown">Logout</a>
+                        </div>
+                        -->
+            </div>
+        </div>
+        <div class="profHeaderLower">
+            <div class="profHeaderLowerLinks">
+                <a href="#" class="lowerLinksList lowerListItems1">Posts</a>
+                <a href="#" class="lowerLinksList lowerListItems2">Background</a>
+                <a href="#" class="lowerLinksList lowerListItems3">Recommendations</a>
+                <a href="#" class="lowerLinksList lowerListItems4">Following</a>
+                <a class="headerEmpty"></a>
+            </div>
+        </div>
+    </div>
+    <!-- profile form starts -->
+    <section class="profile-form">
+        <div class="left-form-nav">
+            <div>Personal Details</div>
+            <div>Education</div>
+            <div>Professional</div>
+            <div>Projects</div>
+            <div>Account Setting</div>
+        </div>
+        <div class="right-form">
+            <div class="personal-details-form">
+                <label for="pp-input-image" class="pp-label">Change Profile Pic</label>
+                <div class="pp-form">
+                    <div>
+                        <div class="square-pp" style="background: url(images/postpic.jpg); background-position: center; background-size: cover;"></div>
+                    </div>
+                    <div>
+                        <div class="round-pp" style="background: url(images/postpic.jpg); background-position: center; background-size: cover;"></div>
+                    </div>
+                    <div>
+                        <input type="file" accept="image/*" id="pp-input-image" class="pp-input-image">
+                    </div>
+                </div>
+                <label for="tag-line-form">Tagline</label>
+                <input type="text" id="tag-line-form" placeholder="Front-End Web Developer">
+                <label for="location-form">Location</label>
+                <input type="text" placeholder="California, United States">
+                <label for="linked-in-form">Links</label>
+                <label for="linked-in-form">http://linkedin.com/in/</label>
+                <input type="text" id="linked-in-form" placeholder="stevejobs">
+                <label for="github-form">http://github.com/</label>
+                <input type="text" id="github-in-form" placeholder="stevejobs">
+                <label for="twitter-form">http://twitter.com/</label>
+                <input type="text" id="twitter-form" placeholder="stevejobs">
+            </div>
+        </div>
+    </section>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/webcomponentsjs/webcomponents.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+</body>
+
+</html>

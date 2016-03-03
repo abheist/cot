@@ -63,22 +63,20 @@
     <!-- profile form starts -->
     <section class="profile-form">
         <div class="left-form-nav">
-            <div>Personal Details</div>
-            <div>Education</div>
-            <div>Professional</div>
-            <div>Projects</div>
-            <div>Account Setting</div>
+            <a href="#personal-details-form">Personal Details</a>
+            <a href="#links-form">Links</a>
+            <a href="#education-form">Education</a>
+            <a href="#professional-form">Professional</a>
+            <a href="#projects-form">Projects</a>
+            <a href="#account-setting">Account Setting</a>
         </div>
         <div class="right-form">
-            <div class="details-form">
+            <div class="details-form" id="personal-details-form">
                 <label for="linked-in-form" class="form-bottom-link-line">Personal Details</label>
                 <label for="pp-input-image" class="pp-label">Change Profile Pic</label>
                 <div class="pp-form">
                     <div>
-                        <div class="square-pp" style="background: url(images/profilepic.jpg); background-position: center; background-size: cover; background-repeat: no-repeat;"></div>
-                    </div>
-                    <div>
-                        <div class="round-pp" style="background: url(images/profilepic.jpg); background-position: center; background-size: cover; background-repeat: no-repeat;"></div>
+                        <img src="images/postpic.jpg" id="prof-pic-form" class="upload-pic-form" alt="">
                     </div>
                     <div>
                         <input type="file" accept="image/*" id="pp-input-image" class="pp-input-image">
@@ -93,35 +91,34 @@
                         <label for="location-form">Location</label>
                         <input type="text" placeholder="California, United States">
                     </div>
+                </div>
+            </div>
+            <div class="details-form" id="links-form">
+                <label for="linked-in-form" class="form-bottom-link-line">Links</label>
+                <div class="details-form-bottom">
                     <div>
-                        <label for="linked-in-form" class="form-bottom-link-line">Links</label>
-                    </div>
-                    <div>
-                        <label for="linked-in-form">http://linkedin.com/in/</label>
+                        <label class="links-form-left" for="linked-in-form">http://linkedin.com/in/</label>
                         <input type="text" id="linked-in-form" placeholder="stevejobs">
                     </div>
                     <div>
-                        <label for="github-form">http://github.com/</label>
+                        <label class="links-form-left" for="github-form">http://github.com/</label>
                         <input type="text" id="github-in-form" placeholder="stevejobs">
                     </div>
                     <div>
-                        <label for="twitter-form">http://twitter.com/</label>
+                        <label class="links-form-left" for="twitter-form">http://twitter.com/</label>
                         <input type="text" id="twitter-form" placeholder="stevejobs">
                     </div>
                 </div>
             </div>
-            <div class="details-form">
+            <div class="details-form" id="education-form">
                 <label for="linked-in-form" class="form-bottom-link-line">Education</label>
-                <label for="pp-input-image2" class="pp-label">Change Institute Pic</label>
+                <label for="pp-input-image" class="pp-label">Change Pic</label>
                 <div class="pp-form">
                     <div>
-                        <div class="square-pp" style="background: url(images/profilepic.jpg); background-position: center; background-size: cover; background-repeat: no-repeat;"></div>
+                        <img src="images/postpic.jpg" id="education-pic-form" class="upload-pic-form" alt="">
                     </div>
                     <div>
-                        <div class="round-pp" style="background: url(images/profilepic.jpg); background-position: center; background-size: cover; background-repeat: no-repeat;"></div>
-                    </div>
-                    <div>
-                        <input type="file" accept="image/*" id="pp-input-image2" class="pp-input-image">
+                        <input type="file" accept="image/*" id="education-input-image" class="pp-input-image">
                     </div>
                 </div>
                 <div class="details-form-bottom">
@@ -143,18 +140,15 @@
                     </div>
                 </div>
             </div>
-            <div class="details-form">
+            <div class="details-form" id="professional-form">
                 <label for="linked-in-form" class="form-bottom-link-line">Professional</label>
                 <label for="pp-input-image3" class="pp-label">Change Company Pic</label>
                 <div class="pp-form">
                     <div>
-                        <div class="square-pp" style="background: url(images/profilepic.jpg); background-position: center; background-size: cover; background-repeat: no-repeat;"></div>
+                        <img src="images/postpic.jpg" id="professional-pic-form" class="upload-pic-form" alt="">
                     </div>
                     <div>
-                        <div class="round-pp" style="background: url(images/profilepic.jpg); background-position: center; background-size: cover; background-repeat: no-repeat;"></div>
-                    </div>
-                    <div>
-                        <input type="file" accept="image/*" id="pp-input-image3" class="pp-input-image">
+                        <input type="file" accept="image/*" id="professional-input-image" class="pp-input-image">
                     </div>
                 </div>
                 <div class="details-form-bottom">
@@ -180,18 +174,15 @@
                     </div>
                 </div>
             </div>
-            <div class="details-form">
+            <div class="details-form" id="projects-form">
                 <label for="linked-in-form" class="form-bottom-link-line">Projects</label>
                 <label for="pp-input-image4" class="pp-label">Change Project Pic</label>
                 <div class="pp-form">
                     <div>
-                        <div class="square-pp" style="background: url(images/profilepic.jpg); background-position: center; background-size: cover; background-repeat: no-repeat;"></div>
+                        <img src="images/postpic.jpg" id="project-pic-form" class="upload-pic-form" alt="">
                     </div>
                     <div>
-                        <div class="round-pp" style="background: url(images/profilepic.jpg); background-position: center; background-size: cover; background-repeat: no-repeat;"></div>
-                    </div>
-                    <div>
-                        <input type="file" accept="image/*" id="pp-input-image4" class="pp-input-image">
+                        <input type="file" accept="image/*" id="project-input-image" class="pp-input-image">
                     </div>
                 </div>
                 <div class="details-form-bottom">
@@ -213,7 +204,7 @@
                     </div>
                 </div>
             </div>
-            <div class="details-form">
+            <div class="details-form" id="account-setting">
                 <label for="linked-in-form" class="form-bottom-link-line">Account Setting</label>
                 <div class="details-form-bottom">
                     <div>

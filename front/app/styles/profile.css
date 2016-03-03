@@ -332,7 +332,7 @@ body {
 .left-form-nav {
     width: 300px;
     height: calc(80vh - 112px);
-    margin-top: 10vh;
+    margin-top: 25px;
     display: flex;
     position: fixed;
     flex-direction: column;
@@ -342,13 +342,13 @@ body {
     z-index: 999;
 }
 
-.left-form-nav div {
+.left-form-nav a {
     flex: 1;
     line-height: calc((80vh - 112px) / 5);
     transition: all 0.3s;
 }
 
-.left-form-nav div:hover {
+.left-form-nav a:hover {
     background: #fff;
     box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.3);
 }
@@ -356,17 +356,18 @@ body {
 .right-form {
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.01);
     /*border-radius: 3px;*/
-    width: calc(100% - 400px);
-    margin-left: 330px;
+    width: 500px;
+    margin-left: 500px;
     /*height: 1000px;*/
-    margin-top: 50px;
+    /*margin-top: 50px;*/
     position: absolute;
 }
 
 .details-form {
     background: #fff;
-    padding: 20px;
+    padding: 0px 20px 20px 20px;
     margin-bottom: 20px;
+    margin-top: 50px;
 }
 
 .pp-form {
@@ -379,7 +380,17 @@ body {
 }
 
 .pp-form div {
-    flex: 2;
+    flex: 1;
+    display: flex;
+}
+
+.pp-form div:first-child    {
+    margin-right: 10px;
+}
+
+.pp-form div input  {
+    flex: 1;
+    align-self: center;
 }
 
 .pp-form div div {
@@ -394,13 +405,15 @@ body {
 .pp-input-image::-webkit-file-upload-button {
     color: #fff;
     height: 30px;
-    width: 200px;
+    width: 150px;
     border: 0px;
+    margin-left: 100px;
     font-size: 17px;
     background: #3FBAEB;
     cursor: pointer;
     border-radius: 3px;
     transition: all 0.2s;
+    outline: none;
 }
 
 .pp-input-image::-webkit-file-upload-button:hover {
@@ -423,19 +436,95 @@ body {
     border: 5px solid #fff;
 }
 
+.education-label-form   {
+    clear: both;
+    display: block;
+    height: 50px;
+    margin-top: 25px;
+}
+
 .pp-label {
     line-height: 50px;
 }
 
+.details-form textarea {
+    width: 100%;
+}
+
 .details-form-bottom div {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.details-form-bottom div label  {
+    font-size: 15px;
+    line-height: 25px;
+    display: block;
+    font-weight: 600;
+    font-family: latoBold;
+}
+
+
+
+.details-form-bottom div input  {
+    height: 30px;
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid #ddd;
+    /*font-size: 12px;*/
+    outline: none;
+    transition: all 0.3s;
+}
+
+.details-form-bottom div input:focus    {
+    border-bottom: 2px solid #3FBAEB;
 }
 
 .form-bottom-link-line {
-    border-bottom: 1px solid;
     display: block;
-    color: #ccc;
-    font-size: 14px;
-    line-height: 24px;
+    line-height: 40px;
+    background: rgba(0,0,0,0.07);
+    text-align: center;
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    font-family: latoBold;
+    color: #3FBAEB;
 }
+
+
+.upload-pic-form  {
+    height: 100px;
+    border: 5px solid #fff;
+    box-shadow: 2px 3px 3px rgba(0,0,0,0.3);
+}
+
+.upload-pic-form-round  {
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    border: 5px solid #fff;
+    box-shadow: 2px 3px 3px rgba(0,0,0,0.3);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

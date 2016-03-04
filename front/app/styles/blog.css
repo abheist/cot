@@ -303,3 +303,9 @@ body {
 .blogger-links-upper {
     margin-top: 15px;
 }
+
+.article-view   {
+    height: 100px;
+    width: 70%;
+    margin: 0px auto;
+}

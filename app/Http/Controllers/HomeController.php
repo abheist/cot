@@ -25,10 +25,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $questions = Question::with('user','answers')->latest()->get();
+        $questions = Question::with([
+            'user',
+            'answers' => function($query){ 
+                    $query->orderBy('created_at','desc');
+                }
+            ])->latest()->get();
         return view('home',['questions' => $questions]);
-        //$answer = $questions->answers->first();
-        //var_dump($answer->user);
     }
 
     

@@ -57,7 +57,6 @@ class AskController extends Controller
     	$input = $request->except('_token');
     	$input = array_map('trim',$input);
     	$answer = new Answer($input);
-    	//$user = User::find(Auth::id());
     	$question = Question::find($question);
     	$answer->user()->associate(Auth::user());
     	$answer->question()->associate($question);

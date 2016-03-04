@@ -17,7 +17,7 @@
     </div>
     <hr>
    <div class="well col-md-10 col-md-offset-1">
-        <a href= {{ route('userquestions',$user->id)}} > Questions </a> | <a href= {{ route('user',$user->id)}} > Answers </a>
+        <a href= {{ route('users.questions.show',$user->id)}} > Questions </a> | <a href= {{ route('users.show',$user->id)}} > Answers </a>
     </div>
      @foreach($questions as $question)
         <div class="row">
@@ -25,7 +25,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3>{{ $question->question }}</h3>
-                        <a  target="_blank" style="text-decoration: none;" class="btn-link" href={{ route('user',$question->user->id) }}> <img src="../../profile_default.png" class="img-circle" width="30" height="30">
+                        <a  target="_blank" style="text-decoration: none;" class="btn-link" href={{ route('users.show',$question->user->id) }}> <img src="../../profile_default.png" class="img-circle" width="30" height="30">
                          <span class="label label-info">{{ $question->user->fname }} {{ $question->user->lname }} </span></a> <br/>
                         <small> {{ date_format($question->created_at, 'g:i A \o\n l jS F Y') }} </small>
                     </div>
@@ -40,10 +40,10 @@
                         @else
                             {{ count($question->answers) }} Answer
                         @endif
-                        
+
                         @foreach($question->answers as $answer)
                             <div class="well">
-                            <a target="_blank" style="text-decoration: none;" class="btn-link" href={{ route('user',$question->user->id) }}> <img src="../../profile_default.png" class="img-circle" width="30" height="30">
+                            <a target="_blank" style="text-decoration: none;" class="btn-link" href={{ route('users.show',$question->user->id) }}> <img src="../../profile_default.png" class="img-circle" width="30" height="30">
                          <span class="label label-info">{{ $answer->user->fname }} {{ $answer->user->lname }} </span></a> <br/>
                                
                                 {{ $answer->answer }} 
@@ -52,7 +52,7 @@
                       @else
                         No Answers Available
                     @endif
-                       <a href="{{ route('answer',$question->id) }}" class="btn btn-info">Answer</a>
+                       <a href="{{ route('answers.create',$question->id) }}" class="btn btn-info">Answer</a>
                     </div>
                 </div>
             </div>

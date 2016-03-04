@@ -48,7 +48,7 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li><a href="{{ route('home') }}">Home</a></li>
-                     <li><a href="{{ route('user',Auth::id()) }}">Dashboard</a></li>
+                     <li><a href="{{ route('users.show',Auth::id()) }}">Dashboard</a></li>
                     <li><a href="{{ route('ask.create') }}">Create</a></li>
                 </ul>
 
@@ -65,7 +65,7 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ route('user',Auth::id()) }}"><i class="fa fa-btn"></i>Profile</a>
+                                <li><a href="{{ route('users.show',Auth::id()) }}"><i class="fa fa-btn"></i>Profile</a>
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                             </ul>
                         </li>

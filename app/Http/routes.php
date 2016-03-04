@@ -34,13 +34,13 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('/',['as' => 'home', 'uses' => 'HomeController@index']);
 
-    Route::get('/profile/{user}', ['as' => 'user', 'uses' => 'UsersController@show']);
-    Route::get('/profile/{user}/questions', ['as' => 'userquestions', 'uses' => 'UsersController@showquestions']);
+    Route::get('/profile/{user}', ['as' => 'users.show', 'uses' => 'UsersController@show']);
+    Route::get('/profile/{user}/questions', ['as' => 'users.questions.show', 'uses' => 'UsersController@showquestions']);
 
     
-    Route::get('/answer/{question}/create', ['as' => 'answer', 'uses' => 'AskController@answer']);
+    Route::get('/answers/{question}/create', ['as' => 'answers.create', 'uses' => 'AskController@answer']);
 
-    Route::post('/answer/{question}', ['as' => 'answer.store', 'uses' => 'AskController@storeanswer']);
+    Route::post('/answers/{question}', ['as' => 'answers.store', 'uses' => 'AskController@storeanswer']);
 
     Route::resource('ask','AskController');
 });

@@ -8,7 +8,7 @@
                 <div class="panel-heading"><h3>{{ $question->question }}</h3></div>
                 <div class="panel-body">
                    
-                {{ Form::open(array('method' => 'POST', 'route' => ['answer.store',$question], 'class' => 'form-horizontal')) }}
+                {{ Form::open(array('method' => 'POST', 'route' => ['answers.store',$question], 'class' => 'form-horizontal')) }}
                  
 
                         <div class="form-group{{ $errors->has('answer') ? ' has-error' : '' }}">

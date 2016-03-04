@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
+use App\Question;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -14,13 +15,12 @@ class UsersController extends Controller
 {
     public function index()
     {
-    	return view('pages.register');
     }
 
     public function store(Request $request)
     {
     	$this->validate($request, [
-            'fname' => 'required|min:3',
+            'fname' => 'required|regex:/^([a-zA-z]+\s{0,1})+$/|min:3',
             'lname' => 'required|min:3',
             'email' => 'required|email',
             'password'  => 'required',
@@ -57,5 +57,17 @@ class UsersController extends Controller
     {
     	Auth::logout();
     	return Redirect::intended('/');
+    }
+
+
+    // to show specific users details
+
+    public function show($user)
+    {
+        $user = User::find($user);
+        $questions = Question::with('user')->where('user_id',$user->id)->latest()->get();
+        if($questions->isEmpty())
+            return 'No user found';
+        return view('user',['questions' => $questions, 'user' => $user]);
     }
 }

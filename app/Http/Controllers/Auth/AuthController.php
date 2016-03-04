@@ -28,7 +28,7 @@ class AuthController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
     protected $redirectAfterLogout = '/login';
 
     /**
@@ -50,8 +50,8 @@ class AuthController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'fname' => 'required|max:255',
-            'lname' => 'required|max:255',
+            'fname' => 'required|regex:/^([a-zA-z]+\s{0,1})+$/|max:255',
+            'lname' => 'required|regex:/^([a-zA-z]+\s{0,1})+$/|max:255',
             'gender' => 'required',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed|min:3',
@@ -66,6 +66,7 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
+        $data = array_map('trim', $data);
         return User::create([
             'fname' => $data['fname'],
             'lname' => $data['lname'],

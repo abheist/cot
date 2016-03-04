@@ -98,6 +98,7 @@ return [
         ],
         'fname' => [
             'required'  => 'We need to know your first name!',
+            'regex' => 'First Name can include only characters'
         ],
          'lname' => [
             'required'  => 'We need to know your last name!',

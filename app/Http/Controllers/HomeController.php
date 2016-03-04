@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Question;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,6 +25,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $questions = Question::with('user','answers')->latest()->get();
+        return view('home',['questions' => $questions]);
+        //$answer = $questions->answers->first();
+        //var_dump($answer->user);
     }
+
+    
 }

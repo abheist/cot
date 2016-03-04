@@ -22,7 +22,7 @@
                       @if(count($question->answers))
                         @foreach($question->answers as $answer)
                             <div class="well">
-                            <a target="_blank" style="text-decoration: none;" class="btn-link" href={{ route('user',$question->user->id) }}> <img src="profile_default.png" class="img-circle" width="30" height="30">
+                            <a target="_blank" style="text-decoration: none;" class="btn-link" href={{ route('user',$answer->user->id) }}> <img src="profile_default.png" class="img-circle" width="30" height="30">
                          <span class="label label-info">{{ $answer->user->fname }} {{ $answer->user->lname }} </span></a> <br/>
                                
                                 {{ $answer->answer }} 

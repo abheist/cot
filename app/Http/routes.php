@@ -35,6 +35,8 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/',['as' => 'home', 'uses' => 'HomeController@index']);
 
     Route::get('/profile/{user}', ['as' => 'user', 'uses' => 'UsersController@show']);
+    Route::get('/profile/{user}/questions', ['as' => 'userquestions', 'uses' => 'UsersController@showquestions']);
+
     
     Route::get('/answer/{question}/create', ['as' => 'answer', 'uses' => 'AskController@answer']);
 

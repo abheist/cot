@@ -1,0 +1,16 @@
+Baldev
+1. Update the username   -done
+2. Edit Profile, with multiple query update
+3. See the Api required for blog(Trix Editor)
+4. Forum
+
+
+
+Abhishek
+1. Front end of blog
+2. Edit Profile
+
+
+
+Kapil
+1. Question Answer Module

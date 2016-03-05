@@ -1,0 +1,341 @@
+body {
+    background: #F5F8F9;
+}
+
+.profContainer {
+    width: 100%;
+}
+
+
+.mainBox {
+    margin-top: 30px;
+    display: flex;
+}
+
+.leftBox {
+    flex: 2;
+}
+
+.middleBox {
+    flex: 4;
+}
+
+.rightBox {
+    flex: 2;
+}
+
+.personOverviewBox {
+    width: 70%;
+    margin: 0px auto;
+    border-radius: 4px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.08);
+}
+
+.basicProfInfo {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    background: white;
+    border-radius: 4px 4px 0px 0px;
+    border-bottom: 2px solid #F5F8F9;
+}
+
+.personProfilePic {
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    border-radius: 100%;
+    margin: 0px auto;
+}
+
+.profileName {
+    margin-top: 10px;
+    color: red;
+    color: #3D4347;
+    margin-bottom: 10px;
+    font-family: latoRegular;
+}
+
+.profileTagLine {
+    font-family: latoLight;
+}
+
+.currentLocation {
+    font-family: latoLight;
+    margin-top: 5px;
+    color: #A6A9AC;
+}
+
+.followButton {
+    background: #38B7EA;
+    color: white;
+    border: 0px;
+    margin: 0px auto;
+    border-radius: 100px;
+    font-size: 20px;
+    font-family: latoLight;
+    line-height: 35px;
+    margin-top: 20px;
+    width: 60%;
+}
+
+.connectButton {
+    color: white;
+    border: 0px;
+    margin: 0px auto;
+    border-radius: 100px;
+    font-size: 20px;
+    font-family: latoLight;
+    line-height: 35px;
+    margin-top: 10px;
+    width: 60%;
+    background: white;
+    color: #38B7EA;
+    border: 1px solid #38B7EA;
+}
+
+.personFollowInfo {
+    display: flex;
+    background: white;
+}
+
+.personFollowItems1 {
+    border-right: 1px solid #F5F8F9;
+    padding: 20px 0px;
+}
+
+.personFollowItems2 {
+    border-left: 1px solid #F5F8F9;
+    padding: 20px 0px;
+}
+
+.personFollowItems {
+    flex: 1;
+    text-align: center;
+}
+
+.personFollowItemsInner1 {}
+
+.personFollowItemsInner2 {
+    font-family: latoHairline;
+    color: #B3B6B8;
+}
+
+.personLinks {
+    border-top: 2px solid #F5F8F9;
+    display: flex;
+}
+
+.personLinksItems {
+    flex: 1;
+    text-align: center;
+    ;
+    background: white;
+    padding: 10px 0px;
+}
+
+.personResume {
+    background: white;
+    border-top: 2px solid #F5F8F9;
+    padding: 20px 10px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 0px 0px 4px 4px;
+}
+
+.personPosts {
+    background: white;
+}
+
+.postHeading {
+    padding: 20px;
+    border-bottom: 2px solid #F5F8F9;
+}
+
+.personPostLinksOuter {
+    display: flex;
+    padding: 20px;
+}
+
+.personPostsLink {
+    min-height: 150px;
+    flex: 1;
+    align-self: space-around;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.personPostHeading {
+    margin-top: 5px;
+    font-size: 17px;
+    color: #565A5F;
+}
+
+.personPostTime {
+    color: #A6A9AC;
+    margin-top: 5px;
+}
+
+.profBackground {
+    margin-top: 30px;
+    color: #3D4347;
+    margin-bottom: 30px;
+}
+
+.backgroundHeading {
+    padding: 20px;
+    background: white;
+    border-bottom: 2px solid #F5F8F9;
+}
+
+.backgroundData {
+    padding: 20px;
+    background: white;
+}
+
+.profBackgroundInnerUpper {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.profBackgroundInnerUpperLeft {
+    flex: 1;
+    text-align: center;
+    align-self: center;
+}
+
+.profBackgroundInnerUpperRight {
+    flex: 7;
+    font-size: 20px;
+    align-self: center;
+    font-family: latoLight;
+}
+
+.profEachBox {
+    margin-bottom: 40px;
+}
+
+.profSummaryData {
+    display: flex;
+    padding: 0px 20px;
+}
+
+
+
+.profSummaryDataRight {
+    flex: 9;
+}
+
+.profEachJob {
+    min-height: 100px;
+    display: flex;
+}
+
+.profEachProject {
+    min-height: 100px;
+    display: flex;
+}
+
+.notFirst	{
+	margin-top: 30px;
+}
+
+.profEachExp {
+    flex: 7;
+    align-self: center;
+}
+
+.expLogo {
+    flex: 2;
+}
+
+.expPeriod {
+    font-family: latoLight;
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.expPosition {
+    font-family: latoRegular;
+    font-size: 17px;
+    margin-bottom: 7px;
+}
+
+.expCompany {
+    font-family: latoLight;
+    font-size: 17px;
+    color: #38B7EA;
+}
+
+.singleSkill {
+    border: 1px solid #b3b3b3;
+    border-radius: 25px;
+    display: inline-block;
+    font-size: 11px;
+    line-height: 18px;
+    margin: 4px;
+    padding: 0 8px;
+    text-transform: uppercase;
+}
+
+.projectDetail {
+    font-size: 14px;
+    line-height: 17px;
+}
+
+
+.personRecc	{
+	border: 2px solid #F5F8F9;
+	height: 150px;
+	border-radius: 4px;
+	font-size: 14px;
+	color: #888;
+	padding: 20px 20px 10px 20px;
+	line-height: 18px;
+	text-align: justify;
+
+}
+
+.profDataBlank {
+    flex: 1;
+    display: flex;
+}
+
+.sideLineHelloLeft	{
+	flex: 1;
+}
+
+.sideLineHelloRight	{
+	width: 5px;
+	margin-right: 20px;
+	display: flex;
+	flex-direction: column;
+}
+
+.sideLineLine	{
+	width: 2px;
+	flex: 1;
+	margin-left: 3px;
+	background: #e7ebec;
+}
+
+.sideLineCircle	{
+	height: 5px;
+	width: 5px;
+	border: 2px solid #e7ebec;
+	border-radius: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

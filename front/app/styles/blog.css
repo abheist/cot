@@ -83,8 +83,8 @@ body {
     padding-bottom: 10px;
 }
 
-.fp-each:hover	{
-	box-shadow: 0px 0px 2px rgba(0,0,0,0.2);
+.fp-each:hover {
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
 }
 
 .fp-image {
@@ -296,10 +296,168 @@ body {
     line-height: 20px;
     font-family: latoLight;
     text-indent: 5px;
-    color: rgba(0,0,0,0.5);
+    color: rgba(0, 0, 0, 0.5);
     margin-bottom: 3px;
 }
 
 .blogger-links-upper {
     margin-top: 15px;
 }
+
+.article-view {
+    width: 70%;
+    margin: 0px auto;
+}
+
+.article-body {
+    min-height: 100px;
+    /*background: yellow;*/
+}
+
+.article-blogger-body-div {
+    height: 1px;
+    background: #eee;
+    margin-top: 50px;
+}
+
+.article-blogger-body-div-lower {
+    height: 1px;
+    background: #eee;
+}
+
+.e-back {
+    /*background: #eee;*/
+}
+
+.article-blogger-profile {
+    padding-top: 0px;
+    display: flex;
+    width: 100%;
+    height: 90px;
+    /*background: red;*/
+    margin: 20px auto;
+    width: 80%;
+}
+
+.article-blogger-pic {
+    flex: 1;
+    display: flex;
+}
+
+.article-blogger-pic-inner {
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    margin: 0px auto;
+    align-self: center;
+    border: 2px solid #eee;
+}
+
+.article-blogger-bio {
+    flex: 4;
+    /*background: green;*/
+    align-self: center;
+    margin-left: 10px;
+}
+
+.article-blogger-bio h2 {
+    font-size: 20px;
+    font-weight: 100;
+    color: #222;
+}
+
+.article-blogger-bio p {
+    font-size: 14px;
+    color: #999;
+    font-weight: 100;
+}
+
+.article-blogger-follow {
+    flex: 1;
+    /*background: blue;*/
+    display: flex;
+}
+
+.article-blogger-follow-inner {
+    width: 100px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border: 1px solid #38B7EA;
+    border-radius: 20px;
+    align-self: center;
+}
+
+.blogger-article-social {
+    width: 100%;
+    font-family: latoLight;
+    color: #aaa;
+    font-size: 14px;
+}
+
+.article-comments-upper {
+    min-height: 100px;
+    background: #eee;
+    padding-bottom: 70px;
+    padding-top: 70px;
+}
+
+.each-comment   {
+    width: 50%;
+    margin: 20px auto;
+    background: red;
+    background: #fff;
+    padding: 20px;
+}
+
+.each-comment p {
+    margin-top: 10px;
+    font-size: 17px;
+    font-family: latoLight;
+    margin-bottom: 7px;
+}
+
+.each-comment textarea {
+    resize: vertical;
+    height: 70px;
+    width: 100%;
+    border-radius: 3px;
+    margin-top: 20px;
+    border: 1px solid #38B7EA;
+}
+
+
+.comments-article-heading   {
+    width: 50%;
+    margin: 0px auto;
+}
+
+
+.article-comment-submit {
+    display: inline-block;
+    /*background: #eee;*/
+    padding: 7px 20px;
+    border-radius: 20px;
+    border: 1px solid #38B7EA;
+}
+
+.article-comment-submit:active  {
+    background: #38B7EA;
+}
+
+.article-comment-submit-upper   {
+    display: flex;
+    /*background: red;*/
+    margin-top: 7px;
+    justify-content: flex-end;
+}
+
+
+
+
+
+
+
+
+
+

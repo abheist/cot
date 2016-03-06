@@ -35,13 +35,47 @@ class AskController extends Controller
     public function store(Request $request)
     {
     	$this->validate($request,array(
-    		'question' => 'required|min:5'
+    		'question' => 'required|min:5',
+    		'tag1' => 'sometimes|required|different:tag2,tag3',
+    		'tag2' => 'sometimes|required|different:tag1,tag3',
+    		'tag3' => 'sometimes|required|different:tag1,tag2',
     		));
+
     	$input = $request->except('_token'); 
     	$input = array_map('trim',$input);
     	$question = new Question($input);
     	$user = User::find(Auth::id());
     	$user->questions()->save($question);
+    	if(isset($input['tag1'])){
+    		$tag1 = Tag::where('name','=',$input['tag1'])->first();
+    		if($tag1==null && !empty($input['tag1'])){
+    			$tag = new Tag(['name' => $input['tag1']]);
+    			$tag->save();
+    			$question->tags()->attach($tag->id);
+    		}
+    		else
+    			$question->tags()->attach($tag1->id);	
+    	}
+    	if(isset($input['tag2'])){
+			$tag2 = Tag::where('name','=',$input['tag2'])->first();
+			if($tag2==null && !empty($input['tag2'])){
+    			$tag = new Tag(['name' => $input['tag2']]);
+    			$tag->save();
+    			$question->tags()->attach($tag->id);
+    		}
+    		else
+    			$question->tags()->attach($tag1->id);	
+    	}
+    	if(isset($input['tag3'])){
+    		$tag3 = Tag::where('name','=',$input['tag3'])->first();
+    		if($tag3==null && !empty($input['tag3'])){
+    			$tag = new Tag(['name' => $input['tag3']]);
+    			$tag->save();
+    			$question->tags()->attach($tag->id);
+    		}
+    		else
+    			$question->tags()->attach($tag1->id);	
+    	}
     	return Redirect::route('home');
     }
 
@@ -72,5 +106,12 @@ class AskController extends Controller
 		$tags = Tag::where('name','LIKE','%'.$input['keyword'].'%')->get();
 		$returnHTML =  view('readtags',['tags' => $tags])->render();
 		return response()->json(array('success' => true, 'html' => $returnHTML));
+   }
+
+   public function showtags($tag)
+   {	
+   		$tag = Tag::find($tag);
+   		
+   		return view('tag',['tag' => $tag ]);
    }
 }

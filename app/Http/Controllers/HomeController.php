@@ -29,7 +29,8 @@ class HomeController extends Controller
             'user',
             'answers' => function($query){ 
                     $query->orderBy('created_at','desc');
-                }
+                },
+            'tags'
             ])->latest()->get();
         return view('home',['questions' => $questions]);
     }

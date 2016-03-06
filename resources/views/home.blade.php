@@ -12,7 +12,7 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3>{{ $question->question }}</h3>
+                        <a href=""><h3>{{ $question->question }}</h3></a>
                         <a target="_blank" style="text-decoration: none;" class="btn-link" href={{ route('users.show',$question->user->id) }}> <img src="profile_default.png" class="img-circle" width="30" height="30">
                          <span class="label label-info">{{ $question->user->fname }} {{ $question->user->lname }} </span></a> <br/>
                         <small> {{ date_format($question->created_at, 'g:i A \o\n l jS F Y') }} </small>
@@ -32,7 +32,18 @@
                         No Answers Available
                         <a href="{{ route('answers.create',$question->id) }}" class="btn btn-info">Answer</a>
                     @endif
-                     
+                    </div>
+                    <div class="well">
+                        <span class="glyphicon glyphicon-tags"></span>&nbsp;
+                        @if(!count($question->tags))
+                            No Tags Available
+                        @endif
+                        @foreach($question->tags as $tag)
+                         <a href="tags/{{ $tag->id }}" class="btn btn-success btn-xs">
+                           {{ $tag->name }}
+                        </a>
+                           
+                        @endforeach
                     </div>
                 </div>
             </div>

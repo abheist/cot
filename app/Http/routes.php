@@ -41,6 +41,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/profile/{user}/questions', ['as' => 'users.questions.show', 'uses' => 'UsersController@showquestions']);
 
     Route::get('tags/{tag}', ['as' => 'tags.show', 'uses' => 'AskController@showtags']);
+    Route::get('questions/{question}', ['as' => 'questions.show', 'uses' => 'AskController@showquestions']);
 
     Route::get('/answers/{question}/create', ['as' => 'answers.create', 'uses' => 'AskController@answer']);
 

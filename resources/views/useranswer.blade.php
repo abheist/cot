@@ -24,7 +24,8 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3>{{ $answer->question->question }}</h3>
+                    <a href="{{route('questions.show',$answer->question->id)}}">  <h3>{{ $answer->question->question }}</h3></a>
+                      
                         <a  target="_blank" style="text-decoration: none;" class="btn-link" href={{ route('users.show',$answer->question->user->id) }}> <img src="../profile_default.png" class="img-circle" width="30" height="30">
                          <span class="label label-info">{{ $answer->question->user->fname }} {{ $answer->question->user->lname }} </span></a> <br/>
                         <small> {{ date_format($answer->question->created_at, 'g:i A \o\n l jS F Y') }} </small>

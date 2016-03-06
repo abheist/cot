@@ -139,13 +139,19 @@
                     val.remove(); 
                 });
                 $("#suggestion-box").remove();
-               form.append(' <div class="form-group"><label class="col-md-4 control-label">Tag'+(current_tags+1)+' </label><div class="col-md-6"><input type="text" onfocus="setid();" data-token="{{ csrf_token() }}" class="form-control" id="tag'+(current_tags+1)+'" name="tag'+(current_tags+1)+'">');
+               form.append(' <div id="atag" class="form-group"><label class="col-md-4 control-label">Tag'+(current_tags+1)+' </label><div class="col-md-6"><input type="text" onfocus="setid();" data-token="{{ csrf_token() }}" class="form-control" id="tag'+(current_tags+1)+'" name="tag'+(current_tags+1)+'">');
                form.append('<div class="col-md-6 col-md-offset-4" id="suggestion-box"></div>');
             }
            
             $.each(x,function(i,val){
                     form.append(val); 
                 });
+        });
+
+        $("#deltag").click(function(){
+            console.log("delete tag pressed");
+            var lasttag = $(this).closest('.form-group').nextAll("#atag").filter(':last');
+            lasttag.remove()
         });
 
        

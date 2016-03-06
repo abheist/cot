@@ -12,7 +12,7 @@
         <hr>
     @foreach($tag->questions as $question)
         <div class="well"> 
-           <a href=""> {{ $question->question }} </a>
+           <a href="{{route('questions.show',$question->id)}}"> {{ $question->question }} </a>
         </div>
     @endforeach
 

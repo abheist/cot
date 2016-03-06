@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
+use Validator;
 
 class AskController extends Controller
 {
@@ -36,10 +37,11 @@ class AskController extends Controller
     {
     	$this->validate($request,array(
     		'question' => 'required|min:5',
-    		'tag1' => 'sometimes|required|different:tag2,tag3',
-    		'tag2' => 'sometimes|required|different:tag1,tag3',
+    		'tag1' => 'sometimes|required',
+    		'tag2' => 'sometimes|required|different:tag1',
     		'tag3' => 'sometimes|required|different:tag1,tag2',
     		));
+
 
     	$input = $request->except('_token'); 
     	$input = array_map('trim',$input);
@@ -64,7 +66,7 @@ class AskController extends Controller
     			$question->tags()->attach($tag->id);
     		}
     		else
-    			$question->tags()->attach($tag1->id);	
+    			$question->tags()->attach($tag2->id);	
     	}
     	if(isset($input['tag3'])){
     		$tag3 = Tag::where('name','=',$input['tag3'])->first();
@@ -74,7 +76,7 @@ class AskController extends Controller
     			$question->tags()->attach($tag->id);
     		}
     		else
-    			$question->tags()->attach($tag1->id);	
+    			$question->tags()->attach($tag3->id);	
     	}
     	return Redirect::route('home');
     }
@@ -111,7 +113,12 @@ class AskController extends Controller
    public function showtags($tag)
    {	
    		$tag = Tag::find($tag);
-   		
    		return view('tag',['tag' => $tag ]);
+   }
+
+   public function showquestions($question)
+   {
+   		$question = Question::find($question);
+   		return view('question',['question' => $question]);
    }
 }

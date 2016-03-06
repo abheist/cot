@@ -34,6 +34,9 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('/',['as' => 'home', 'uses' => 'HomeController@index']);
 
+    Route::post('/readtags', 'AskController@readtags');
+
+
     Route::get('/profile/{user}', ['as' => 'users.show', 'uses' => 'UsersController@show']);
     Route::get('/profile/{user}/questions', ['as' => 'users.questions.show', 'uses' => 'UsersController@showquestions']);
 

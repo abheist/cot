@@ -6,9 +6,11 @@ use App\Answer;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\Question;
+use App\Tag;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 
 class AskController extends Controller
@@ -63,4 +65,12 @@ class AskController extends Controller
     	$answer->save();
     	return Redirect::route('home');
     }
+
+   public function readtags(Request $request)
+   {	
+   		$input = Input::all();
+		$tags = Tag::where('name','LIKE','%'.$input['keyword'].'%')->get();
+		$returnHTML =  view('readtags',['tags' => $tags])->render();
+		return response()->json(array('success' => true, 'html' => $returnHTML));
+   }
 }

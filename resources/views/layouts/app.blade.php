@@ -81,5 +81,76 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
+    
+    <script type="text/javascript">
+    var tagid;
+     function setid(){
+        var focus = document.activeElement;
+        tagid='#'+focus.id;
+        console.log(tagid);
+     }
+
+        function selectTag(val){
+            console.log(val);
+            $(tagid).val(val);
+           $("#suggestion-box").html("");
+           $("#suggestion-box").hide();
+        }
+
+        $("document").ready(function(){
+            console.log("here");
+            $(document).on('keyup',"input:text", function(e){
+                var keyword = $(this).val();
+                console.log("key"+keyword.length);
+
+                if(keyword.length>0){
+                e.preventDefault();
+                var sendData = {
+                    keyword:keyword,
+                    _token:$(this).data('token')
+                }
+                 $.ajax({
+                    type: "POST",
+                    url: "/cotblog/public/readtags",
+                    data: sendData,
+                    dataType: 'json',
+                    success: function(data){
+                      console.log(data.success);
+                      console.log(data);
+                      $("#suggestion-box").show();
+                      $("#suggestion-box").html(data.html);
+                    }
+                });
+            }
+            else{
+                $('#suggestion-box').html("");
+                $("#suggestion-box").hide();
+            }
+            });
+        });
+
+        $("#addtag").click(function(){
+            console.log('Add Tag Clicked');
+            var form = $(this).closest('form');
+            var current_tags= form.find('input:text').length;
+            if(current_tags<3){
+                var x = $(this).closest('.form-group').nextAll('#askbtn');  
+                $.each(x,function(i,val){
+                    val.remove(); 
+                });
+                $("#suggestion-box").remove();
+               form.append(' <div class="form-group"><label class="col-md-4 control-label">Tag'+(current_tags+1)+' </label><div class="col-md-6"><input type="text" onfocus="setid();" data-token="{{ csrf_token() }}" class="form-control" id="tag'+(current_tags+1)+'" name="tag'+(current_tags+1)+'">');
+               form.append('<div class="col-md-6 col-md-offset-4" id="suggestion-box"></div>');
+            }
+           
+            $.each(x,function(i,val){
+                    form.append(val); 
+                });
+        });
+
+       
+
+        
+    </script>
 </body>
 </html>

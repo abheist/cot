@@ -8,6 +8,8 @@
     <title>@yield('title')</title>
 
     <!-- Fonts -->
+<link rel="stylesheet" href="https://code.getmdl.io/1.1.2/material.indigo-pink.min.css">
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
 
@@ -15,6 +17,8 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    >
     <style>
         body {
             font-family: 'Lato';
@@ -47,9 +51,10 @@
             <div class="collapse navbar-collapse" id="spark-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ route('home') }}">Home</a></li>
+                    <li class="active"><a href="{{ route('home') }}">Home</a></li>
                      <li><a href="{{ route('users.show',Auth::id()) }}">Dashboard</a></li>
                     <li><a href="{{ route('ask.create') }}">Create</a></li>
+                    <li><a href="{{route('image.upload')}}">Uplaod Profile Picture</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -65,7 +70,7 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ route('users.show',Auth::id()) }}"><i class="fa fa-btn"></i>Profile</a>
+                                <li><a href="{{ route('users.show',Auth::id()) }}"><i class="fa fa-btn fa-user"></i>Profile</a>
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                             </ul>
                         </li>
@@ -78,10 +83,12 @@
     @yield('content')
 
     <!-- JavaScripts -->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
-    
+            <script defer src="https://code.getmdl.io/1.1.2/material.min.js"></script>
+
     <script type="text/javascript">
     var tagid;
      function setid(){
@@ -139,7 +146,7 @@
                     val.remove(); 
                 });
                 $("#suggestion-box").remove();
-               form.append(' <div id="atag" class="form-group"><label class="col-md-4 control-label">Tag'+(current_tags+1)+' </label><div class="col-md-6"><input type="text" onfocus="setid();" data-token="{{ csrf_token() }}" class="form-control" id="tag'+(current_tags+1)+'" name="tag'+(current_tags+1)+'">');
+                form.append(' <div id="atag" class="form-group"><label class="col-md-4 control-label">Tag'+(current_tags+1)+' </label><div class="col-md-6"><input type="text" onfocus="setid();" data-token="{{ csrf_token() }}" class="form-control" id="tag'+(current_tags+1)+'" name="tag'+(current_tags+1)+'">');
                form.append('<div class="col-md-6 col-md-offset-4" id="suggestion-box"></div>');
             }
            
@@ -147,6 +154,7 @@
                     form.append(val); 
                 });
         });
+
 
         $("#deltag").click(function(){
             console.log("delete tag pressed");
@@ -158,5 +166,6 @@
 
         
     </script>
+
 </body>
 </html>

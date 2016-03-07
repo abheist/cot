@@ -19,6 +19,13 @@
    <div class="well col-md-10 col-md-offset-1">
         <a href= {{ route('users.questions.show',$user->id)}} > Questions </a> | <a href= {{ route('users.show',$user->id)}} > Answers </a>
     </div>
+    @if(!count($questions))
+        <div class="container">
+       <div class="col-md-12">
+            <center><h3>{{ $user->fname }} has not asked any question yet.</h3></center>
+        </div>
+    </div>
+    @endif
      @foreach($questions as $question)
         <div class="row">
             <div class="col-md-10 col-md-offset-1">

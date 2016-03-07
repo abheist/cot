@@ -14,7 +14,7 @@
                             No Tags Available
                         @endif
                         @foreach($question->tags as $tag)
-                         <a href="tags/{{ $tag->id }}" class="btn btn-success btn-xs">
+                         <a href="{{route('tags.show',$tag->id)}}" class="btn btn-success btn-xs">
                            {{ $tag->name }}
                         </a>
                            

@@ -66,19 +66,7 @@ class UsersController extends Controller
     public function show($user)
     {
         $user = User::find($user);
-        //$questions = Question::with('user','answers')->where('user_id',$user->id)->latest()->get();
-        /*$questions = Question::with([
-            'user',
-            'answers' => function($query) use($user){
-                    $query->where('user_id',$user->id);
-                }
-            ])->latest()->get();
-
-            */
         $answers = Answer::with('user','question')->where('user_id',$user->id)->latest()->get();
-        if($answers->isEmpty())
-            return 'No user found';
-        //var_dump($answers->first()->question->question);
         return view('useranswer',['answers' => $answers, 'user' => $user]);
     }
 
@@ -86,8 +74,6 @@ class UsersController extends Controller
     {
         $user = User::find($user);
         $questions = Question::with('user','answers')->where('user_id',$user->id)->latest()->get();
-        if($questions->isEmpty())
-            return 'No user found';
         return view('user',['questions' => $questions, 'user' => $user]);
     }
 

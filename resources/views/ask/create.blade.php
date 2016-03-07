@@ -1,15 +1,16 @@
 @extends('layouts.app')
-
+@section('title')
+    Ask Question - CotQuora
+@endsection
 @section('content')
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Ask Question</div>
+            <div class="panel panel-primary">
+                <div class="panel-heading ">Ask Question</div>
                 <div class="panel-body">
                    
                 {{ Form::open(array('method' => 'POST', 'route' => 'ask.store', 'class' => 'form-horizontal')) }}
-                 
                         <div class="form-group{{ $errors->has('question') ? ' has-error' : '' }}">
                             <label class="col-md-4 control-label">Question</label>
                             <div class="col-md-6">
@@ -22,28 +23,24 @@
                                 @endif
                             </div>
                         </div>
-                        {{ $errors->first('tag1')}}
                         <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button title="Add Tag" id="addtag" type="button" class="btn btn-sm btn-info">
-                                  <span class="glyphicon glyphicon-plus"></span>
+                            <div class="col-md-6 col-md-offset-8">
+                                <button type="button" title="Add Tag" id="addtag" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+                                    <i class="material-icons">add</i>
                                 </button>
-                                 <button title="Delete Tag" id="deltag" type="button" class="btn btn-sm btn-danger">
-                                  <span class="glyphicon glyphicon-remove"></span>
+                                <button type="button" title="Delete Tag" id="deltag" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+                                    <i class="material-icons">delete</i>
                                 </button>
                             </div>
                         </div>
-
                         <div class="form-group" id="askbtn">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                  Ask
+                                <button title="Add Question" type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+                                    Add Question
                                 </button>
                             </div>
                         </div>
-
-                {{ Form::close() }}     
-                
+               {{ Form::close() }}        
                 </div>
             </div>
         </div>

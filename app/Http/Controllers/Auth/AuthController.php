@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
-use Validator;
+use App\Followable;
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\ThrottlesLogins;
+use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Foundation\Auth\ThrottlesLogins;
+use Validator;
 
 class AuthController extends Controller
 {
@@ -67,12 +68,16 @@ class AuthController extends Controller
     protected function create(array $data)
     {
         $data = array_map('trim', $data);
-        return User::create([
+        $followable = new Followable(['type' => 1]);
+        $followable->save();
+        $user = new User([
             'fname' => $data['fname'],
             'lname' => $data['lname'],
             'gender' => $data['gender'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+        $followable->user()->save($user);
+        return $user;
     }
 }

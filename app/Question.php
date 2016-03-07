@@ -8,6 +8,8 @@ class Question extends Model
 {
     protected $fillable = ['question'];
 
+    protected $primaryKey = 'id';
+    
     public function user()
     {
     	return $this->belongsTo('App\User');
@@ -21,6 +23,11 @@ class Question extends Model
     public function tags()
     {
     	return $this->belongstoMany('App\Tag');
+    }
+
+    public function followable()
+    {
+        return $this->belongsto('App\Followable','id');
     }
 
 }

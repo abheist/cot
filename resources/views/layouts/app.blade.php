@@ -54,7 +54,7 @@
                     <li class="active"><a href="{{ route('home') }}">Home</a></li>
                      <li><a href="{{ route('users.show',Auth::id()) }}">Dashboard</a></li>
                     <li><a href="{{ route('ask.create') }}">Create</a></li>
-                    <li><a href="{{route('image.upload')}}">Uplaod Profile Picture</a></li>
+                    
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -70,7 +70,8 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ route('users.show',Auth::id()) }}"><i class="fa fa-btn fa-user"></i>Profile</a>
+                                <li><a href="{{ route('users.show',Auth::id()) }}"><i class="fa fa-btn fa-user"></i>Profile</a></li>
+                                <li><a href="{{route('image.upload')}}"><i class="fa fa-btn fa-cog"></i>Settings</a></li>
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                             </ul>
                         </li>

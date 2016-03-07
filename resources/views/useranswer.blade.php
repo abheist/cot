@@ -13,7 +13,11 @@
         </div>
         <div class="col-md-10">
             <h3>{{ $user->fname }} {{ $user->lname }}</h3>
+            @if($user->id!=Auth::id())
+                <br/><a href="{{route('users.follow',$user->id)}}" class="btn btn-primary">Follow</a>
+            @endif
         </div>
+
     </div>
     <hr>
     <div class="well col-md-10 col-md-offset-1">

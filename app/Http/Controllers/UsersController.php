@@ -77,4 +77,10 @@ class UsersController extends Controller
         return view('user',['questions' => $questions, 'user' => $user]);
     }
 
+
+    public function follow($user)
+    {
+        return Auth::id()." wants to follow ".$user;
+    }
+
 }

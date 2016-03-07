@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTagsTable extends Migration
+class CreateFollowablesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,9 @@ class CreateTagsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tags', function (Blueprint $table) {
-            $table->integer('id')->unsigned();
-            $table->string('name');
-            $table->foreign('id')->references('id')->on('followables');
+        Schema::create('followables', function (Blueprint $table) {
+            $table->increments('id');
+            $table->tinyInteger('type');
             $table->timestamps();
         });
     }
@@ -27,6 +26,6 @@ class CreateTagsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('tags');
+        Schema::drop('followables');
     }
 }

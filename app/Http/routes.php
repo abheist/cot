@@ -34,6 +34,8 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('imageupload',['as' => 'image.upload', 'uses' => 'ImageController@upload']);
      Route::post('imageupload',['as' => 'image.store', 'uses' => 'ImageController@store']);
+   
+
     Route::get('/',['as' => 'home', 'uses' => 'HomeController@index']);
 
     Route::post('/readtags', 'AskController@readtags');
@@ -51,5 +53,6 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::resource('ask','AskController');
 
+    Route::get('/follow/{user}', ['as' => 'users.follow', 'uses' => 'UsersController@follow']);
 
 });

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Answer;
+use App\Followable;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\Question;
@@ -45,15 +46,23 @@ class AskController extends Controller
 
     	$input = $request->except('_token'); 
     	$input = array_map('trim',$input);
+        
+        $followable = new Followable(['type' => 2]);
+        $followable->save();
     	$question = new Question($input);
-    	$user = User::find(Auth::id());
-    	$user->questions()->save($question);
+        $user = User::find(Auth::id());
+        $question->followable()->associate($followable);
+        $question->user()->associate($user);
+    	$question->save();
+        $question = Question::find($followable->id); //retrieving only the question to save tag
     	if(isset($input['tag1'])){
     		$tag1 = Tag::where('name','=',$input['tag1'])->first();
     		if($tag1==null && !empty($input['tag1'])){
+                $followable = new Followable(['type' => 3]);
+                $followable->save();
     			$tag = new Tag(['name' => $input['tag1']]);
-    			$tag->save();
-    			$question->tags()->attach($tag->id);
+    			$followable->tag()->save($tag);
+    			$question->tags()->attach($followable->id);
     		}
     		else
     			$question->tags()->attach($tag1->id);	
@@ -61,9 +70,11 @@ class AskController extends Controller
     	if(isset($input['tag2'])){
 			$tag2 = Tag::where('name','=',$input['tag2'])->first();
 			if($tag2==null && !empty($input['tag2'])){
+                $followable = new Followable(['type' => 3]);
+                $followable->save();
     			$tag = new Tag(['name' => $input['tag2']]);
-    			$tag->save();
-    			$question->tags()->attach($tag->id);
+    			$followable->tag()->save($tag);
+    			$question->tags()->attach($followable->id);
     		}
     		else
     			$question->tags()->attach($tag2->id);	
@@ -71,14 +82,18 @@ class AskController extends Controller
     	if(isset($input['tag3'])){
     		$tag3 = Tag::where('name','=',$input['tag3'])->first();
     		if($tag3==null && !empty($input['tag3'])){
+                $followable = new Followable(['type' => 3]);
+                $followable->save();
     			$tag = new Tag(['name' => $input['tag3']]);
-    			$tag->save();
-    			$question->tags()->attach($tag->id);
+    			$followable->tag()->save($tag);
+    			$question->tags()->attach($followable->id);
     		}
     		else
     			$question->tags()->attach($tag3->id);	
     	}
     	return Redirect::route('home');
+
+        
     }
 
     public function answer($question)

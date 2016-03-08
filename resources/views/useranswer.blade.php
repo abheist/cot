@@ -12,10 +12,11 @@
             <img src="../profile_default.png" class="img-circle" alt="Profile Pic" height="150">
         </div>
         <div class="col-md-10">
-            <h3>{{ $user->fname }} {{ $user->lname }}</h3>
+            <h3>{{ $user->fname }} {{ $user->lname }}</h3><br/>
             @if($user->id!=Auth::id())
-                <br/><a href="{{route('users.follow',$user->id)}}" class="btn btn-primary">Follow</a>
-            @endif
+              
+                    <a href="{{route('users.follow',$user->id)}}" class="btn btn-primary ">Follow</a>
+                           @endif
         </div>
 
     </div>

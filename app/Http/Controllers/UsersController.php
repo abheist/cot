@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Answer;
+use App\Followable;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\Question;
@@ -66,8 +67,9 @@ class UsersController extends Controller
     public function show($user)
     {
         $user = User::find($user);
-        $answers = Answer::with('user','question')->where('user_id',$user->id)->latest()->get();
-        return view('useranswer',['answers' => $answers, 'user' => $user]);
+        return $user->followables;
+        //$answers = Answer::with('user','question')->where('user_id',$user->id)->latest()->get();
+        //return view('useranswer',['answers' => $answers, 'user' => $user, 'followers' => $followers]);
     }
 
     public function showquestions($user)
@@ -80,7 +82,10 @@ class UsersController extends Controller
 
     public function follow($user)
     {
-        return Auth::id()." wants to follow ".$user;
+        $followable = Followable::find($user);
+        $user = Auth::user();    
+        $user->followables()->attach($followable->id);
+        return Redirect::back();
     }
 
 }

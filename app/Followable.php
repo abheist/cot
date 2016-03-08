@@ -13,6 +13,8 @@ class Followable extends Model
     	return $this->hasOne('App\User','id');
     }
 
+ 
+    
     public function question()
     {
     	return $this->hasOne('App\Question','id');

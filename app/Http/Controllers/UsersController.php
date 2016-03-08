@@ -67,9 +67,17 @@ class UsersController extends Controller
     public function show($user)
     {
         $user = User::find($user);
-        return $user->followables;
-        //$answers = Answer::with('user','question')->where('user_id',$user->id)->latest()->get();
-        //return view('useranswer',['answers' => $answers, 'user' => $user, 'followers' => $followers]);
+
+       foreach($user->followers as $follower){
+            if($follower->id == Auth::id()){
+                $follow = 1;
+            }
+            else
+                $follow = 0;
+        }
+        $answers = Answer::with('user','question')->where('user_id',$user->id)->latest()->get();
+        return view('useranswer',['answers' => $answers, 'user' => $user, 'follow' => $follow]);
+
     }
 
     public function showquestions($user)
@@ -80,11 +88,10 @@ class UsersController extends Controller
     }
 
 
+
     public function follow($user)
     {
-        $followable = Followable::find($user);
-        $user = Auth::user();    
-        $user->followables()->attach($followable->id);
+        Auth::user()->following()->save(User::find($user));
         return Redirect::back();
     }
 

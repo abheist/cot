@@ -55,4 +55,5 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('/follow/{user}', ['as' => 'users.follow', 'uses' => 'UsersController@follow']);
 
+
 });

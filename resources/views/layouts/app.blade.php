@@ -70,8 +70,10 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ route('users.show',Auth::id()) }}"><i class="fa fa-btn fa-user"></i>Profile</a></li>
-                                <li><a href="{{route('image.upload')}}"><i class="fa fa-btn fa-cog"></i>Settings</a></li>
+
+                                <li><a href="{{ route('users.show',Auth::id()) }}"><i class="fa fa-btn fa-user"></i>Profile</a>
+                                <li><a href="{{route('image.upload')}}"><i class="fa fa-btn fa-gear"></i>Settings</a></li>
+
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                             </ul>
                         </li>

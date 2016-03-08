@@ -25,9 +25,5 @@ class Question extends Model
     	return $this->belongstoMany('App\Tag');
     }
 
-    public function followable()
-    {
-        return $this->belongsto('App\Followable','id');
-    }
 
 }

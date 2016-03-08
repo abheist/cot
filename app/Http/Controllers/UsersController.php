@@ -66,8 +66,15 @@ class UsersController extends Controller
     public function show($user)
     {
         $user = User::find($user);
+        foreach($user->followers as $follower){
+            if($follower->id == Auth::id()){
+                $follow = 1;
+            }
+            else
+                $follow = 0;
+        }
         $answers = Answer::with('user','question')->where('user_id',$user->id)->latest()->get();
-        return view('useranswer',['answers' => $answers, 'user' => $user]);
+        return view('useranswer',['answers' => $answers, 'user' => $user, 'follow' => $follow]);
     }
 
     public function showquestions($user)
@@ -77,4 +84,9 @@ class UsersController extends Controller
         return view('user',['questions' => $questions, 'user' => $user]);
     }
 
+    public function follow($user)
+    {
+        Auth::user()->following()->save(User::find($user));
+        return Redirect::back();
+    }
 }

@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="container spark-screen">
-        <a href="tags/{{ $tag->id }}" class="btn btn-success btn-lg">
+        <a href="{{route('tags.show',$tag->id) }}" class="btn btn-success btn-lg">
             <span class="glyphicon glyphicon-tag"></span>&nbsp;{{ $tag->name }}
         </a>
         <hr>

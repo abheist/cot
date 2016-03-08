@@ -23,4 +23,8 @@ class Question extends Model
     	return $this->belongstoMany('App\Tag');
     }
 
+    public function followables()
+    {
+        return $this->morphToMany('App\User','followable');
+    }
 }

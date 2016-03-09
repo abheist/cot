@@ -83,8 +83,16 @@ class UsersController extends Controller
     public function showquestions($user)
     {
         $user = User::find($user);
+        $follow=0;
+        foreach($user->followers as $follower){
+            if($follower->id == Auth::id()){
+                $follow = 1;
+            }
+            else
+                $follow = 0;
+        }
         $questions = Question::with('user','answers')->where('user_id',$user->id)->latest()->get();
-        return view('user',['questions' => $questions, 'user' => $user]);
+        return view('user',['questions' => $questions, 'user' => $user,'follow'=> $follow]);
     }
 
 

@@ -40,8 +40,6 @@ class AskController extends Controller
             'tag2' => 'sometimes|required|different:tag1',
             'tag3' => 'sometimes|required|different:tag1,tag2',
             ));
-
-
         $input = $request->except('_token'); 
         $input = array_map('trim',$input);
         $question = new Question($input);

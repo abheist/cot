@@ -68,16 +68,14 @@ class AuthController extends Controller
     protected function create(array $data)
     {
         $data = array_map('trim', $data);
-        $followable = new Followable(['type' => 1]);
-        $followable->save();
-        $user = new User([
+        
+        return User::create([
             'fname' => $data['fname'],
             'lname' => $data['lname'],
             'gender' => $data['gender'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
-        $followable->user()->save($user);
-        return $user;
+        
     }
 }

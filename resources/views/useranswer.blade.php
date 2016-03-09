@@ -15,14 +15,16 @@
 
             <h3>{{ $user->fname }} {{ $user->lname }}</h3>
             <br/>
-            @if(!$follow)
-                 <a href="{{route('users.follow',$user->id)}}" class="btn btn-primary">
-                    Follow
-                </a>
-            @else
-             <a href="{{route('users.follow',$user->id)}}" class="btn btn-primary disabled">
-                    Following
+            @if($user->id!=Auth::id())
+                @if($follow==0)
+                     <a href="{{route('users.follow',$user->id)}}" class="btn btn-primary">
+                        Follow
                     </a>
+                @else
+                 <a href="{{route('users.follow',$user->id)}}" class="btn btn-primary disabled">
+                        Following
+                        </a>
+                @endif
             @endif
              
 

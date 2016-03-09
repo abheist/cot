@@ -36,6 +36,8 @@ class AskController extends Controller
 
     public function store(Request $request)
     {
+
+    
     	$this->validate($request,array(
     		'question' => 'required|min:5',
     		'tag1' => 'sometimes|required',
@@ -47,7 +49,7 @@ class AskController extends Controller
     	$input = $request->except('_token'); 
     	$input = array_map('trim',$input);
         
-        $followable = new Followable(['type' => 2]);
+       $followable = new Followable(['type' => 2]);
         $followable->save();
     	$question = new Question($input);
         $user = User::find(Auth::id());
@@ -93,7 +95,7 @@ class AskController extends Controller
     	}
     	return Redirect::route('home');
 
-        
+    
     }
 
     public function answer($question)

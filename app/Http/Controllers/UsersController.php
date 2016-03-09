@@ -67,8 +67,8 @@ class UsersController extends Controller
     public function show($user)
     {
         $user = User::find($user);
-
-       foreach($user->followers as $follower){
+        $follow=0;
+        foreach($user->followers as $follower){
             if($follower->id == Auth::id()){
                 $follow = 1;
             }

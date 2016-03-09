@@ -22,7 +22,7 @@
                     </a>
                 @else
                  <a href="{{route('users.follow',$user->id)}}" class="btn btn-primary disabled">
-                        Following
+                        Following <span class="badge">{{ count($user->followers)}}</span>
                         </a>
                 @endif
             @endif

@@ -29,9 +29,9 @@
                                 <br/>
 
                                 @if(!in_array($answer->id,$user_bookmarks))
-                                    <a href="{{ route('answers.bookmark',$answer->id)}}"><span class="glyphicon glyphicon-bookmark">Add to Reading List</span></a>
+                                    <a title="Add to Reading List" class="btn btn-xs btn-primary" href="{{ route('answers.bookmark',$answer->id)}}"><span class="glyphicon glyphicon-bookmark"></span></a>
                                 @else
-                                    <a href="{{route('users.bookmarks.show')}}"><span class="glyphicon glyphicon-bookmark">View Bookmarks</span></a>
+                                    <a title="View Bookmarks" class="btn btn-xs btn-success" href="{{route('users.bookmarks.show')}}"><span class="glyphicon glyphicon-bookmark"></span></a>
                                 @endif
                             </div>
                         @endforeach

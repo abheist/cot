@@ -17,4 +17,9 @@ class Answer extends Model
 	{
 		return $this->belongsTo('App\Question');
 	}
+
+	public function bookmarkedby()
+	{
+		return $this->belongstoMany('App\User','user_bookmarks')->withTimestamps();
+	}
 }

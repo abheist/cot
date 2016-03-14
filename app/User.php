@@ -49,5 +49,8 @@ class User extends Authenticatable
         return $this->morphedByMany('App\User','followable','followables','user_id','followable_id');
     }
 
-
+    public function bookmarks()
+    {
+        return $this->belongstoMany('App\Answer','user_bookmarks')->withTimestamps();
+    }
 }

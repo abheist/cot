@@ -9,7 +9,11 @@
     
     <div class="container">
        <div class="col-md-2">
-            <img src="../profile_default.png" class="img-circle" alt="Profile Pic" height="150">
+            @if($user->gender=="M")
+                <img src="../profile_default.png" class="img-circle" alt="Profile Pic" height="150">
+            @else
+                <img src="../profile_women.png" class="img-circle" alt="Profile Pic" height="150">
+            @endif
         </div>
         <div class="col-md-10">
 
@@ -17,9 +21,10 @@
             <br/>
             @if($user->id!=Auth::id())
                 @if($follow==0)
-                     <a href="{{route('users.follow',$user->id)}}" class="btn btn-primary">
+                <!--href="{{route('users.follow',$user->id)}}"-->
+                     <button id="follow" class="btn btn-primary">
                         Follow
-                    </a>
+                    </button>
                 @else
                  <a href="{{route('users.follow',$user->id)}}" class="btn btn-primary disabled">
                         Following <span class="badge">{{ count($user->followers)}}</span>

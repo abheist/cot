@@ -26,6 +26,13 @@
                          <span class="label label-info">{{ $answer->user->fname }} {{ $answer->user->lname }} </span></a> <br/>
                                <small> {{ date_format($answer->created_at, 'g:i A \o\n l jS F Y') }} </small>      <br/>
                                 {{ $answer->answer }} 
+                                <br/>
+
+                                @if(!in_array($answer->id,$user_bookmarks))
+                                    <a href="{{ route('answers.bookmark',$answer->id)}}"><span class="glyphicon glyphicon-bookmark">Add to Reading List</span></a>
+                                @else
+                                    <a href="{{route('users.bookmarks.show')}}"><span class="glyphicon glyphicon-bookmark">View Bookmarks</span></a>
+                                @endif
                             </div>
                         @endforeach
                       @else

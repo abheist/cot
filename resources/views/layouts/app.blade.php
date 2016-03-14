@@ -165,7 +165,9 @@
             lasttag.remove()
         });
 
-       
+       $("#follow").click(function(){
+            console.log("follow clicked");
+       });
 
         
     </script>

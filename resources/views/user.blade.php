@@ -9,7 +9,11 @@
     
     <div class="container">
        <div class="col-md-2">
-            <img src="../../profile_default.png" class="img-circle" alt="Profile Pic" height="150">
+            @if($user->gender=="M")
+                <img src="../../profile_default.png" class="img-circle" alt="Profile Pic" height="150">
+            @else
+                <img src="../../profile_women.png" class="img-circle" alt="Profile Pic" height="150">
+            @endif
         </div>
         <div class="col-md-10">
             <h3>{{ $user->fname }} {{ $user->lname }}</h3>

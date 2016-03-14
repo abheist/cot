@@ -55,5 +55,7 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('/follow/{user}', ['as' => 'users.follow', 'uses' => 'UsersController@follow']);
 
+    Route::get('/bookmark/{answer}', ['as' => "answers.bookmark" , 'uses' => 'AskController@bookmark']);
 
+    Route::get('/bookmarks', ['as' => "users.bookmarks.show",'uses' => 'AskController@showbookmarks']);
 });

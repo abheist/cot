@@ -118,4 +118,18 @@ class AskController extends Controller
         $question = Question::find($question);
         return view('question',['question' => $question]);
    }
+
+   public function bookmark($answer)
+   {
+        Auth::user()->bookmarks()->attach($answer);
+        return Redirect::back();
+   }
+
+   public function showbookmarks()
+   {
+        $user = Auth::user();
+        $bookmarks = $user::with('bookmarks')->latest()->first();
+       // echo $bookmarks->bookmarks;
+        return view('showbookmarks',['bookmarks'=>$bookmarks]);
+    }
 }

@@ -21,17 +21,15 @@
             <br/>
             @if($user->id!=Auth::id())
                 @if($follow==0)
-                <!--href="{{route('users.follow',$user->id)}}"-->
-                     <button id="follow" class="btn btn-primary">
+                     <a href="{{route('users.follow',$user->id)}}" class="btn btn-primary">
                         Follow
-                    </button>
+                    </a>
                 @else
-                 <a href="{{route('users.follow',$user->id)}}" class="btn btn-primary disabled">
+                    <a href="{{route('users.follow',$user->id)}}" class="btn btn-primary disabled">
                         Following <span class="badge">{{ count($user->followers)}}</span>
-                        </a>
+                    </a>
                 @endif
             @endif
-             
 
         </div>
 

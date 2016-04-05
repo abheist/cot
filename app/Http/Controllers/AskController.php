@@ -126,10 +126,17 @@ class AskController extends Controller
    }
 
    public function showbookmarks()
-   {
-        $user = Auth::user();
-        $bookmarks = $user::with('bookmarks')->latest()->first();
-       // echo $bookmarks->bookmarks;
-        return view('showbookmarks',['bookmarks'=>$bookmarks]);
+    {
+        return view('showbookmarks');
     }
+
+    public function follow($question)
+    {
+        $question = Question::find($question);
+        Auth::user()->following_questions()->save($question);
+        return Redirect::back();
+    }
+
+
 }
+

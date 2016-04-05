@@ -40,7 +40,13 @@ class HomeController extends Controller
         $user_bookmarks = array();
         foreach(Auth::user()->bookmarks as $bookmark)
             array_push($user_bookmarks, $bookmark->pivot->answer_id);
-        return view('home',['questions' => $questions,'user_bookmarks' => $user_bookmarks]);
+
+        $wantquestions = Auth::user()->following_questions()->get();
+        $wids = array();
+       foreach($wantquestions as $question)
+            array_push($wids,$question->id);
+
+        return view('home',['questions' => $questions,'user_bookmarks' => $user_bookmarks,'wids' => $wids]);
         
     }
 

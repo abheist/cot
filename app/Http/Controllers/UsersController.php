@@ -99,8 +99,14 @@ class UsersController extends Controller
 
     public function follow($user)
     {
-        Auth::user()->following()->save(User::find($user));
-        return Redirect::back();
+       Auth::user()->following()->save(User::find($user));
+    return Redirect::back();
     }
 
+    public function wantanswers()
+    {
+       $wantquestions = Auth::user()->following_questions()->get();
+        return view('showwantanswers',['questions' => $wantquestions]);
+
+    }
 }

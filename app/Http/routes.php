@@ -62,4 +62,6 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/wantanswer/{question}',['as' => "questions.follow",'uses' => 'AskController@follow']);
 
     Route::get('/wantanswers',['as' => "users.wantanswers.show",'uses' => 'UsersController@wantanswers']);
+
+    Route::delete('/wantanswers/{question}',['as' => 'users.wantanswers.destroy', 'uses' => 'UsersController@destroywantanswer']);
 });

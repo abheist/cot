@@ -33,12 +33,13 @@
                                <small> {{ date_format($answer->created_at, 'g:i A \o\n l jS F Y') }} </small>      <br/>
                                 {{ $answer->answer }} 
                                 <br/>
-
+                                 <a href="#" class="btn btn-primary btn-xs">Upvote</a>
                                 @if(!in_array($answer->id,$user_bookmarks))
-                                    <a title="Add to Reading List" class="btn btn-xs btn-primary" href="{{ route('answers.bookmark',$answer->id)}}"><span class="glyphicon glyphicon-bookmark"></span></a>
+                                    <a title="Add to Reading List" class="pull-right btn btn-xs btn-primary" href="{{ route('answers.bookmark',$answer->id)}}"><span class="glyphicon glyphicon-bookmark"></span></a>
                                 @else
-                                    <a title="View Bookmarks" class="btn btn-xs btn-success" href="{{route('users.bookmarks.show')}}"><span class="glyphicon glyphicon-bookmark"></span></a>
+                                    <a title="View Bookmarks" class="pull-right btn btn-xs btn-success" href="{{route('users.bookmarks.show')}}"><span class="glyphicon glyphicon-bookmark"></span></a>
                                 @endif
+
                             </div>
                         @endforeach
                       @else

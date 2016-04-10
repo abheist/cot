@@ -54,6 +54,10 @@ class User extends Authenticatable
         return $this->morphedByMany('App\Question','followable','followables','user_id','followable_id');
     }
 
+    public function following_tags()
+    {
+        return $this->morphedByMany('App\Tag','followable','followables','user_id','followable_id');
+    }
  
     public function bookmarks()
     {

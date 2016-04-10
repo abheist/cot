@@ -14,4 +14,9 @@ class Tag extends Model
 	{
 		return $this->belongstoMany('App\Question');
 	}
+
+  	public function followers()
+    {
+        return $this->morphToMany('App\User','followable','followables','followable_id','user_id');
+    }
 }

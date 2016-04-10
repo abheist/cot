@@ -67,4 +67,8 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('/profile/{user}/addbio',['as'=>'user.addbio','uses'=>'UsersController@createbio']);
     Route::patch('/profile/{user}/addbio',['as'=>'user.updatebio','uses'=>'UsersController@updatebio']);
+
+
+    Route::get('/tags/{tag}/follow',['as' => 'tag.follow','uses' => 'AskController@followtag']);
+    Route::get('/tags/{tag}/unfollow',['as' => 'tag.unfollow','uses' => 'AskController@unfollowtag']);
 });

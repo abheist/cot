@@ -110,7 +110,15 @@ class AskController extends Controller
    public function showtags($tag)
    {    
         $tag = Tag::find($tag);
-        return view('tag',['tag' => $tag ]);
+        $follow=0;
+        foreach($tag->followers as $follower){
+            if($follower->id == Auth::id()){
+                $follow = 1;
+            }
+            else
+                $follow = 0;
+        }    
+        return view('tag',['tag' => $tag, 'follow' => $follow ]);
    }
 
    public function showquestions($question)
@@ -137,6 +145,18 @@ class AskController extends Controller
         return Redirect::back();
     }
 
+    public function followtag($tag)
+    {
+        $tag = Tag::find($tag);
+        Auth::user()->following_tags()->save($tag);
+        return Redirect::back();
+    }
 
+    public function unfollowtag($tag)
+    {
+        $tag = Tag::find($tag);
+        Auth::user()->following_tags()->detach($tag);
+        return Redirect::back();
+    }
 }
 

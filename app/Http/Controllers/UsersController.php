@@ -128,6 +128,6 @@ class UsersController extends Controller
         $user = User::find($user);
         $user->bio = $request->bio;
         $user->save();
-        var_dump($request->all());
+        return Redirect::route('users.show',['user' => $user->id]);
     }
 }

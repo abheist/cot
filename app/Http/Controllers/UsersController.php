@@ -114,4 +114,20 @@ class UsersController extends Controller
         Auth::user()->following_questions()->detach($question);
         return Redirect::back();
     }
+
+    public function createbio($user)
+    {
+        return view('addbio',['user' => $user]);
+    }
+
+    public function updatebio(Request $request, $user)
+    {
+        $this->validate($request,[
+            'bio' => 'required|min:3'
+            ]);
+        $user = User::find($user);
+        $user->bio = $request->bio;
+        $user->save();
+        var_dump($request->all());
+    }
 }

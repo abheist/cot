@@ -17,7 +17,6 @@
         </div>
         <div class="col-md-10">
             <h3>{{ $user->fname }} {{ $user->lname }}</h3>
-            <br/>
             @if($user->id!=Auth::id())
                 @if($follow==0)
                      <a href="{{route('users.follow',$user->id)}}" class="btn btn-primary">
@@ -28,6 +27,12 @@
                         Following <span class="badge">{{ count($user->followers)}}</span>
                     </a>
                 @endif
+            @else
+                @if(empty($user->bio))
+                        <a id="addbio" href="{{ route('user.addbio',$user->id)}}">Add Bio</a>
+                @else
+                    <h4> {{ $user->bio }} </h4>
+                    @endif
             @endif
         </div>
     </div>

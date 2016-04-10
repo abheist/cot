@@ -64,4 +64,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/wantanswers',['as' => "users.wantanswers.show",'uses' => 'UsersController@wantanswers']);
 
     Route::delete('/wantanswers/{question}',['as' => 'users.wantanswers.destroy', 'uses' => 'UsersController@destroywantanswer']);
+
+    Route::get('/profile/{user}/addbio',['as'=>'user.addbio','uses'=>'UsersController@createbio']);
+    Route::patch('/profile/{user}/addbio',['as'=>'user.updatebio','uses'=>'UsersController@updatebio']);
 });

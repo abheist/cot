@@ -54,6 +54,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::resource('ask','AskController');
 
     Route::get('/follow/{user}', ['as' => 'users.follow', 'uses' => 'UsersController@follow']);
+    Route::get('/unfollow/{user}', ['as' => 'users.unfollow', 'uses' => 'UsersController@unfollow']);
 
     Route::get('/bookmark/{answer}', ['as' => "answers.bookmark" , 'uses' => 'AskController@bookmark']);
 

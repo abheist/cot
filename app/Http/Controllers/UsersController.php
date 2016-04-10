@@ -101,6 +101,14 @@ class UsersController extends Controller
     {
         Auth::user()->following()->save(User::find($user));
         return Redirect::back();
+
+    }
+
+    public function unfollow($user)
+    {
+        Auth::user()->following()->detach(User::find($user));
+        return Redirect::back();
+       
     }
 
     public function wantanswers()

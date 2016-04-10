@@ -170,9 +170,7 @@
             console.log("follow clicked");
        });
 
-        $("#addbio").click(function(){
-            console.log("Add Bio Clicked");
-        })
+   
     </script>
 
 </body>

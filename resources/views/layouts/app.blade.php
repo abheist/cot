@@ -113,16 +113,20 @@
             $(document).on('keyup',"input:text", function(e){
                 var keyword = $(this).val();
                 console.log("key"+keyword.length);
-
+   
                 if(keyword.length>0){
                 e.preventDefault();
+                console.log("before");
+                var token = $(this).data('tagtoken');
+               
                 var sendData = {
                     keyword:keyword,
-                    _token:$(this).data('token')
+                    _token:$(this).data('tagtoken')
                 }
+                console.log("reached");
                  $.ajax({
                     type: "POST",
-                    url: "/cotblog/public/readtags",
+                    url: "/readtags",
                     data: sendData,
                     dataType: 'json',
                     success: function(data){

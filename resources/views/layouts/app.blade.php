@@ -166,11 +166,61 @@
             lasttag.remove()
         });
 
-       $("#follow").click(function(){
-            console.log("follow clicked");
+       $("#follow").click(function(e){
+            e.preventDefault();
+            var content = $("#follow").html();
+            console.log(content);
+            if(content=="Follow")
+            {
+                console.log(content);
+                var usertofollow = $("#userid").val();
+                var token = $("#token").val();
+                console.log(usertofollow);
+                var sendId = {
+                    usertofollow:usertofollow,
+                    _token:token
+                }
+                console.log("reached");
+                $.ajax({
+                     type: "POST",
+                        url: "/follow",
+                        data: sendId,
+                        dataType: 'json',
+                        success: function(data){
+                          console.log("success");
+                          var followers = data.followers;
+                          $("#follow").html('Unfollow <span class="badge">'+followers+'</span>');
+                            $("#follow").removeClass("btn-primary");
+                            $("#follow").addClass("btn-danger");
+                        }
+                });
+            }
+            else
+            {
+                console.log("unfollow");
+                var usertounfollow = $("#userid").val();
+                var token = $("#token").val();
+                console.log(usertounfollow);
+                var sendId = {
+                    usertounfollow:usertounfollow,
+                    _token:token
+                }
+                console.log("reached here");
+                $.ajax({
+                    type: "POST",
+                    url: "/unfollow",
+                    data: sendId,
+                    dataType: 'json',
+                    success: function(data){
+                        console.log("success");
+                        $("#follow").html('Follow');
+                        $("#follow").removeClass("btn-danger");
+                        $("#follow").addClass("btn-primary");
+                    }
+                });
+            }
        });
 
-   
     </script>
 
 </body>

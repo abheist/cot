@@ -72,4 +72,7 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('/tags/{tag}/follow',['as' => 'tag.follow','uses' => 'AskController@followtag']);
     Route::get('/tags/{tag}/unfollow',['as' => 'tag.unfollow','uses' => 'AskController@unfollowtag']);
+
+    Route::post('/follow',['as' => 'user.follow','uses' => 'UsersController@userfollow']);
+    Route::post('/unfollow',['as' => 'user.unfollow','uses' => 'UsersController@userunfollow']);
 });

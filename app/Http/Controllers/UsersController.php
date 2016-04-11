@@ -11,6 +11,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 
 class UsersController extends Controller
@@ -137,5 +138,23 @@ class UsersController extends Controller
         $user->bio = $request->bio;
         $user->save();
         return Redirect::route('users.show',['user' => $user->id]);
+    }
+
+    public function userfollow(Request $request)
+    {
+        //return Redirect::back();
+        $input = Input::all();
+        $usertofollow = User::find($input['usertofollow']);
+        Auth::user()->following()->save($usertofollow);
+        return response()->json(array('success' => true,'userto' => $usertofollow,'followers' => count($usertofollow->followers)));
+
+    }
+
+    public function userunfollow(Request $request)
+    {
+        $input = Input::all();
+        $usertounfollow = User::find($input['usertounfollow']);
+        Auth::user()->following()->detach($usertounfollow);
+        return response()->json(array('success' => true));       
     }
 }

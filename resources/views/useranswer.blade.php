@@ -25,16 +25,14 @@
            
             @if($user->id!=Auth::id())
                 @if($follow==0)
-                     <a id="followuser" href="{{route('users.follow',$user->id)}}" class="btn btn-primary">
-                        Follow
-                    </a>
-                     <input type="hidden" id="userid" value="{{$user->id}}">
+                     <a id="follow" href="{{route('users.follow',$user->id)}}" class="btn btn-primary">Follow</a>
                 @else
-                    <a href="{{route('users.unfollow',$user->id)}}" class="btn btn-primary ">
+                    <a id="follow" href="{{route('users.unfollow',$user->id)}}" class="btn btn-danger">
                         Unfollow <span class="badge">{{ count($user->followers)}}</span>
                     </a>
-
                 @endif
+                <input type="hidden" id="userid" value="{{$user->id}}">
+                <input type="hidden" id="token" value="{{ csrf_token()}}"></input>
              @endif
        
 

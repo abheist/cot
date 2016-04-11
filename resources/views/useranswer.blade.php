@@ -34,7 +34,6 @@
                 
                 <input type="hidden" id="token" value="{{ csrf_token()}}"></input>
              @endif
-        <input type="hidden" id="userid" value="{{$user->id}}">
 
         </div>
 
@@ -78,4 +77,81 @@
         </div>
     @endforeach
 </div>
+@endsection
+
+@section('scripts')
+$("#follow").click(function(e){
+            e.preventDefault();
+            var content = $("#follow").html();
+            console.log(content);
+            if(content=="Follow")
+            {
+                console.log(content);
+                var usertofollow = {{$user->id}};
+                var token = $("#token").val();
+                console.log(usertofollow);
+                var sendId = {
+                    usertofollow:usertofollow,
+                    _token:token
+                }
+                console.log("reached");
+                $.ajax({
+                     type: "POST",
+                        url: "/follow",
+                        data: sendId,
+                        dataType: 'json',
+                        success: function(data){
+                          console.log("success");
+                          var followers = data.followers;
+                          $("#follow").html('Unfollow <span class="badge">'+followers+'</span>');
+                            $("#follow").removeClass("btn-primary");
+                            $("#follow").addClass("btn-danger");
+                        }
+                });
+            }
+            else
+            {
+                console.log("unfollow");
+                var usertounfollow = {{$user->id}};
+                var token = $("#token").val();
+                console.log(usertounfollow);
+                var sendId = {
+                    usertounfollow:usertounfollow,
+                    _token:token
+                }
+                console.log("reached here");
+                $.ajax({
+                    type: "POST",
+                    url: "/unfollow",
+                    data: sendId,
+                    dataType: 'json',
+                    success: function(data){
+                        console.log("success");
+                        $("#follow").html('Follow');
+                        $("#follow").removeClass("btn-danger");
+                        $("#follow").addClass("btn-primary");
+                    }
+                });
+            }
+       });
+ $("#bio").hover(
+            function(e){
+                e.preventDefault();
+                var userid = {{Auth::id()}}
+                var viewuserid = {{$user->id}};
+                if(userid==viewuserid)
+                {
+                    var route = 'user.addbio';
+                    var link = '<a href='+userid+'/addbio>Edit Bio</a>';
+                    console.log(link);
+                    $("#bio").append(link);
+                }
+           },
+           function(e){
+                e.preventDefault();
+                $(this).find('a:first').remove();
+           }
+
+        );
+
 @endsection

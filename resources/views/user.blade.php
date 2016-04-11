@@ -15,7 +15,7 @@
                 <img src="../../profile_women.png" class="img-circle" alt="Profile Pic" height="150">
             @endif
         </div>
-          <div class="col-md-10">
+         <div class="col-md-10">
 
             <h3>{{ $user->fname }} {{ $user->lname }}</h3>
             @if(($user->id==Auth::id()) && (empty($user->bio)))
@@ -31,9 +31,9 @@
                         Unfollow <span class="badge">{{ count($user->followers)}}</span>
                     </a>
                 @endif
+                
                 <input type="hidden" id="token" value="{{ csrf_token()}}"></input>
              @endif
-       <input type="hidden" id="userid" value="{{$user->id}}">
 
         </div>
     </div>

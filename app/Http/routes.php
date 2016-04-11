@@ -53,9 +53,6 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::resource('ask','AskController');
 
-    Route::get('/follow/{user}', ['as' => 'users.follow', 'uses' => 'UsersController@follow']);
-    Route::get('/unfollow/{user}', ['as' => 'users.unfollow', 'uses' => 'UsersController@unfollow']);
-
     Route::get('/bookmark/{answer}', ['as' => "answers.bookmark" , 'uses' => 'AskController@bookmark']);
 
     Route::get('/bookmarks', ['as' => "users.bookmarks.show",'uses' => 'AskController@showbookmarks']);
@@ -75,4 +72,5 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::post('/follow',['as' => 'user.follow','uses' => 'UsersController@userfollow']);
     Route::post('/unfollow',['as' => 'user.unfollow','uses' => 'UsersController@userunfollow']);
+
 });

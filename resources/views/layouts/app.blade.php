@@ -225,6 +225,27 @@
             }
        });
 
+
+       $("#bio").hover(
+            function(e){
+                e.preventDefault();
+                var userid = {{Auth::id()}}
+                var viewuserid = $("#userid").val();
+                if(userid==viewuserid)
+                {
+                    var route = 'user.addbio';
+                    var link = '<a href='+userid+'/addbio>Edit Bio</a>';
+                    console.log(link);
+                    $("#bio").append(link);
+                }
+           },
+           function(e){
+                e.preventDefault();
+                $(this).find('a:first').remove();
+           }
+
+        );
+       
     </script>
 
 </body>

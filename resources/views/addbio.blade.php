@@ -12,10 +12,10 @@
                    
                 {{ Form::model($user,array('method' => 'patch', 'route' => array('user.updatebio',$user),  'class' => 'form-horizontal')) }}
                         <div class="form-group{{ $errors->has('bio') ? ' has-error' : '' }}">
-                            <label class="col-md-4 control-label">Bio</label>
+                            <!--<label class="col-md-4 control-label">Bio</label>-->
+                            {{ Form::label('bio','Bio',['class' => 'col-md-4 control-label' ])}}
                             <div class="col-md-6">
-                                <textarea class="form-control" name="bio" >{{ old('bio') }}
-                                </textarea>
+                               {{Form::textarea('bio',null,['class' => 'form-control', 'rows' => '5'])}}
                                 @if ($errors->has('bio'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('bio') }}</strong>

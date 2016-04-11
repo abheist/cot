@@ -96,22 +96,6 @@ class UsersController extends Controller
         return view('user',['questions' => $questions, 'user' => $user,'follow'=> $follow]);
     }
 
-
-
-    public function follow($user)
-    {
-        Auth::user()->following()->save(User::find($user));
-        return Redirect::back();
-
-    }
-
-    public function unfollow($user)
-    {
-        Auth::user()->following()->detach(User::find($user));
-        return Redirect::back();
-       
-    }
-
     public function wantanswers()
     {
        $wantquestions = Auth::user()->following_questions()->get();
@@ -126,6 +110,7 @@ class UsersController extends Controller
 
     public function createbio($user)
     {
+        $user = User::find($user);
         return view('addbio',['user' => $user]);
     }
 
@@ -142,7 +127,6 @@ class UsersController extends Controller
 
     public function userfollow(Request $request)
     {
-        //return Redirect::back();
         $input = Input::all();
         $usertofollow = User::find($input['usertofollow']);
         Auth::user()->following()->save($usertofollow);

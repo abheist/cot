@@ -14,7 +14,7 @@
                 
                  {{ Form::open(array('route'=>array('users.wantanswers.destroy',$question->id), 'method' => 'delete')) }}
                
-                 <button type="submit" class="pull-right btn btn-danger">Remove</button>
+                 <button title="Remove Question" type="submit" class="pull-right btn btn-danger"><i  class="fa fa-times"></i></button>
 
                  {{ Form::close() }}
 

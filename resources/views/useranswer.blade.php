@@ -8,12 +8,10 @@
 <div class="container spark-screen">
     
     <div class="container">
-       <div class="col-md-2">
-            @if($user->gender=="M")
-                <img src="../profile_default.png" class="img-circle" alt="Profile Pic" height="150">
-            @else
-                <img src="../profile_women.png" class="img-circle" alt="Profile Pic" height="150">
-            @endif
+       <div class="col-md-2" id="userimage">
+       
+                <img src="/{{$userprofilepic}}" class="img-circle" alt="Profile Pic" height="150">
+           
         </div>
         <div class="col-md-10">
 
@@ -142,9 +140,28 @@ $("#follow").click(function(e){
                 if(userid==viewuserid)
                 {
                     var route = 'user.addbio';
-                    var link = '<a href='+userid+'/addbio>Edit Bio</a>';
+                    var link = '<a href=/profile/'+userid+'/addbio> <i title="Edit Bio" class="fa fa-pencil-square-o"></i></a>';
                     console.log(link);
                     $("#bio").append(link);
+                }
+           },
+           function(e){
+                e.preventDefault();
+                $(this).find('a:first').remove();
+           }
+
+        );
+ $("#userimage").hover(
+            function(e){
+                e.preventDefault();
+                var userid = {{Auth::id()}}
+                var viewuserid = {{$user->id}};
+                if(userid==viewuserid)
+                {
+                    var route = 'user.addbio';
+                    var link = '<a href=/profile/'+userid+'/addprofileimage> <i title="Change Profile Picture" class="fa fa-camera"></i></a>';
+                    console.log(link);
+                    $("#userimage").append(link);
                 }
            },
            function(e){

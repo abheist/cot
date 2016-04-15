@@ -73,4 +73,8 @@ Route::group(['middleware' => 'web'], function () {
     Route::post('/follow',['as' => 'user.follow','uses' => 'UsersController@userfollow']);
     Route::post('/unfollow',['as' => 'user.unfollow','uses' => 'UsersController@userunfollow']);
 
+    Route::get('/profile/{user}/addprofileimage',['as' => 'user.addprofileimage', 'uses' => 'UsersController@addprofileimage']);
+    Route::patch('/profile/{user}/addprofileimage',['as'=>'user.updateprofileimage','uses'=>'UsersController@updateprofileimage']);
+
+
 });

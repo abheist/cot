@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
+use Carbon\Carbon;
 
 class UsersController extends Controller
 {
@@ -76,9 +77,22 @@ class UsersController extends Controller
             else
                 $follow = 0;
         }
-        $answers = Answer::with('user','question')->where('user_id',$user->id)->latest()->get();
-        return view('useranswer',['answers' => $answers, 'user' => $user, 'follow' => $follow]);
 
+        $path = public_path()."/images/profilepics/";
+        $pics = scandir($path,1);
+        $pattern = "/^[0-9]{4}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-".$user->id.".[a-z]{3,}$/";
+        $userimages= preg_grep($pattern,$pics);
+        if(count($userimages))
+            $userprofilepic = "images/profilepics/".array_values($userimages)[0];
+        else{
+            if($user->gender=='M')
+                $userprofilepic =  "profile_default.png";
+            else
+                $userprofilepic = "profile_women.png";
+        }
+
+        $answers = Answer::with('user','question')->where('user_id',$user->id)->latest()->get();
+        return view('useranswer',['answers' => $answers, 'user' => $user, 'follow' => $follow, 'userprofilepic' => $userprofilepic]);
     }
 
     public function showquestions($user)
@@ -140,5 +154,31 @@ class UsersController extends Controller
         $usertounfollow = User::find($input['usertounfollow']);
         Auth::user()->following()->detach($usertounfollow);
         return response()->json(array('success' => true));       
+    }
+
+    public function addprofileimage($user)
+    {
+        return view('addprofileimage',['user' => $user]);
+    }
+
+    public function updateprofileimage(Request $request,$user)
+    {
+        $user = User::find($user);
+        $this->validate($request,[
+                'image' => 'required'
+            ]);
+        if($request->hasFile('image'))
+        {
+            $image = Input::file('image');
+            $imagename = $image->getClientOriginalName();
+            $temp = explode('.', $imagename);
+            $imageext = end($temp);
+            $timestamp = str_replace([' ', ':'], '-', Carbon::now()->toDateTimeString());
+            $name = $timestamp. '-' .$user->id.".".$imageext;
+            $image->filePath = $name;
+            $image->filePath = $name;
+            $image->move(public_path().'/images/profilepics', $name);
+             return Redirect::route('users.show',['user' => $user->id]);
+        }   
     }
 }

@@ -17,6 +17,12 @@ use Carbon\Carbon;
 
 class UsersController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
     }
@@ -125,7 +131,9 @@ class UsersController extends Controller
     public function createbio($user)
     {
         $user = User::find($user);
-        return view('addbio',['user' => $user]);
+        if($user->id == Auth::id())
+            return view('addbio',['user' => $user]);
+        abort(404);
     }
 
     public function updatebio(Request $request, $user)
@@ -158,7 +166,11 @@ class UsersController extends Controller
 
     public function addprofileimage($user)
     {
-        return view('addprofileimage',['user' => $user]);
+        $user = User::find($user);
+        if($user->id == Auth::id())
+            return view('addprofileimage',['user' => $user]);
+        abort(404);
+        
     }
 
     public function updateprofileimage(Request $request,$user)

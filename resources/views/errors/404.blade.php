@@ -7,7 +7,7 @@
 @section('content')
 
 	<div class="container jumbotron">
-		<center><img src="404new.png">
+		<center><img src="/404.png">
 		<div>
 	We could not find the page you are looking for.<br/>
 	<a href="{{ route('home')}}">Back to home</a>

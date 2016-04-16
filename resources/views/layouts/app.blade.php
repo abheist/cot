@@ -52,9 +52,10 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="{{ route('home') }}">Home</a></li>
+                @if(Auth::check())
                      <li><a href="{{ route('users.show',Auth::id()) }}">Dashboard</a></li>
                     <li><a href="{{ route('ask.create') }}">Create</a></li>
-                    
+                @endif
                 </ul>
 
                 <!-- Right Side Of Navbar -->

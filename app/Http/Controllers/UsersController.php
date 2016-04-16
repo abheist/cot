@@ -74,7 +74,7 @@ class UsersController extends Controller
 
     public function show($user)
     {
-        $user = User::find($user);
+        $user = User::findOrFail($user);
         $follow=0;
         foreach($user->followers as $follower){
             if($follower->id == Auth::id()){
@@ -103,7 +103,7 @@ class UsersController extends Controller
 
     public function showquestions($user)
     {
-        $user = User::find($user);
+        $user = User::findOrFail($user);
         $follow=0;
         foreach($user->followers as $follower){
             if($follower->id == Auth::id()){
@@ -130,7 +130,7 @@ class UsersController extends Controller
 
     public function createbio($user)
     {
-        $user = User::find($user);
+        $user = User::findOrFail($user);
         if($user->id == Auth::id())
             return view('addbio',['user' => $user]);
         abort(404);
@@ -166,16 +166,17 @@ class UsersController extends Controller
 
     public function addprofileimage($user)
     {
-        $user = User::find($user);
+        $user = User::findOrFail($user);
         if($user->id == Auth::id())
             return view('addprofileimage',['user' => $user]);
         abort(404);
-        
     }
 
     public function updateprofileimage(Request $request,$user)
     {
-        $user = User::find($user);
+        $user = User::findOrFail($user);
+        if($user->id != Auth::id())
+           return Redirect::route('users.show',['user' => $user->id]);
         $this->validate($request,[
                 'image' => 'required'
             ]);

@@ -8,6 +8,8 @@ use App\Question;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use DB;
+use App\Followable;
 
 class HomeController extends Controller
 {
@@ -29,7 +31,7 @@ class HomeController extends Controller
     public function index()
     {
 
-
+/*
        $questions = Question::with([
             'user',
             'answers' => function($query){ 
@@ -37,7 +39,30 @@ class HomeController extends Controller
                 },
             'tags'
             ])->latest()->get(); 
-        $user_bookmarks = array();
+            */
+            
+   $tempquestions = DB::table('questions')
+        ->join('question_tag','question_tag.question_id','=','questions.id')->whereIn('question_tag.tag_id',function($query){
+            $query->select('followable_id')
+                ->from(with(new Followable)->getTable())
+                ->where('user_id',Auth::id())
+                ->where('followable_type','App\Tag');
+        })
+       ->select('questions.id')->get();
+                 
+    $qids = array();
+    foreach($tempquestions as $question){
+        array_push($qids, $question->id);
+    }
+    
+    $questions = Question::with([
+            'user',
+            'answers' => function($query){ 
+                    $query->orderBy('created_at','desc');
+                },
+            'tags'
+            ])->whereIn('id',$qids)->latest()->get(); 
+      $user_bookmarks = array();
         foreach(Auth::user()->bookmarks as $bookmark)
             array_push($user_bookmarks, $bookmark->pivot->answer_id);
 
@@ -47,8 +72,9 @@ class HomeController extends Controller
             array_push($wids,$question->id);
 
         return view('home',['questions' => $questions,'user_bookmarks' => $user_bookmarks,'wids' => $wids]);
-        
-    }
 
+    }
+        
+       
     
 }

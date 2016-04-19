@@ -6,7 +6,8 @@
 
 @section('content')
 <div class="container spark-screen">
-    
+<h3> Based on the tags you follow </h3>
+<hr/>
    @foreach($questions as $question)
         <div class="row">
             <div class="col-md-10 col-md-offset-1">

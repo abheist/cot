@@ -75,7 +75,9 @@ class HomeController extends Controller
         if(count($questions))
             return view('home',['questions' => $questions,'user_bookmarks' => $user_bookmarks,'wids' => $wids]);
         else{
-           $tags = Tag::all();
+            $tags = Tag::with([
+            'followers'])->get();
+      
            return view('showtags',['tags' => $tags]);
         }
 

@@ -123,8 +123,9 @@ class AskController extends Controller
 
    public function alltags()
    {
-        $tags = Tag::all();
-       return view('showtags',['tags' => $tags]);
+        $tags = Tag::with([
+            'followers'])->get();
+      return view('showtags',['tags' => $tags]);
    }
 
    public function showquestions($question)

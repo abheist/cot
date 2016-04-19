@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use DB;
 use App\Followable;
+use App\Tag;
 
 class HomeController extends Controller
 {
@@ -40,7 +41,7 @@ class HomeController extends Controller
             'tags'
             ])->latest()->get(); 
             */
-            
+
    $tempquestions = DB::table('questions')
         ->join('question_tag','question_tag.question_id','=','questions.id')->whereIn('question_tag.tag_id',function($query){
             $query->select('followable_id')
@@ -71,7 +72,12 @@ class HomeController extends Controller
        foreach($wantquestions as $question)
             array_push($wids,$question->id);
 
-        return view('home',['questions' => $questions,'user_bookmarks' => $user_bookmarks,'wids' => $wids]);
+        if(count($questions))
+            return view('home',['questions' => $questions,'user_bookmarks' => $user_bookmarks,'wids' => $wids]);
+        else{
+           $tags = Tag::all();
+           return view('showtags',['tags' => $tags]);
+        }
 
     }
         

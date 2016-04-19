@@ -55,6 +55,7 @@
                 @if(Auth::check())
                      <li><a href="{{ route('users.show',Auth::id()) }}">Dashboard</a></li>
                     <li><a href="{{ route('ask.create') }}">Create</a></li>
+                      <li><a href="{{ route('tags.all') }}">See All Tags</a></li>
                 @endif
                 </ul>
 

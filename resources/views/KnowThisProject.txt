@@ -13,3 +13,5 @@ This question-answer module inspired from currently online running website Quora
  9. User can follow tags so that questions associated with the followed tag will be displayed to him.
  10. User can also follow other users. 
  11. Any new answer by followed user to any question will be displayed to the user who is following the answerer.
+ 12. When you create a new tag (that was not already in the system), you will automatically following that tag.
+ 13. Your home will comprise of questions based on the tags you follow and also users you follow.

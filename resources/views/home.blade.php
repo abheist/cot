@@ -14,12 +14,15 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <a style="text-decoration: none;" href="{{route('questions.show',$question->id)}}"><h4>{{ $question->question }}</h4></a>
-                        @if(!in_array($question->id,$wids))
-                            <a class="btn btn-link btn-xm" href="{{ route('questions.follow',$question->id) }}"> Want Answer</a>
-                        @else
-                           <a class="btn btn-link btn-xs disabled" href="{{ route('questions.follow',$question->id) }}"> Want Answer <span class="badge"> {{ count($question->followers)  }} </span></a>
+                        @if(!count($question->answers))
+                            @if(!in_array($question->id,$wids))
+                                <a class="btn btn-link btn-xm" href="{{ route('questions.follow',$question->id) }}"> Want Answer</a>
+                            @else
+                               <a class="btn btn-link btn-xs disabled" href="{{ route('questions.follow',$question->id) }}"> Want Answer <span class="badge"> {{ count($question->followers)  }} </span></a>
+                            @endif
+                                <br/>
                         @endif
-                        <br/>
+                    
                         <a target="_blank" style="text-decoration: none;" class="btn-link" href={{ route('users.show',$question->user->id) }}> <img src="profile_default.png" class="img-circle" width="30" height="30">
                          <span class="label label-info">{{ $question->user->fname }} {{ $question->user->lname }} </span></a> <br/>
                         <small> {{ date_format($question->created_at, 'g:i A \o\n l jS F Y') }} </small>
@@ -28,7 +31,7 @@
                     <div class="panel-body">
                       @if(count($question->answers))
                         @foreach($question->answers as $answer)
-                            <div class="well">
+                            <div class="well clearfix">
                             <a target="_blank" style="text-decoration: none;" class="btn-link" href={{ route('users.show',$answer->user->id) }}> <img src="profile_default.png" class="img-circle" width="30" height="30">
                          <span class="label label-info">{{ $answer->user->fname }} {{ $answer->user->lname }} </span></a> <br/>
                                <small> {{ date_format($answer->created_at, 'g:i A \o\n l jS F Y') }} </small>      <br/>

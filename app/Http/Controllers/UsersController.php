@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Carbon\Carbon;
+use DB;
 
 class UsersController extends Controller
 {
@@ -112,8 +113,22 @@ class UsersController extends Controller
             else
                 $follow = 0;
         }
+
+        $path = public_path()."/images/profilepics/";
+        $pics = scandir($path,1);
+        $pattern = "/^[0-9]{4}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-".$user->id.".[a-z]{3,}$/";
+        $userimages= preg_grep($pattern,$pics);
+        if(count($userimages))
+            $userprofilepic = "images/profilepics/".array_values($userimages)[0];
+        else{
+            if($user->gender=='M')
+                $userprofilepic =  "profile_default.png";
+            else
+                $userprofilepic = "profile_women.png";
+        }
+
         $questions = Question::with('user','answers')->where('user_id',$user->id)->latest()->get();
-        return view('user',['questions' => $questions, 'user' => $user,'follow'=> $follow]);
+        return view('user',['questions' => $questions, 'user' => $user,'follow'=> $follow, 'userprofilepic' => $userprofilepic]);
     }
 
     public function wantanswers()
@@ -163,6 +178,14 @@ class UsersController extends Controller
         Auth::user()->following()->detach($usertounfollow);
         return response()->json(array('success' => true));       
     }
+
+    public function showfollowing($user)
+    {
+        if($user==Auth::id())
+            return view('showfollowing');
+        abort(404);
+    }
+
 
     public function addprofileimage($user)
     {

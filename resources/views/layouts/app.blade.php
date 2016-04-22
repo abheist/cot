@@ -77,7 +77,9 @@
                                 <li><a href="{{route('image.upload')}}"><i class="fa fa-btn fa-gear"></i>Settings</a></li>
                                 <li><a href="{{route('users.bookmarks.show')}}"><i class="fa fa-btn fa-bookmark"></i>Your Reading List</a></li>
                                 <li><a href="{{route('users.wantanswers.show')}}"><i class="fa fa-btn fa-bolt"></i>Answers Needed for</a></li>
+                                <li><a href="{{ route('users.showfollowing',Auth::id()) }}"><i class="fa fa-btn fa-users"></i>People I Follow</a></li>
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+
                             </ul>
                         </li>
                     @endif

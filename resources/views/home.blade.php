@@ -6,7 +6,7 @@
 
 @section('content')
 <div class="container spark-screen">
-<h3> Based on the tags you follow </h3>
+<h3> Based on the tags and users you follow </h3>
 <hr/>
    @foreach($questions as $question)
         <div class="row">
@@ -34,7 +34,7 @@
                                <small> {{ date_format($answer->created_at, 'g:i A \o\n l jS F Y') }} </small>      <br/>
                                 {{ $answer->answer }} 
                                 <br/>
-                                 <a href="#" class="btn btn-primary btn-xs">Upvote</a>
+                                 
                                 @if(!in_array($answer->id,$user_bookmarks))
                                     <a title="Add to Reading List" class="pull-right btn btn-xs btn-primary" href="{{ route('answers.bookmark',$answer->id)}}"><span class="glyphicon glyphicon-bookmark"></span></a>
                                 @else

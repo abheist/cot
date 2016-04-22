@@ -51,9 +51,11 @@ class AskController extends Controller
                 $tag = new Tag(['name' => $input['tag1']]);
                 $tag->save();
                 $question->tags()->attach($tag->id);
+                Auth::user()->following_tags()->save(Tag::find($tag->id));
             }
-            else
+            else{
                 $question->tags()->attach($tag1->id);   
+            }
         }
         if(isset($input['tag2'])){
             $tag2 = Tag::where('name','=',$input['tag2'])->first();
@@ -61,9 +63,11 @@ class AskController extends Controller
                 $tag = new Tag(['name' => $input['tag2']]);
                 $tag->save();
                 $question->tags()->attach($tag->id);
+                Auth::user()->following_tags()->save(Tag::find($tag->id));
             }
-            else
+            else{
                 $question->tags()->attach($tag2->id);   
+            }
         }
         if(isset($input['tag3'])){
             $tag3 = Tag::where('name','=',$input['tag3'])->first();
@@ -71,9 +75,11 @@ class AskController extends Controller
                 $tag = new Tag(['name' => $input['tag3']]);
                 $tag->save();
                 $question->tags()->attach($tag->id);
+                Auth::user()->following_tags()->save(Tag::find($tag->id));
             }
-            else
-                $question->tags()->attach($tag3->id);   
+            else{
+                $question->tags()->attach($tag3->id);  
+            }
         }
         return Redirect::route('home');
     }

@@ -31,17 +31,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-
-/*
-       $questions = Question::with([
-            'user',
-            'answers' => function($query){ 
-                    $query->orderBy('created_at','desc');
-                },
-            'tags'
-            ])->latest()->get(); 
-            */
-
+        
    $tempquestions = DB::table('questions')
         ->join('question_tag','question_tag.question_id','=','questions.id')->whereIn('question_tag.tag_id',function($query){
             $query->select('followable_id')
@@ -49,10 +39,17 @@ class HomeController extends Controller
                 ->where('user_id',Auth::id())
                 ->where('followable_type','App\Tag');
         })
-       ->select('questions.id')->get();
-                 
+       ->select('questions.id')->distinct()->get();
+             
+       $followinguserquestions = DB::table('questions')
+        ->join('answers','answers.question_id','=','questions.id')->whereIn('answers.user_id',array_column(Auth::user()->following->toArray(),"id"))->select('questions.id')->distinct()->get();
+
     $qids = array();
+
     foreach($tempquestions as $question){
+        array_push($qids, $question->id);
+    }
+     foreach($followinguserquestions as $question){
         array_push($qids, $question->id);
     }
     

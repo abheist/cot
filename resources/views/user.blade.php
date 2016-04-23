@@ -88,6 +88,7 @@ $("#follow").click(function(e){
             e.preventDefault();
             var content = $("#follow").html();
             console.log(content);
+            $("#follow").append('<img src="/default.gif" height="30" width="30">');
             if(content=="Follow")
             {
                 console.log(content);

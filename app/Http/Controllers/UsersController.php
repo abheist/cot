@@ -233,7 +233,7 @@ class UsersController extends Controller
             $desc = trim($request['description']);
            
             Mail::send('emails.reportbug',['user' => Auth::user(),'desc' => $desc],function($m){
-                $m->from('bug@cotanz.com','Bug in Application');
+                $m->from('kapil.agrawal947@gmail.com','Bug in Application');
                 $m->to('kapil.agrawal947@gmail.com','Kapil Agrawal')->subject('Bug Reported');
             });
             

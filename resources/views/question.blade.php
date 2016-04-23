@@ -8,7 +8,11 @@
     <div class="container spark-screen">
      <h3> {{ $question->question}}</h3>
        <a href="{{ route('answers.create',$question->id) }}" class="btn btn-info btn-sm">Answer</a>
-   
+        @if(!in_array($question->id,array_column(Auth::user()->following_questions->toArray(),"id")))
+            <a class="btn btn-link btn-xm" href="{{ route('questions.follow',$question->id) }}"> Want Answer</a>
+        @else
+           <a class="btn btn-link btn-xs disabled" href="{{ route('questions.follow',$question->id) }}"> Want Answer <span class="badge"> {{ count($question->followers)  }} </span></a>
+        @endif
          <span class="glyphicon glyphicon-tags"></span>&nbsp;
                         @if(!count($question->tags))
                             No Tags Available

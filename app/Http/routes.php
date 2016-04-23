@@ -81,5 +81,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/profile/{user}/addprofileimage',['as' => 'user.addprofileimage', 'uses' => 'UsersController@addprofileimage']);
     Route::patch('/profile/{user}/addprofileimage',['as'=>'user.updateprofileimage','uses'=>'UsersController@updateprofileimage']);
 
+    Route::get('/reportbug',['as' => 'reportbug','uses' => 'UsersController@reportbug']);
+    Route::post('/reportbug',['as' => 'addbug', 'uses' => 'UsersController@addbug']);
 
 });

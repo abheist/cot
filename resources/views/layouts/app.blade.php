@@ -78,6 +78,7 @@
                                 <li><a href="{{route('users.bookmarks.show')}}"><i class="fa fa-btn fa-bookmark"></i>Your Reading List</a></li>
                                 <li><a href="{{route('users.wantanswers.show')}}"><i class="fa fa-btn fa-bolt"></i>Answers Needed for</a></li>
                                 <li><a href="{{ route('users.showfollowing',Auth::id()) }}"><i class="fa fa-btn fa-users"></i>People I Follow</a></li>
+                                <li><a href="{{ route('reportbug') }}"><i class="fa fa-btn fa-exclamation-circle"></i>Report a bug</a></li>
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
 
                             </ul>

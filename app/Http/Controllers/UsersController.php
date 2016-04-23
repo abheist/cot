@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Carbon\Carbon;
 use DB;
+use Mail;
 
 class UsersController extends Controller
 {
@@ -216,5 +217,25 @@ class UsersController extends Controller
             $image->move(public_path().'/images/profilepics', $name);
              return Redirect::route('users.show',['user' => $user->id]);
         }   
+    }
+
+    public function reportbug()
+    {
+        return view('reportbug');
+    }
+
+    public function addbug(Request $request)
+    {
+            $this->validate($request,[
+                'description' => 'required'
+                ]);
+
+            $desc = trim($request['description']);
+           
+            Mail::send('emails.reportbug',['user' => Auth::user(),'desc' => $desc],function($m){
+                $m->from('bug@cotanz.com','Bug in Application');
+                $m->to('kapil.agrawal947@gmail.com','Kapil Agrawal')->subject('Bug Reported');
+            });
+            
     }
 }

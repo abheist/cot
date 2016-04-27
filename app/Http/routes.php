@@ -37,6 +37,7 @@ Route::group(['middleware' => 'web'], function () {
    
 
     Route::get('/',['as' => 'home', 'uses' => 'HomeController@index']);
+    Route::get('/about',['as' => 'about' , 'uses' => 'HomeController@about']);
 
     Route::post('/readtags', 'AskController@readtags');
 

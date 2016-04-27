@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 node_modules
 dist
 .tmp
 .sass-cache
 bower_components
 test/bower_components
+||||||| merged common ancestors
+=======
+
+>>>>>>> bd4f1ce260e9f16a477d244e9654e9ebd6364cae

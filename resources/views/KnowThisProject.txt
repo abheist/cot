@@ -1,0 +1,17 @@
+This question-answer module inspired from currently online running website Quora.com. This Cot-Quora is meant for college only. Only college students, faculties, alumni and other Glaites can use it. This is strictly not intended to use for outsiders for now. 
+ 
+ Cot-Quora aims to procide interaction between students and teachers and basically let people know each other and their collge in a better way than earlier. Students can ask anything to anyone. They can also hide their identity if they feel afraid to ask anything. Everyone will be able to read the type of answers he/she likes without any restrictions. It's feature include:
+
+ 1. You can post as many relevant questions. 
+ 2. Posted Questions can include atmost three tags/topics associated with them.
+ 3. By default posted question will be visible all those people who are following the tags/topics the question is associated with.
+ 4. One who has posted the question can also answer the question.
+ 5. Anybody can answer any question.
+ 6. One can also subscribe to questions one has not asked termed as "Want Answers". If one has subscribed for "Want Answers" for some particular question then any new answer of the question will be notified to the subscribed user.
+ 7. If user liked some answer he/she can appreciate the answer by "Upvoting" it.
+ 8. Also, user can add answer to reading list which will be his own can be seen anytime.
+ 9. User can follow tags so that questions associated with the followed tag will be displayed to him.
+ 10. User can also follow other users. 
+ 11. Any new answer by followed user to any question will be displayed to the user who is following the answerer.
+ 12. When you create a new tag (that was not already in the system), you will automatically following that tag.
+ 13. Your home will comprise of questions based on the tags you follow and also users you follow.

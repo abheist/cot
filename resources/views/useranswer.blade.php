@@ -54,8 +54,15 @@
                     <div class="panel-heading">
                     <a href="{{route('questions.show',$answer->question->id)}}">  <h3>{{ $answer->question->question }}</h3></a>
                       
-                        <a  target="_blank" style="text-decoration: none;" class="btn-link" href={{ route('users.show',$answer->question->user->id) }}> <img src="../profile_default.png" class="img-circle" width="30" height="30">
-                         <span class="label label-info">{{ $answer->question->user->fname }} {{ $answer->question->user->lname }} </span></a> <br/>
+
+                        @if(!$answer->question->anonymous)
+                            <a  target="_blank" style="text-decoration: none;" class="btn-link" href={{ route('users.show',$answer->question->user->id) }}> <img src="../profile_default.png" class="img-circle" width="30" height="30">
+                             <span class="label label-info">{{ $answer->question->user->fname }} {{ $answer->question->user->lname }} </span></a> 
+                        @else
+                         <span class="label label-info">Anonymous </span>
+                        @endif
+
+                         <br/>
                         <small> {{ date_format($answer->question->created_at, 'g:i A \o\n l jS F Y') }} </small>
                     </div>
 

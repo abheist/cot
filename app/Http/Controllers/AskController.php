@@ -43,6 +43,7 @@ class AskController extends Controller
         $input = $request->except('_tagtoken'); 
         $input = array_map('trim',$input);
         $question = new Question($input);
+        //var_dump($question);
         $user = User::find(Auth::id());
         $user->questions()->save($question);
         if(isset($input['tag1'])){

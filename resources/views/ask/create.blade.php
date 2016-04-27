@@ -33,6 +33,11 @@
                                 </button>
                             </div>
                         </div>
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <input type="checkbox" name="anonymous" value="1"></input>Ask As Anonymous
+                            </div>
+                        </div>
                         <div class="form-group" id="askbtn">
                             <div class="col-md-6 col-md-offset-4">
                                 <button title="Add Question" type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">

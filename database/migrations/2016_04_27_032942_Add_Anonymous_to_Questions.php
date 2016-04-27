@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddProfilepicToUsers extends Migration
+class AddAnonymousToQuestions extends Migration
 {
     /**
      * Run the migrations.
@@ -12,8 +12,8 @@ class AddProfilepicToUsers extends Migration
      */
     public function up()
     {
-         Schema::table('users', function ($table) {
-            $table->string('profilepic');
+        Schema::table('questions', function ($table) {
+            $table->integer('anonymous')->default(0);
         });
     }
 
@@ -24,8 +24,8 @@ class AddProfilepicToUsers extends Migration
      */
     public function down()
     {
-        Schema::table('users', function ($table) {
-            $table->dropColumn('profilepic');
+        Schema::table('questions', function ($table) {
+            $table->dropColumn('anonymous');
         });
     }
 }

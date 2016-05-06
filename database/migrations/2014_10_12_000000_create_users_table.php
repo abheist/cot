@@ -19,8 +19,7 @@ class CreateUsersTable extends Migration
             $table->char('gender');
             $table->string('email')->unique();
             $table->string('password', 60);
-            $table->string('blogtitle')->default('My Blog');
-            
+            $table->text('bio');
             $table->rememberToken();
             $table->timestamps();
         });

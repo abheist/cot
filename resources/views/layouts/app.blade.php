@@ -10,11 +10,12 @@
     <!-- Fonts -->
 <link rel="stylesheet" href="https://code.getmdl.io/1.1.2/material.indigo-pink.min.css">
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+    <link href="css/font-awesome.min.css" rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
 
     <!-- Styles -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -56,6 +57,7 @@
                 @if(Auth::check())
                      <li><a href="{{ route('users.show',Auth::id()) }}">Dashboard</a></li>
                     <li><a href="{{ route('ask.create') }}">Create</a></li>
+                      <li><a href="{{ route('blog.show') }}">Blogs</a></li>
                       <li><a href="{{ route('tags.all') }}">See All Tags</a></li>
                 @endif
                 </ul>
@@ -95,7 +97,7 @@
     <!-- JavaScripts -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
             <script defer src="https://code.getmdl.io/1.1.2/material.min.js"></script>
 
@@ -178,8 +180,8 @@
 
        
 
-       @yield('scripts');
-       
+       @yield('scripts')
+    
     </script>
 
 </body>

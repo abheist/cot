@@ -10,7 +10,7 @@
     <div class="container">
        <div class="col-md-2" id="userimage">
        
-                <img src="/{{$userprofilepic}}" class="img-circle" alt="Profile Pic" height="150">
+                <img src="/{{$userprofilepic}}" class="img-circle " alt="Profile Pic" height="150" width="150">
            
         </div>
         <div class="col-md-10">

@@ -8,12 +8,17 @@ class Blog extends Model
 {
 
 	protected $fillable = [
-        'blog_title', 'blog_body',
+        'title', 'body','bio',
     ];
 
 
     public function user()
     {
     	return $this->belongsTo('App\User');
+    }
+
+    public function articles()
+    {
+    	return $this->hasMany('App\Article');
     }
 }

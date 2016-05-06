@@ -24,14 +24,19 @@ class User extends Authenticatable
         'password',
     ];
 
-    public function blogs()
+    public function blog()
     {
-        return $this->hasMany('App\Blog');
+        return $this->hasOne('App\Blog');
     }
 
     public function questions()
     {
         return $this->hasMany('App\Question');
+    }
+
+     public function articles()
+    {
+        return $this->hasMany('App\Article');
     }
 
     public function answers()

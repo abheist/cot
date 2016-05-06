@@ -85,4 +85,13 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/reportbug',['as' => 'reportbug','uses' => 'UsersController@reportbug']);
     Route::post('/reportbug',['as' => 'addbug', 'uses' => 'UsersController@addbug']);
 
+
+    Route::get('blog/create',['as' => 'blog.create', 'uses' => 'BlogsController@create']);
+
+    Route::post('blog/create',['as' => 'blog.store', 'uses' => 'BlogsController@store']);  
+
+    Route::get('blogs',['as' => 'blog.show', 'uses' => 'BlogsController@show']);    
+
+    Route::get('blog/{blog}/article/create/',['as' => 'article.create', 'uses' => 'ArticlesController@create']);    
+    Route::post('blog/{blog}/article/create/',['as' => 'article.store', 'uses' => 'ArticlesController@store']);    
 });

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-    Ask Question - CotQuora
+    CotBlog - Create Blog
 @endsection
 @section('content')
 <div class="container">
@@ -65,5 +65,7 @@
             </div>
         </div>
     </div>
+     <hr/>
+    <h3>Create your own blog and start exploring ideas and sharing your knowledge and thoughts. </h3>
 </div>
 @endsection

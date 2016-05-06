@@ -67,5 +67,18 @@
             </div>
         </div>
     </div>
+    <hr/>
+    <center>
+    <h2>Welcome to Cotanz College Connect</h2>
+    </center>
+    <div class="well">
+        <h4><strong>Cotanz College Connect</strong> will use social media, video, and other Web-based communications, along with traditional forms of outreach, to connect students to GLA and to other public and private colleges. Users could add people as friends, send them messages, and update their personal profiles to notify friends about themselves.</h4>
+    </div>
+    <div class="well">
+        <h4>Users across GLA will be eligible to claim Cotanz, more secure access to the applications and services you use every day allow only authorized user to access various functions and processes available in system: as in today’s era it’s not safe to have records without any security that is one cannot allow access to everyone. This needs a check so that authorized access is given through the system by facilitating with the passwords so that authorized person can go through it.</h4>
+    </div>
+    
+       <center> <a href="/register"><h3 class="btn btn-primary btn-lg">Join Us Now</h3></a></center>
+    <hr/>
 </div>
 @endsection

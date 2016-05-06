@@ -4,6 +4,20 @@
     Home - CotQuora
 @endsection
 
+@section('navbar')
+<ul class="nav navbar-nav">
+    <li class="active"><a href="{{ route('home') }}">Home</a></li>
+    <li><a href="{{ route('about') }}">About</a></li>
+    @if(Auth::check())
+        <li><a href="{{ route('users.show',Auth::id()) }}">Dashboard</a></li>
+        <li><a href="{{ route('ask.create') }}">Create</a></li>
+        <li ><a href="{{ route('blog.show') }}">Blogs</a></li>
+        <li><a href="{{ route('tags.all') }}">See All Tags</a></li>
+    @endif
+</ul>
+@endsection
+
+
 @section('content')
 <div class="container spark-screen">
 <h3> Based on the tags and users you follow </h3>
@@ -46,9 +60,11 @@
                                 <br/>
                                  
                                 @if(!in_array($answer->id,$user_bookmarks))
-                                    <a title="Add to Reading List" class="pull-right btn btn-xs btn-primary" href="{{ route('answers.bookmark',$answer->id)}}"><span class="glyphicon glyphicon-bookmark"></span></a>
+                                    <a title="Add to Reading List" class="pull-right btn btn-xs btn-primary" href="{{ route('answers.bookmark',$answer->id)}}"><i class="fa fa-bookmark" aria-hidden="true"></i>
+</a>
                                 @else
-                                    <a title="View Bookmarks" class="pull-right btn btn-xs btn-success" href="{{route('users.bookmarks.show')}}"><span class="glyphicon glyphicon-bookmark"></span></a>
+                                    <a title="View Bookmarks" class="pull-right btn btn-xs btn-success" href="{{route('users.bookmarks.show')}}"><i class="fa fa-bookmark" aria-hidden="true"></i>
+</a>
                                 @endif
 
                             </div>

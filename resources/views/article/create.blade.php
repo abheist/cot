@@ -1,12 +1,21 @@
 @extends('layouts.app')
 
 @section('title')
-Cot-Blog | Create
+Cot-Blog | Create Article
 @stop
 
-@section('head')
-
-@stop
+@section('navbar')
+<ul class="nav navbar-nav">
+    <li ><a href="{{ route('home') }}">Home</a></li>
+    <li><a href="{{ route('about') }}">About</a></li>
+    @if(Auth::check())
+        <li><a href="{{ route('users.show',Auth::id()) }}">Dashboard</a></li>
+        <li><a href="{{ route('ask.create') }}">Create</a></li>
+        <li class="active"><a href="{{ route('blog.show') }}">Blogs</a></li>
+        <li><a href="{{ route('tags.all') }}">See All Tags</a></li>
+    @endif
+</ul>
+@endsection
 
 @section('content')
 <div class="container">
@@ -54,6 +63,7 @@ Cot-Blog | Create
             </div>
         </div>
     </div>
+   
 </div>
 @stop
 

@@ -10,7 +10,7 @@
     <!-- Fonts -->
 <link rel="stylesheet" href="https://code.getmdl.io/1.1.2/material.indigo-pink.min.css">
 
-    <link href="css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
 
     <!-- Styles -->
@@ -45,22 +45,13 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ route('home') }}">
-                    Cot-Quora
+                   Cotanz College Connect
                 </a>
             </div>
 
             <div class="collapse navbar-collapse" id="spark-navbar-collapse">
                 <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="{{ route('home') }}">Home</a></li>
-                     <li><a href="{{ route('about') }}">About</a></li>
-                @if(Auth::check())
-                     <li><a href="{{ route('users.show',Auth::id()) }}">Dashboard</a></li>
-                    <li><a href="{{ route('ask.create') }}">Create</a></li>
-                      <li><a href="{{ route('blog.show') }}">Blogs</a></li>
-                      <li><a href="{{ route('tags.all') }}">See All Tags</a></li>
-                @endif
-                </ul>
+                @yield('navbar')
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
@@ -96,8 +87,8 @@
 
     <!-- JavaScripts -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../../../js/jquery-2.2.1.min.js"></script>
+    <script src="../../../js/bootstrap.min.js"></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
             <script defer src="https://code.getmdl.io/1.1.2/material.min.js"></script>
 
